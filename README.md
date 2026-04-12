@@ -1,44 +1,72 @@
-# AI-coding-projects
-All of my AI-coding-projects
+# AI Coding Projects
 
-## 项目介绍
-基于广告产品经理日常场景，使用AI coding捣鼓出来的一些小工具，用于提升自己的工作效率
+> 搜索广告产品经理的 AI 编程实践：用 AI 辅助编码解决真实工作问题，无需系统编程背景。
+>
+> AI-assisted coding projects by a Search Ads PM — solving real work problems without a formal engineering background.
 
-## 使用技术
-- Python 
-- gemini cli
+---
 
-## 主要项目
-1. query分类工具
-2. 商品信息提取工具
-3. 图片自动裁切工具
+## 项目列表 | Projects
 
-## query分类工具
-### 主要功能及场景
-为了小规模识别某些query的分类。使用场景为，在新产品为了快速上线时，经常需要人工圈选一些符合产品定义的query，但是往往又没现成的分类可用。
-本功能主要是基于给定的定义，对query进行分类，并判断1-10分，用于后续按照阈值卡控。
+### 1. Query 意图分类工具 | Query Intent Classifier
+**状态 | Status:** ✅ 完成
 
-### 次要功能
-1. 可同时进行多个维度的定义判别，结果输出为一个二元/多元数组
-2. 内置模型列表，按照顺序选择可以用的模型，不可用的话会跳过
-3. 从txt文件写入，结果写出到csv文件中
-4. 每30s报告一次状态，模型轮换有冷却时间。
-5. 断点续传，失败会记录log
+**背景 | Background:**
+新产品上线时需要对大量搜索 Query 进行意图分类，人工标注效率低，用 AI 批量打分可大幅提速。When launching new ad products, manual query categorization is too slow — AI batch scoring dramatically improves efficiency.
 
+**功能 | Features:**
+- 两维度打分：多商品意图 & 多机构意图（0-10 分）
+- 批量处理：每批 50 条，支持断点续传
+- 多模型轮换：自动探测可用 Gemini 模型，限流时自动切换
+- 错误处理：解析失败自动拆批重试，失败日志记录
 
-## 商品信息提取工具（待更新）
+**技术栈 | Tech Stack:** Python · Gemini CLI
 
+**文件 | Files:**
+- `query_identity.py` — 主处理脚本
 
-## 图片自动裁切工具（待更新）
+**使用方法 | Usage:**
+```bash
+# 前提：已安装并登录 Gemini CLI
+python query_identity.py
+```
 
+---
 
+### 2. 商品信息提取工具 | Product Info Extractor
+**状态 | Status:** 🚧 规划中
 
-## 所需环境
-gemini CLI授权
+---
 
+### 3. 自动图片裁剪工具 | Auto Image Cropper
+**状态 | Status:** 🚧 规划中
 
-## 不足之处和思考
-1. 使用gemini CLI每隔一段时间就会弹出认证，而使用gemini官方的API，又会有token限制的问题，后续需要接入开放的第三方平台，或使用ds等价格较低或者免费模型
-2. 简单功能无需使用gemini的复杂模型，本项目一开始就使用了gemini的新模型，后续降为fast模型之后效果好了很多
-3. 对于需要大规模、长时间使用、监控的项目，最好同步增加监控面板和进度条，并预估好产能和时间。
+---
 
+## 经验与反思 | Lessons Learned
+
+1. **模型选择**：简单分类任务用轻量模型（gemini-2.5-flash-lite）效果已很好，一开始用旗舰模型反而容易超限；降到 fast 模型后效果好了很多。Simple tasks don't need powerful models — lighter variants perform better in practice.
+
+2. **批次大小**：30-50 条最稳定，100 条容易截断导致解析失败。Batch size 30-50 is most stable; 100 causes frequent truncation.
+
+3. **工程健壮性**：2 万条数据必须做断点续传和失败日志，否则中途崩溃代价极高。For large-scale jobs, checkpoint recovery and failure logging are non-negotiable.
+
+4. **认证问题**：Gemini CLI 会周期性弹出重新认证，大规模任务建议考虑接入官方 API 或低价替代模型（如 DeepSeek）。Gemini CLI requires periodic re-auth — for production-scale tasks, consider the official API or cost-effective alternatives.
+
+---
+
+## 开发理念 | Philosophy
+
+> "用最小的技术投入解决真实的工作问题。"
+>
+> "Minimum technical overhead, maximum real-world impact."
+
+---
+
+## 关于作者 | About
+
+搜索广告产品经理，SQL 和数据分析背景，近期通过 AI 辅助编程（Claude Code、Gemini CLI）解决工作中的自动化需求。
+
+Search Ads PM with SQL/data analysis background, recently using AI-assisted coding (Claude Code, Gemini CLI) to automate real work problems.
+
+🔗 [Search Ads Knowledge](https://github.com/benyuh/search-ads-knowledge) | [Data Analysis Notes](https://github.com/benyuh/data-analysis-notes) | [AI Monetization](https://github.com/benyuh/ai-monetization)
