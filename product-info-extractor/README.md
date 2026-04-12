@@ -15,7 +15,6 @@
 | `task_antisun.py` | 防晒霜 | 商品名、价格、SPF/PA值、质地、核心卖点 |
 | `task_bodycream.py` | 身体乳 | 商品名、价格、功效、质地、卖点 |
 | `task_bodywash.py` | 沐浴露 | 商品名、价格、香型、功效、卖点 |
-| `task_paybill_boc.py` | 银行账单 | 账单结构化信息 |
 
 ## 使用方法 | Usage
 
