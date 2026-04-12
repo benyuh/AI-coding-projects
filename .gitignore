@@ -1,0 +1,18 @@
+# 输出文件
+output/
+output_caiqie/
+results/
+*.zip
+
+# 图片素材（通常较大）
+images/
+裁切结果/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# macOS
+.DS_Store
