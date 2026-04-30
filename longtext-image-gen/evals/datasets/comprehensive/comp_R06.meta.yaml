@@ -1,0 +1,12 @@
+case_id: comp_R06
+category: comprehensive
+title: 大语言模型LLM完整科普
+source_url: null
+text_length: 5404
+language: zh
+preferences:
+  target_platform: xiaohongshu
+  output_format: video
+  style_hint: auto
+user_profile:
+  user_type: general

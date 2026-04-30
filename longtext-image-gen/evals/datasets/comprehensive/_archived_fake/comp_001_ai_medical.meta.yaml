@@ -1,0 +1,12 @@
+case_id: comp_001_ai_medical
+category: comprehensive
+title: AI医疗应用深度研究报告
+source_url: null
+text_length: 300
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: auto
+  style_hint: auto
+user_profile:
+  user_type: professional

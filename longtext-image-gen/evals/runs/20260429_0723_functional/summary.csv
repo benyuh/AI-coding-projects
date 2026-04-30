@@ -1,0 +1,2 @@
+case_id,terminal_status,duration_s,error
+func_01_policy_general,error,470.24,"Unsupported screenshot mime type for path ""/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/runs/20260429_0723_functional/func_01_policy_general/artifacts/output"": None"

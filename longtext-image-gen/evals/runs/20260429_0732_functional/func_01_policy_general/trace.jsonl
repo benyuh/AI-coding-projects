@@ -1,0 +1,8 @@
+{"stage": "orchestrator_graph", "started_at": "2026-04-29T07:32:39.385005", "duration_ms": 2858.1900596618652, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "agent0_multisource", "started_at": "2026-04-29T07:32:39.391252", "duration_ms": 0.030994415283203125, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "agent1_router", "started_at": "2026-04-29T07:32:39.391488", "duration_ms": 315.8230781555176, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "agent2_understand", "started_at": "2026-04-29T07:32:39.708598", "duration_ms": 81.01415634155273, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "agent3_orchestrate", "started_at": "2026-04-29T07:32:39.790140", "duration_ms": 233.75797271728516, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "gate1_blueprint", "started_at": "2026-04-29T07:32:40.024258", "duration_ms": 204.18524742126465, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "tool1_imagerender", "started_at": "2026-04-29T07:32:40.229286", "duration_ms": 1661.5078449249268, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "gate2_render", "started_at": "2026-04-29T07:32:41.891275", "duration_ms": 351.44901275634766, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}

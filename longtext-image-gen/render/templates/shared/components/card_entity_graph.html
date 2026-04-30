@@ -1,0 +1,71 @@
+{#
+render/templates/shared/components/card_entity_graph.html
+D3 力导向关系图组件
+
+参数：
+  card        — 卡片对象（card.title）
+  graph_data  — {"nodes": [{"id": "...", "label": "...", "group": 0}], "edges": [{"source": "...", "target": "...", "label": "..."}]}
+  graph_id    — 图唯一 ID
+#}
+{% macro card_entity_graph(card, graph_data, graph_id="graph0") %}
+<div class="card-section card-entity-graph">
+  <div class="card-title">{{ card.title }}</div>
+  <div id="{{ graph_id }}-container" style="width:960px;height:460px;overflow:hidden;position:relative;">
+    <svg id="{{ graph_id }}" width="960" height="460"></svg>
+  </div>
+</div>
+<script>
+(function() {
+  var nodes = {{ graph_data.nodes | tojson | default('[]') }};
+  var links = {{ graph_data.edges | tojson | default('[]') }};
+
+  var svg = d3.select('#{{ graph_id }}');
+  var width = 960, height = 460;
+  var colors = d3.schemeTableau10;
+
+  var simulation = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(function(d) { return d.id; }).distance(120))
+    .force('charge', d3.forceManyBody().strength(-300))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide(40));
+
+  var link = svg.append('g').selectAll('line')
+    .data(links).enter().append('line')
+    .attr('stroke', '#ccc').attr('stroke-width', 2);
+
+  var linkLabel = svg.append('g').selectAll('text')
+    .data(links).enter().append('text')
+    .attr('font-size', 12).attr('fill', '#888').attr('text-anchor', 'middle')
+    .text(function(d) { return d.label || ''; });
+
+  var node = svg.append('g').selectAll('circle')
+    .data(nodes).enter().append('circle')
+    .attr('r', 24).attr('fill', function(d) { return colors[d.group % 10]; })
+    .attr('stroke', '#fff').attr('stroke-width', 2);
+
+  var nodeLabel = svg.append('g').selectAll('text')
+    .data(nodes).enter().append('text')
+    .attr('font-size', 13).attr('fill', '#fff').attr('text-anchor', 'middle')
+    .attr('dy', '0.35em').text(function(d) { return d.label || d.id; });
+
+  simulation.on('tick', function() {
+    link
+      .attr('x1', function(d) { return d.source.x; })
+      .attr('y1', function(d) { return d.source.y; })
+      .attr('x2', function(d) { return d.target.x; })
+      .attr('y2', function(d) { return d.target.y; });
+
+    linkLabel
+      .attr('x', function(d) { return (d.source.x + d.target.x) / 2; })
+      .attr('y', function(d) { return (d.source.y + d.target.y) / 2; });
+
+    node.attr('cx', function(d) { return d.x; }).attr('cy', function(d) { return d.y; });
+    nodeLabel.attr('x', function(d) { return d.x; }).attr('y', function(d) { return d.y; });
+  });
+
+  // 停止模拟后静态快照（Playwright 渲染时无法等待动画）
+  simulation.tick(300);
+  simulation.stop();
+})();
+</script>
+{% endmacro %}

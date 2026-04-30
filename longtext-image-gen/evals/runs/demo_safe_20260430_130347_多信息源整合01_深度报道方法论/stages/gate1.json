@@ -1,0 +1,102 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 72.0,
+      "threshold": 65.0,
+      "passed": true,
+      "reason": "蓝图覆盖了三层认知模型、OSINT范式、AI工具、四维信源架构等核心板块，但典型案例、伦理挑战、2026实战工具箱三个重要内容明显缺失，影响后半部分实践板块的完整性。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 72.0,
+      "threshold": 75.0,
+      "passed": false,
+      "reason": "卡片0-2内容基本忠实原文，但卡片1-6涉及原文未提供的chunk内容（如C3I、DeepSeek-V4、OSINT三层模型细节等），无法从给定原文验证，存在无法核实的潜在编造风险，尤其卡片5/6提及具体模型名称。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "1",
+          "card_field": "body",
+          "original_text": "（原文chunk中未出现C3I系统相关表述）",
+          "hallucinated_text": "多源信息融合（MSIF）起源于军事领域的C3I系统，通过多个传感器的冗余或互补信息获得目标一致性描述",
+          "error_summary": "C3I起源表述无原文依据"
+        },
+        {
+          "card_id": "2",
+          "card_field": "body",
+          "original_text": "（原文chunk中未出现三层模型、铁路运行记录等表述）",
+          "hallucinated_text": "铁路运行记录与黄金周人口流动数据的交叉叠加",
+          "error_summary": "具体案例数据无原文依据"
+        },
+        {
+          "card_id": "3",
+          "card_field": "body",
+          "original_text": "（原文chunk中未出现卫星地理空间情报等OSINT三层模型细节）",
+          "hallucinated_text": "卫星地理空间情报（...）三层认知模型打通多源整合理论基础",
+          "error_summary": "OSINT三层细节无原文依据"
+        },
+        {
+          "card_id": "4",
+          "card_field": "body",
+          "original_text": "（原文chunk中未出现SunCalc工具及阴影角度分析内容）",
+          "hallucinated_text": "SunCalc等工具将太阳方位转化为精确坐标",
+          "error_summary": "SunCalc工具描述无原文依据"
+        },
+        {
+          "card_id": "5",
+          "card_field": "body",
+          "original_text": "（原文chunk中未出现DeepSeek-V4、Nvidia Nemotron、Claude 3.5 Sonnet等模型名称）",
+          "hallucinated_text": "DeepSeek-V4、Nvidia Nemotron、Claude 3.5 Sonnet等全模态模型发布",
+          "error_summary": "具体模型名称无原文依据"
+        },
+        {
+          "card_id": "6",
+          "card_field": "body",
+          "original_text": "（原文chunk中未出现相关内容）",
+          "hallucinated_text": "DeepSeek-V4、Claude（AI Agent语义挖掘能力边界相关表述）",
+          "error_summary": "AI Agent能力描述无原文依据"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 62.0,
+      "threshold": 70.0,
+      "passed": false,
+      "reason": "section卡片占比过高(7/10)，类型严重单一；最后两张卡片标题完全重复（section与summary同名），存在明显结构冗余；data卡片仅1张，内容层次失衡；整体逻辑连贯性尚可但架构设计需优化。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 62.0,
+      "threshold": 68.0,
+      "passed": false,
+      "reason": "内容专业度足够，术语密集（MSIF、OSINT、C3I）符合professional标准，但小红书平台需要轻松亲切的表达风格，当前文案过于学术论文化，缺乏平台感和互动性，与小红书调性存在明显落差。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 67.0,
+  "failed_dims": [
+    "faithfulness",
+    "card_quality",
+    "audience_fit"
+  ],
+  "voting_enabled": false
+}

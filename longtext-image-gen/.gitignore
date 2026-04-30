@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.env.local
+output_*.png
+debug_*.png
+debug_*.json
+*.log
+ku_assets/
+.pytest_cache/

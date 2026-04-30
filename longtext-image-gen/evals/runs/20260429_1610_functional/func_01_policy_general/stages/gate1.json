@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 62.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "覆盖了部分量化目标（可再生能源、煤炭、新能源汽车、建筑），但严重缺失：指导思想、工作机制保障措施、交通领域系统性内容、工业领域细节不足，且存在重复卡片（建筑目标出现两次），整体结构失衡。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 85.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片0-5主要内容与原文基本一致，数据准确。但卡片1未提及'65%以上'具体数值被省略，卡片3风光装机细节截断，卡片6、7内容（绿色基金、绿色工厂）在卡片列表中未出现，整体忠实度较高但存在信息截断。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 62.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "存在两张标题完全相同的卡片（timeline和summary均为'2025年新建建筑绿色化目标'），重复冗余；section类型用于具体数据目标不当；整体逻辑层次略混乱，但数据卡片内容覆盖较全面。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 85.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "文案保留了专业术语和量化数据，符合professional受众需求。但朋友圈平台要求简洁，部分句子略显冗长，信息密度偏高，建议适当精简表达以提升传播效果。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 73.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality"
+  ],
+  "voting_enabled": false
+}

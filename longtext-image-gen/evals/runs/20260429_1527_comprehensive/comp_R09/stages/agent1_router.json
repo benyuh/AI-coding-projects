@@ -1,0 +1,11 @@
+{
+  "article_type": "tutorial",
+  "user_type": "general",
+  "platform": "xiaohongshu",
+  "narrative_structure": "lin_style_explainer",
+  "output_format_hint": "image",
+  "risk_level": "safe",
+  "risk_reason": "",
+  "skip_reason": "",
+  "style_hint": "xiaohongshu_warm"
+}

@@ -1,0 +1,103 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 62.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "蓝图覆盖了数据预警、韩日中核心案例和部分政策讨论，但严重缺失：五大不愿生育原因分析、欧美延伸内容、低生育率陷阱与宏观后果、文明选择哲学反思等关键层次，结构深度严重不足。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 72.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片1、2、3、4、5、6的核心数据在提供的chunk片段中均未得到完整验证，chunk原文被截断，无法确认这些具体数字（如280万亿韩元、758631人、956万、1041万等）的准确性，存在无法核实的风险。卡片0基本可验证。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "1",
+          "card_field": "body",
+          "original_text": "原文chunk被截断，联合国数据部分不完整",
+          "hallucinated_text": "全球平均生育率从1950年的5骤降至2021年的2.3，预计2050年将跌至2.1",
+          "error_summary": "具体数值在截断原文中无法完整核实"
+        },
+        {
+          "card_id": "2",
+          "card_field": "body",
+          "original_text": "原文chunk被截断，韩国投入数据未出现在提供片段中",
+          "hallucinated_text": "过去20年，韩国在生育激励上投入超过280万亿韩元（约合2000亿美元）",
+          "error_summary": "韩国投入金额在提供原文中无据可查"
+        },
+        {
+          "card_id": "3",
+          "card_field": "body",
+          "original_text": "原文chunk被截断，日本数据未出现在提供片段中",
+          "hallucinated_text": "2023年，日本全年新生儿仅758631人，TFR降至1.20",
+          "error_summary": "日本新生儿数据在提供原文中无据可查"
+        },
+        {
+          "card_id": "4",
+          "card_field": "body",
+          "original_text": "原文chunk被截断，中国人口数据未出现在提供片段中",
+          "hallucinated_text": "2022年，中国出生人口956万，死亡人口1041万，自然增长率跌至-0.60‰",
+          "error_summary": "中国人口负增长具体数值在提供原文中无据可查"
+        },
+        {
+          "card_id": "5",
+          "card_field": "body",
+          "original_text": "原文chunk被截断，新加坡数据未出现在提供片段中",
+          "hallucinated_text": "2023年，新加坡TFR降至0.97，首次跌破1.0",
+          "error_summary": "新加坡生育率数据在提供原文中无据可查"
+        },
+        {
+          "card_id": "6",
+          "card_field": "body",
+          "original_text": "原文chunk被截断，政策效果分析未出现在提供片段中",
+          "hallucinated_text": "各国祭出真金白银：免税、补贴、带薪假期……但研究表明",
+          "error_summary": "政策内容描述在提供原文中无据可查"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 72.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "卡片数量合适，类型分布基本合理，但封面与总结标题完全重复，部分卡片标题被截断（韩国、中国section卡），section与data职能划分略显混乱，逻辑层次不够清晰。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 72.0,
+      "threshold": 75.0,
+      "passed": false,
+      "reason": "数据密集但选题有大众关注度，部分专业缩写（TFR）未解释，数字量级过大不易感知，朋友圈需更简洁有冲击力的表达。整体可读性尚可，但数据堆砌感稍重，情感共鸣不足。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 69.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality",
+    "audience_fit"
+  ],
+  "voting_enabled": false
+}

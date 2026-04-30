@@ -1,0 +1,43 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 78.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "四大核心部分基本覆盖：高压背景、经济账、职业代价、生活质量均有对应卡片。但结尾「理性建议/资源重配决策」这一关键立意缺乏专属卡片呈现，导致文章核心论点升华部分未被充分表达。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 88.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "绝大多数内容忠实原文。卡片5称日活'差了近70倍'（2000万/30万≈67倍），表述基本准确但用'近70'略显粗糙；卡片6健康数据未被纳入卡片内容中但也未被歪曲；整体无明显编造，小数字计算表述稍欠精确。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 88.0,
+      "threshold": 80.0,
+      "passed": true,
+      "reason": "7张卡片数量适中，cover+data+summary结构完整，叙事逻辑清晰：从辞职动因→成本对比→心理压力→财务收益→城市差距→职业代价→身体结语，层层递进。data卡片占比略高，类型略显单一，可适当加入quote或timeline类型丰富视觉层次。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 88.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "文案通俗易懂，用真实数字和情感故事打动大众读者，符合小红书亲切叙事风格。父亲生病等细节引发共鸣，收支对比清晰直观。略显冗长，小红书用户偏好更碎片化表达，情绪节奏可再紧凑些。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 85.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness"
+  ],
+  "voting_enabled": false
+}

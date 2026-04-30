@@ -1,0 +1,17 @@
+在开发大型分布式系统时，代码质量至关重要。
+下面是一个典型的 Python 示例：
+
+```python
+import asyncio
+
+async def main():
+    print("Hello, Distributed World!")
+    await asyncio.sleep(1)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+这段代码展示了如何使用 `asyncio` 进行异步编程。
+在信息图中，模型是否会错误地提取代码块作为正文？
+应当保留其为证据，但不应直接渲染在卡片核心文案中。

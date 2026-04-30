@@ -1,0 +1,11 @@
+{
+  "article_type": "research",
+  "user_type": "professional",
+  "platform": "wechat_moments",
+  "narrative_structure": "multi_source_timeline",
+  "output_format_hint": "image",
+  "risk_level": "safe",
+  "risk_reason": "",
+  "skip_reason": "",
+  "style_hint": "data_journalism"
+}

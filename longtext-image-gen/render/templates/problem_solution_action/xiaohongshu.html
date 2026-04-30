@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>信息图 — 问题解决方案</title>
+  {% include "shared/base_styles.html" %}
+  <style>
+    /* problem_solution_action 专属：三段式色块区分 */
+    .card-problem { background: #fff3f3; border-left: 8px solid #e74c3c; border-radius: 20px; padding: 36px 48px; }
+    .card-solution { background: #f0fff4; border-left: 8px solid #27ae60; border-radius: 20px; padding: 36px 48px; }
+    .card-action { background: #f0f4ff; border-left: 8px solid #2980b9; border-radius: 20px; padding: 36px 48px; }
+    .card-psa-label { font-size: 20px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 12px; opacity: 0.65; }
+    .card-problem .card-psa-label { color: #e74c3c; }
+    .card-solution .card-psa-label { color: #27ae60; }
+    .card-action .card-psa-label { color: #2980b9; }
+    .card-problem .card-title, .card-solution .card-title, .card-action .card-title
+      { font-size: 32px; font-weight: 700; margin-bottom: 14px; line-height: 1.4; word-break: break-word; }
+    .card-problem .card-body, .card-solution .card-body, .card-action .card-body
+      { font-size: 26px; color: #444; line-height: 1.7; word-break: break-word; }
+    .card-problem .items-list, .card-solution .items-list, .card-action .items-list
+      { list-style: none; margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+    .card-problem .items-list li, .card-solution .items-list li, .card-action .items-list li
+      { font-size: 25px; color: #333; display: flex; gap: 10px; align-items: flex-start; line-height: 1.6; }
+    .card-problem .items-list li::before { content: "•"; color: #e74c3c; font-size: 28px; flex-shrink: 0; }
+    .card-solution .items-list li::before { content: "✓"; color: #27ae60; font-size: 24px; flex-shrink: 0; }
+    .card-action .items-list li::before { content: "→"; color: #2980b9; font-size: 24px; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+<div class="infographic">
+  {% for card in cards %}
+  {% if card.card_type == "cover" %}
+  <div class="card-cover">
+    <div class="cover-inner">
+      <div class="tag">🔍 问题与解法</div>
+      <div class="main-title">{{ card.title }}</div>
+      {% if card.body %}<div class="subtitle">{{ card.body }}</div>{% endif %}
+      <div class="cover-divider"></div>
+    </div>
+  </div>
+  {% elif card.card_type == "data" %}
+  <div class="card-data">
+    <div class="data-number-wrap">
+      {% if card.data_label|length > 8 %}<div class="data-number very-long-number">{{ card.data_label }}</div>
+      {% elif card.data_label|length > 5 %}<div class="data-number long-number">{{ card.data_label }}</div>
+      {% else %}<div class="data-number">{{ card.data_label }}</div>{% endif %}
+    </div>
+    <div class="data-text">
+      <div class="data-title">{{ card.title }}</div>
+      {% if card.data_desc %}<div class="data-desc">{{ card.data_desc }}</div>{% endif %}
+      {% if card.body %}<div class="data-desc" style="margin-top:8px;">{{ card.body }}</div>{% endif %}
+    </div>
+  </div>
+  {% elif card.card_type == "summary" %}
+  <div class="card-summary">
+    <div class="summary-inner">
+      <div class="summary-label">▌ 行动要点</div>
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+      {% if card.items %}<ul class="items-list">{% for item in card.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+      <div class="summary-footer">✦ AI 摘要 · 仅供参考，请以原文为准</div>
+    </div>
+  </div>
+  {% else %}
+  {# 根据 body 内容关键词推断类型 #}
+  {% if "问题" in card.title or loop.index % 3 == 1 %}
+  <div class="card-problem">
+    <div class="card-psa-label">PROBLEM / 问题</div>
+    <div class="card-title">{{ card.title }}</div>
+    {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    {% if card.items %}<ul class="items-list">{% for item in card.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+  </div>
+  {% elif "解决" in card.title or "方案" in card.title or loop.index % 3 == 2 %}
+  <div class="card-solution">
+    <div class="card-psa-label">SOLUTION / 解法</div>
+    <div class="card-title">{{ card.title }}</div>
+    {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    {% if card.items %}<ul class="items-list">{% for item in card.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+  </div>
+  {% else %}
+  <div class="card-action">
+    <div class="card-psa-label">ACTION / 行动</div>
+    <div class="card-title">{{ card.title }}</div>
+    {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    {% if card.items %}<ul class="items-list">{% for item in card.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+  </div>
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+  <div class="footer">由 Ducc 智能生成 · Blueprint {{ blueprint_id | default('') }}</div>
+</div>
+</body>
+</html>

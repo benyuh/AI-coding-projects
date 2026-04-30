@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>信息图</title>
+  {% include "shared/base_styles.html" %}
+  <style>
+    /* 争议焦点专属样式：两列对比，共识/争议色块区分 */
+    .card-consensus {
+      background: #fff;
+      border-radius: var(--border-radius, 20px);
+      padding: 40px 48px;
+      box-shadow: var(--card-shadow, 0 2px 16px rgba(0,0,0,0.06));
+      overflow: hidden;
+    }
+    .card-consensus .card-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.4;
+      margin-bottom: 24px;
+      word-break: break-word;
+    }
+    .consensus-grid {
+      display: flex;
+      gap: 16px;
+      align-items: stretch;
+    }
+    .consensus-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .consensus-col--agree {
+      background: rgba(72, 187, 120, 0.08);
+      border: 2px solid rgba(72, 187, 120, 0.3);
+    }
+    .consensus-col--disagree {
+      background: rgba(255, 107, 107, 0.08);
+      border: 2px solid rgba(255, 107, 107, 0.3);
+    }
+    .consensus-label {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+    .consensus-col--agree .consensus-label {
+      color: #276749;
+    }
+    .consensus-col--disagree .consensus-label {
+      color: #C53030;
+    }
+    .consensus-item {
+      font-size: 24px;
+      color: #333;
+      line-height: 1.6;
+      word-break: break-word;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+    .consensus-col--agree .consensus-item {
+      background: rgba(72, 187, 120, 0.12);
+      border-left: 3px solid #48BB78;
+    }
+    .consensus-col--disagree .consensus-item {
+      background: rgba(255, 107, 107, 0.12);
+      border-left: 3px solid #FF6B6B;
+    }
+  </style>
+</head>
+<body>
+<div class="infographic">
+
+  {% for card in cards %}
+
+  {# ── COVER ── #}
+  {% if card.card_type == "cover" %}
+  <div class="card-cover">
+    <div class="cover-inner">
+      <div class="tag">⚔️ 争议焦点</div>
+      <div class="main-title">{{ card.title }}</div>
+      {% if card.body %}<div class="subtitle">{{ card.body }}</div>{% endif %}
+      <div class="cover-divider"></div>
+    </div>
+  </div>
+
+  {# ── DATA ── #}
+  {% elif card.card_type == "data" %}
+  <div class="card-data">
+    <div class="data-number-wrap">
+      {% if card.data_label|length > 8 %}
+      <div class="data-number very-long-number">{{ card.data_label }}</div>
+      {% elif card.data_label|length > 5 %}
+      <div class="data-number long-number">{{ card.data_label }}</div>
+      {% else %}
+      <div class="data-number">{{ card.data_label }}</div>
+      {% endif %}
+    </div>
+    <div class="data-text">
+      <div class="data-title">{{ card.title }}</div>
+      {% if card.data_desc %}<div class="data-desc">{{ card.data_desc }}</div>{% endif %}
+      {% if card.body %}<div class="data-desc" style="margin-top:8px;">{{ card.body }}</div>{% endif %}
+    </div>
+  </div>
+
+  {# ── TIMELINE ── #}
+  {% elif card.card_type == "timeline" %}
+  <div class="card-timeline">
+    {% if card.timeline_time %}
+    <div class="timeline-left">
+      <div class="timeline-badge">
+        <div class="timeline-time-text">{{ card.timeline_time }}</div>
+      </div>
+      <div class="timeline-axis"></div>
+    </div>
+    {% endif %}
+    <div class="timeline-content">
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    </div>
+  </div>
+
+  {# ── SUMMARY ── #}
+  {% elif card.card_type == "summary" %}
+  <div class="card-summary">
+    <div class="summary-inner">
+      <div class="summary-label">▌ 核心要点</div>
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+      {% if card.items %}
+      <ul class="items-list">
+        {% for item in card.items %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      <div class="summary-footer">✦ AI 摘要 · 仅供参考，请以原文为准</div>
+    </div>
+  </div>
+
+  {# ── SECTION（共识/争议两列对比）── #}
+  {% else %}
+  <div class="card-consensus">
+    <div class="card-title">{{ card.title }}</div>
+    <div class="consensus-grid">
+      <div class="consensus-col consensus-col--agree">
+        <div class="consensus-label">✅ 共识</div>
+        {% if card.items %}
+        {% for item in card.items[:((card.items|length) // 2 + 1)] %}
+        <div class="consensus-item">{{ item }}</div>
+        {% endfor %}
+        {% endif %}
+      </div>
+      <div class="consensus-col consensus-col--disagree">
+        <div class="consensus-label">⚔️ 争议</div>
+        {% if card.items %}
+        {% for item in card.items[((card.items|length) // 2 + 1):] %}
+        <div class="consensus-item">{{ item }}</div>
+        {% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% endfor %}
+
+  <div class="footer">由 Ducc 智能生成 · Blueprint {{ blueprint_id | default('') }}</div>
+</div>
+</body>
+</html>

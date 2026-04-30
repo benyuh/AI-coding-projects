@@ -1,0 +1,11 @@
+case_id: edge_01_len_too_short
+category: edge
+sub_category: length
+title: 过短文本测试
+text_length: 21
+language: zh
+expected_behavior:
+  expected_terminal: skip_pipeline
+preferences:
+  target_platform: xiaohongshu
+  output_format: auto

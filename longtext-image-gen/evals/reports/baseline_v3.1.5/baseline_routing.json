@@ -1,0 +1,211 @@
+{
+  "total_cases_with_target_platform": 16,
+  "exact_match_rate": 0.1875,
+  "compatible_match_rate": 0.4375,
+  "target_counter": {
+    "xiaohongshu": 11,
+    "wechat_official": 4,
+    "wechat_moments": 1
+  },
+  "actual_counter": {
+    "wechat_moments": 14,
+    "xiaohongshu": 2
+  },
+  "bias_counter": {
+    "xiaohongshu->wechat_moments": 9
+  },
+  "rows": [
+    {
+      "case_id": "comp_R01",
+      "run": "20260429_1527_comprehensive",
+      "category": "comprehensive",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": false,
+      "article_type": "policy",
+      "style_hint": "clean_business"
+    },
+    {
+      "case_id": "comp_R02",
+      "run": "20260429_1527_comprehensive",
+      "category": "comprehensive",
+      "target_platform": "wechat_official",
+      "normalized_target": "wechat_moments",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": true,
+      "article_type": "research",
+      "style_hint": "data_journalism"
+    },
+    {
+      "case_id": "comp_R03",
+      "run": "20260429_1527_comprehensive",
+      "category": "comprehensive",
+      "target_platform": "wechat_official",
+      "normalized_target": "wechat_moments",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": true,
+      "article_type": "analysis",
+      "style_hint": "data_journalism"
+    },
+    {
+      "case_id": "comp_R04",
+      "run": "20260429_1527_comprehensive",
+      "category": "comprehensive",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": false,
+      "article_type": "tutorial",
+      "style_hint": "clean_business"
+    },
+    {
+      "case_id": "comp_R05",
+      "run": "20260429_1527_comprehensive",
+      "category": "comprehensive",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": false,
+      "article_type": "analysis",
+      "style_hint": "clean_business"
+    },
+    {
+      "case_id": "comp_R07",
+      "run": "20260429_1527_comprehensive",
+      "category": "comprehensive",
+      "target_platform": "wechat_official",
+      "normalized_target": "wechat_moments",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": true,
+      "article_type": "analysis",
+      "style_hint": "tech_minimal"
+    },
+    {
+      "case_id": "comp_R08",
+      "run": "20260429_1527_comprehensive",
+      "category": "comprehensive",
+      "target_platform": "wechat_official",
+      "normalized_target": "wechat_moments",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": true,
+      "article_type": "analysis",
+      "style_hint": "data_journalism"
+    },
+    {
+      "case_id": "comp_R09",
+      "run": "20260429_1527_comprehensive",
+      "category": "comprehensive",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "xiaohongshu",
+      "exact_match": true,
+      "compatible_match": true,
+      "article_type": "tutorial",
+      "style_hint": "xiaohongshu_warm"
+    },
+    {
+      "case_id": "func_01_policy_general",
+      "run": "20260429_1610_functional",
+      "category": "functional",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": false,
+      "article_type": "policy",
+      "style_hint": "clean_business"
+    },
+    {
+      "case_id": "func_02_policy_pro",
+      "run": "20260429_1610_functional",
+      "category": "functional",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": false,
+      "article_type": "policy",
+      "style_hint": "clean_business"
+    },
+    {
+      "case_id": "func_03_research_pro",
+      "run": "20260429_1610_functional",
+      "category": "functional",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": false,
+      "article_type": "research",
+      "style_hint": "data_journalism"
+    },
+    {
+      "case_id": "func_04_news_event_general",
+      "run": "20260429_1610_functional",
+      "category": "functional",
+      "target_platform": "wechat_moments",
+      "normalized_target": "wechat_moments",
+      "actual_platform": "wechat_moments",
+      "exact_match": true,
+      "compatible_match": true,
+      "article_type": "news",
+      "style_hint": "data_journalism"
+    },
+    {
+      "case_id": "func_05_personal_opinion_general",
+      "run": "20260429_1610_functional",
+      "category": "functional",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "xiaohongshu",
+      "exact_match": true,
+      "compatible_match": true,
+      "article_type": "opinion",
+      "style_hint": "xiaohongshu_warm"
+    },
+    {
+      "case_id": "func_06_video_timeline",
+      "run": "20260429_1610_functional",
+      "category": "functional",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": false,
+      "article_type": "analysis",
+      "style_hint": "data_journalism"
+    },
+    {
+      "case_id": "func_07_multi_source",
+      "run": "20260429_1610_functional",
+      "category": "functional",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": false,
+      "article_type": "research",
+      "style_hint": "data_journalism"
+    },
+    {
+      "case_id": "func_08_video_research",
+      "run": "20260429_1610_functional",
+      "category": "functional",
+      "target_platform": "xiaohongshu",
+      "normalized_target": "xiaohongshu",
+      "actual_platform": "wechat_moments",
+      "exact_match": false,
+      "compatible_match": false,
+      "article_type": "analysis",
+      "style_hint": "data_journalism"
+    }
+  ]
+}

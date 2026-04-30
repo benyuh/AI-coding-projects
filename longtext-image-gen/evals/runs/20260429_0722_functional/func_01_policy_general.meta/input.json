@@ -1,0 +1,10 @@
+{
+  "text": "",
+  "multi_sources": [],
+  "preferences": {
+    "target_platform": "xiaohongshu",
+    "output_format": "auto",
+    "style_hint": "auto",
+    "watermark": true
+  }
+}

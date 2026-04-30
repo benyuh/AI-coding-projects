@@ -1,0 +1,14 @@
+cases_degraded: 1
+cases_rejected: 0
+cases_succeeded: 1
+cases_total: 2
+created_at: '2026-04-29T16:26:55.278880'
+dataset: edge
+notes: ''
+run_id: 20260429_1626_edge
+total_duration_sec: 58
+total_tokens:
+  haiku_in: 0
+  haiku_out: 0
+  sonnet_in: 2658
+  sonnet_out: 1657

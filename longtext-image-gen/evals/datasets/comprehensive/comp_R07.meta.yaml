@@ -1,0 +1,12 @@
+case_id: comp_R07
+category: comprehensive
+title: 区块链技术深度解析
+source_url: null
+text_length: 5330
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: professional

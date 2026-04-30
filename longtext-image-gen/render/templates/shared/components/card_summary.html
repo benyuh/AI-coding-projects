@@ -1,0 +1,23 @@
+{#
+render/templates/shared/components/card_summary.html
+总结卡组件
+
+参数：
+  card        — 卡片对象（card.title, card.body, card.items）
+  footer_text — 底部免责声明（可覆盖默认值）
+#}
+{% macro card_summary(card, footer_text="✦ AI 摘要 · 仅供参考，请以原文为准") %}
+<div class="card-summary">
+  <div class="summary-inner">
+    <div class="summary-label">▌ 核心要点</div>
+    <div class="card-title">{{ card.title }}</div>
+    {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    {% if card.items %}
+    <ul class="items-list">
+      {% for item in card.items %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+    <div class="summary-footer">{{ footer_text }}</div>
+  </div>
+</div>
+{% endmacro %}

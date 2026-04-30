@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "issues": [
+    {
+      "check_name": "font_size",
+      "passed": true,
+      "detail": "font_size_base=24px ≥18px ✓",
+      "issue_type": "render_only"
+    },
+    {
+      "check_name": "ocr_typo",
+      "passed": true,
+      "detail": "OCR 未安装，检查已跳过",
+      "issue_type": "blueprint_level"
+    },
+    {
+      "check_name": "vision_score",
+      "passed": true,
+      "detail": "Vision 评分: 72/65 | 深色主题配色和谐，数据层级基本清晰，但部分卡片文字截断（如11.3%、41.7%条目）、\"None\"",
+      "issue_type": "render_only"
+    },
+    {
+      "check_name": "fact_drift",
+      "passed": true,
+      "detail": "OCR 未安装，事实漂移检查已跳过",
+      "issue_type": "fact_drift"
+    }
+  ],
+  "vision_score": 72.0,
+  "ocr_skipped": true
+}

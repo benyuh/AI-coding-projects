@@ -1,0 +1,48 @@
+{
+  "source_bundle": {
+    "mode": "single",
+    "text": "以下是 2025 年智能手机出货量预测数据：\n\n| 品牌 | 预计出货量 (百万) | 同比增长 | 市场份额 |\n|---|---|---|---|\n| 苹果 | 250 | 5% | 18% |\n| 三星 | 230 | -2% | 16% |\n| 小米 | 190 | 12% | 14% |\n| OPPO | 120 | 3% | 9% |\n| 其他 | 600 | 1% | 43% |\n\n总计约 1390 百万台。\n这些数据反映了中端市场的强劲复苏。\n",
+    "source_id": "single",
+    "source_url": null,
+    "sources": [
+      {
+        "source_id": "single",
+        "raw_text": "以下是 2025 年智能手机出货量预测数据：\n\n| 品牌 | 预计出货量 (百万) | 同比增长 | 市场份额 |\n|---|---|---|---|\n| 苹果 | 250 | 5% | 18% |\n| 三星 | 230 | -2% | 16% |\n| 小米 | 190 | 12% | 14% |\n| OPPO | 120 | 3% | 9% |\n| 其他 | 600 | 1% | 43% |\n\n总计约 1390 百万台。\n这些数据反映了中端市场的强劲复苏。\n",
+        "source_name": "single",
+        "url": null,
+        "title": "",
+        "publish_time": null,
+        "authority": "general_web"
+      }
+    ],
+    "duplicate_clusters": [],
+    "disagreements": [],
+    "multi_source_meta": {},
+    "char_count": 232
+  },
+  "claims": [],
+  "card_budget": 4,
+  "card_slots": [
+    {
+      "slot_index": 0,
+      "suggested_type": "cover",
+      "content_hint": "封面"
+    },
+    {
+      "slot_index": 1,
+      "suggested_type": "section",
+      "content_hint": "内容1"
+    },
+    {
+      "slot_index": 2,
+      "suggested_type": "section",
+      "content_hint": "内容2"
+    },
+    {
+      "slot_index": 3,
+      "suggested_type": "summary",
+      "content_hint": "总结"
+    }
+  ],
+  "outline": "内容理解失败，使用默认配置"
+}

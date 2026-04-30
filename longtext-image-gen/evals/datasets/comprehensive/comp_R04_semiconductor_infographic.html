@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: #FAFAFE;
+    color: #3B3363;
+  }
+  .header {
+    background: linear-gradient(135deg, #7C3AED, #2563EB);
+    padding: 80px 60px 64px;
+    color: white;
+  }
+  .header .icon { font-size: 52px; margin-bottom: 20px; }
+  .header h1 { font-size: 48px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .header .subtitle { font-size: 25px; font-weight: 400; opacity: 0.9; line-height: 1.5; }
+
+  /* 数据高亮 */
+  .data-row { display: flex; background: white; border-bottom: 1px solid #EDE9FE; }
+  .data-item {
+    flex: 1; text-align: center; padding: 44px 16px;
+    border-right: 1px solid #EDE9FE;
+  }
+  .data-item:last-child { border-right: none; }
+  .data-item .num { font-size: 58px; font-weight: 800; color: #7C3AED; line-height: 1; }
+  .data-item .unit { font-size: 22px; font-weight: 800; color: #7C3AED; }
+  .data-item .lbl { font-size: 19px; color: #9CA3AF; margin-top: 8px; line-height: 1.4; }
+
+  /* section */
+  .section { padding: 48px 60px 8px; }
+  .section-title {
+    font-size: 20px; font-weight: 700; color: #7C3AED;
+    letter-spacing: 3px; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: #EDE9FE; }
+
+  /* 三大驱动 */
+  .driver-cards { padding: 0 60px 40px; display: flex; flex-direction: column; gap: 20px; }
+  .driver-card {
+    background: white; border-radius: 16px; padding: 32px;
+    display: flex; gap: 24px; align-items: flex-start;
+  }
+  .driver-left {
+    width: 100px; flex-shrink: 0; text-align: center;
+  }
+  .driver-icon { font-size: 40px; margin-bottom: 8px; }
+  .driver-tag {
+    display: inline-block; padding: 4px 12px; border-radius: 20px;
+    font-size: 18px; font-weight: 700;
+    background: #F5F3FF; color: #7C3AED;
+  }
+  .driver-tag.blue { background: #DBEAFE; color: #2563EB; }
+  .driver-tag.teal { background: #ECFDF5; color: #059669; }
+  .driver-right {}
+  .driver-title { font-size: 28px; font-weight: 700; color: #1E1B4B; margin-bottom: 10px; }
+  .driver-desc { font-size: 23px; line-height: 1.6; color: #3B3363; }
+  .driver-data {
+    display: inline-block; margin-top: 10px;
+    background: #F5F3FF; color: #7C3AED;
+    padding: 6px 16px; border-radius: 8px;
+    font-size: 20px; font-weight: 600;
+  }
+  .driver-data.blue { background: #DBEAFE; color: #2563EB; }
+  .driver-data.green { background: #ECFDF5; color: #059669; }
+
+  /* 重点赛道 */
+  .track-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; padding: 0 60px 40px;
+  }
+  .track-card {
+    background: white; border-radius: 16px; padding: 30px;
+    border-left: 5px solid #7C3AED;
+  }
+  .track-card:nth-child(2) { border-left-color: #2563EB; }
+  .track-card:nth-child(3) { border-left-color: #059669; }
+  .track-card:nth-child(4) { border-left-color: #F59E0B; }
+  .track-icon { font-size: 30px; margin-bottom: 10px; }
+  .track-title { font-size: 25px; font-weight: 700; color: #1E1B4B; margin-bottom: 8px; }
+  .track-desc { font-size: 21px; line-height: 1.6; color: #3B3363; }
+  .track-badge {
+    display: inline-block; margin-top: 10px;
+    padding: 4px 12px; border-radius: 6px;
+    font-size: 18px; font-weight: 600;
+    background: #F5F3FF; color: #7C3AED;
+  }
+
+  /* 风险区 */
+  .risk-row { padding: 0 60px 40px; display: flex; gap: 20px; }
+  .risk-card {
+    flex: 1; background: white; border-radius: 16px; padding: 28px;
+    border-top: 4px solid #DC2626;
+  }
+  .risk-card:nth-child(2) { border-top-color: #F59E0B; }
+  .risk-icon { font-size: 28px; margin-bottom: 10px; }
+  .risk-title { font-size: 23px; font-weight: 700; color: #1E1B4B; margin-bottom: 8px; }
+  .risk-desc { font-size: 20px; line-height: 1.5; color: #3B3363; }
+
+  /* 结论 */
+  .conclusion {
+    margin: 0 60px 48px;
+    padding: 44px 48px;
+    background: linear-gradient(135deg, #7C3AED, #2563EB);
+    border-radius: 16px; color: white;
+  }
+  .lbl { font-size: 20px; opacity: 0.8; margin-bottom: 16px; letter-spacing: 4px; text-align: center; }
+  .pts { display: flex; flex-direction: column; gap: 14px; }
+  .pt { display: flex; align-items: flex-start; gap: 12px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.7); flex-shrink: 0; margin-top: 10px; }
+  .txt { font-size: 23px; line-height: 1.6; }
+
+  .footer {
+    background: #1E1B4B; padding: 40px 60px;
+    color: rgba(255,255,255,0.55); font-size: 20px; text-align: center; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="icon">🔬</div>
+  <h1>2025全球半导体：AI驱动的"智能芯片"新时代</h1>
+  <div class="subtitle">AI普及化 × 5G-Advanced × AIoT 三轮共振，开启结构性扩张大年</div>
+</div>
+
+<div class="data-row">
+  <div class="data-item">
+    <div class="num">7000<span class="unit">亿</span></div>
+    <div class="lbl">2025年全球半导体<br>市场规模预测（美元）</div>
+  </div>
+  <div class="data-item">
+    <div class="num">12<span class="unit">-15%</span></div>
+    <div class="lbl">2025年全球半导体<br>市场同比增长预测</div>
+  </div>
+  <div class="data-item">
+    <div class="num">15<span class="unit">-20%</span></div>
+    <div class="lbl">5.5G推动前端射频<br>芯片价值量提升</div>
+  </div>
+  <div class="data-item">
+    <div class="num">2<span class="unit">nm</span></div>
+    <div class="lbl">台积电先进制程<br>进入量产准备阶段</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">🚀 三大核心增长引擎</div>
+</div>
+<div class="driver-cards">
+  <div class="driver-card">
+    <div class="driver-left">
+      <div class="driver-icon">🤖</div>
+      <div class="driver-tag">AI普及</div>
+    </div>
+    <div class="driver-right">
+      <div class="driver-title">AI从"云端孤岛"到"端云协同"</div>
+      <div class="driver-desc">AI PC、AI手机、AIoT设备全面爆发——对逻辑芯片算力、存储带宽、先进封装提出了前所未有的需求。NVIDIA Blackwell架构继续统治训练市场，各云服务巨头自研ASIC加速部署以降低成本。</div>
+      <div class="driver-data">HBM3e/HBM4 长期供不应求</div>
+    </div>
+  </div>
+  <div class="driver-card">
+    <div class="driver-left">
+      <div class="driver-icon">📡</div>
+      <div class="driver-tag blue">5G-A</div>
+    </div>
+    <div class="driver-right">
+      <div class="driver-title">5G-Advanced 大规模商用元年</div>
+      <div class="driver-desc">相比5G，5.5G实现十倍网络性能提升。前端射频（RFFE）升级带动滤波器、功率放大器和天线开关数量增加，单机射频芯片价值量提升15%-20%。</div>
+      <div class="driver-data blue">DDR5 / LPDDR5x 加速替代 DDR4</div>
+    </div>
+  </div>
+  <div class="driver-card">
+    <div class="driver-left">
+      <div class="driver-icon">🌐</div>
+      <div class="driver-tag teal">AIoT</div>
+    </div>
+    <div class="driver-right">
+      <div class="driver-title">万物互联升级为万物智联</div>
+      <div class="driver-desc">边缘AI芯片（Edge AI SoC）集成NPU成为主流，RISC-V架构因灵活性和低成本特性在2025年将占据更显著的市场份额。</div>
+      <div class="driver-data green">RISC-V 架构市场份额持续扩大</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0;">
+  <div class="section-title">💡 四大重点细分赛道</div>
+</div>
+<div class="track-grid">
+  <div class="track-card">
+    <div class="track-icon">🧠</div>
+    <div class="track-title">AI服务器芯片</div>
+    <div class="track-desc">Blackwell架构主导训练市场，云厂商自研ASIC规模化部署，算力竞争持续加剧</div>
+    <div class="track-badge">持续高景气</div>
+  </div>
+  <div class="track-card">
+    <div class="track-icon">💾</div>
+    <div class="track-title">HBM高带宽存储</div>
+    <div class="track-desc">HBM3e/HBM4长期供不应求，SK海力士、三星、美光三家寡头垄断，议价能力强</div>
+    <div class="track-badge" style="background:#DBEAFE;color:#2563EB;">供需紧张</div>
+  </div>
+  <div class="track-card">
+    <div class="track-icon">⚡</div>
+    <div class="track-title">碳化硅/氮化镓</div>
+    <div class="track-desc">800V高压快充平台普及推动SiC进入量产扩张，L3自动驾驶推动高算力MCU装车</div>
+    <div class="track-badge" style="background:#ECFDF5;color:#059669;">快速放量</div>
+  </div>
+  <div class="track-card">
+    <div class="track-icon">🏗️</div>
+    <div class="track-title">先进封装</div>
+    <div class="track-desc">2nm制程接近物理极限，CoWoS、Chiplet等封装成为性能提升关键，台积电产能紧张</div>
+    <div class="track-badge" style="background:#FFF7ED;color:#EA580C;">瓶颈赛道</div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0;">
+  <div class="section-title">⚠️ 主要风险提示</div>
+</div>
+<div class="risk-row">
+  <div class="risk-card">
+    <div class="risk-icon">🌐</div>
+    <div class="risk-title">地缘政治管控</div>
+    <div class="risk-desc">出口管制持续升级，中国半导体在EDA工具、核心设备等"卡脖子"领域仍面临突破压力</div>
+  </div>
+  <div class="risk-card">
+    <div class="risk-icon">📉</div>
+    <div class="risk-title">消费端复苏不确定</div>
+    <div class="risk-desc">全球通胀压制消费端芯片（PC/手机）复苏节奏不如预期，传统存储周期波动风险犹存</div>
+  </div>
+  <div class="risk-card">
+    <div class="risk-icon">🏭</div>
+    <div class="risk-title">先进制程产能过剩</div>
+    <div class="risk-desc">各国扶持本土晶圆厂导致成熟制程长期产能过剩，部分赛道价格持续承压</div>
+  </div>
+</div>
+
+<div class="conclusion">
+  <div class="lbl">✦ 投资核心结论 ✦</div>
+  <div class="pts">
+    <div class="pt"><div class="dot"></div><div class="txt"><strong>2025年是AI算力硬件逻辑的时代</strong>，优先关注AI服务器、HBM存储、5.5G射频前端三条核心主线。</div></div>
+    <div class="pt"><div class="dot"></div><div class="txt"><strong>碳化硅与先进封装</strong>是中长期确定性成长赛道，电动车渗透率提升将持续驱动放量。</div></div>
+    <div class="pt"><div class="dot"></div><div class="txt"><strong>地缘政治与消费端复苏</strong>是最大风险，需密切跟踪出口管制政策动向与全球终端需求恢复节奏。</div></div>
+  </div>
+</div>
+
+<div class="footer">
+  来源：2025年全球半导体行业深度展望报告 ｜ 信息图由 AI 生成<br>
+  <span style="opacity:0.4;font-size:18px;">内容为分析性观点，不构成投资建议，请自行判断风险</span>
+</div>
+
+</body>
+</html>

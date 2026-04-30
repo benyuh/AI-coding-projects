@@ -1,0 +1,18 @@
+# platform_scaling.yaml
+# 平台适配参数
+
+xiaohongshu:
+  width: 1080
+  aspect_ratio: "3:4"
+  font_scale: 1.0
+  card_gap: 24
+  padding_h: 60
+  watermark_size_pct: 6
+
+wechat_moments:
+  width: 1080
+  aspect_ratio: "1:1"
+  font_scale: 0.92
+  card_gap: 20
+  padding_h: 48
+  watermark_size_pct: 5

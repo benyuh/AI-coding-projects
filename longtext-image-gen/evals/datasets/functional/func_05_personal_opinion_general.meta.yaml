@@ -1,0 +1,23 @@
+case_id: func_05_personal_opinion_general
+category: functional
+sub_category: personal_opinion
+title: 我为什么从北京回到小城市生活
+text_length: ~2000
+language: zh
+source_count: 1
+expected_behavior:
+  agent1_decision:
+    risk_level: safe
+    article_type: opinion
+    skip_pipeline: false
+  expected_terminal: passed
+  expected_format: image
+  notes: xiaohongshu_warm风格应命中；口语化但有真实数据；不应误触标题党检测
+preferences:
+  target_platform: xiaohongshu
+  output_format: auto
+  style_hint: auto
+  watermark: true
+user_profile:
+  user_type: general
+tags: [opinion, lifestyle, personal, general]

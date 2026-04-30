@@ -1,0 +1,12 @@
+case_id: comp_R10
+category: comprehensive
+title: 播客逐字稿：中国人口趋势
+source_url: null
+text_length: 5272
+language: zh
+preferences:
+  target_platform: xiaohongshu
+  output_format: video
+  style_hint: auto
+user_profile:
+  user_type: general

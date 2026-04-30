@@ -1,0 +1,48 @@
+{
+  "source_bundle": {
+    "mode": "single",
+    "text": "在开发大型分布式系统时，代码质量至关重要。\n下面是一个典型的 Python 示例：\n\n```python\nimport asyncio\n\nasync def main():\n    print(\"Hello, Distributed World!\")\n    await asyncio.sleep(1)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())\n```\n\n这段代码展示了如何使用 `asyncio` 进行异步编程。\n在信息图中，模型是否会错误地提取代码块作为正文？\n应当保留其为证据，但不应直接渲染在卡片核心文案中。\n",
+    "source_id": "single",
+    "source_url": null,
+    "sources": [
+      {
+        "source_id": "single",
+        "raw_text": "在开发大型分布式系统时，代码质量至关重要。\n下面是一个典型的 Python 示例：\n\n```python\nimport asyncio\n\nasync def main():\n    print(\"Hello, Distributed World!\")\n    await asyncio.sleep(1)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())\n```\n\n这段代码展示了如何使用 `asyncio` 进行异步编程。\n在信息图中，模型是否会错误地提取代码块作为正文？\n应当保留其为证据，但不应直接渲染在卡片核心文案中。\n",
+        "source_name": "single",
+        "url": null,
+        "title": "",
+        "publish_time": null,
+        "authority": "general_web"
+      }
+    ],
+    "duplicate_clusters": [],
+    "disagreements": [],
+    "multi_source_meta": {},
+    "char_count": 291
+  },
+  "claims": [],
+  "card_budget": 4,
+  "card_slots": [
+    {
+      "slot_index": 0,
+      "suggested_type": "cover",
+      "content_hint": "封面"
+    },
+    {
+      "slot_index": 1,
+      "suggested_type": "section",
+      "content_hint": "内容1"
+    },
+    {
+      "slot_index": 2,
+      "suggested_type": "section",
+      "content_hint": "内容2"
+    },
+    {
+      "slot_index": 3,
+      "suggested_type": "summary",
+      "content_hint": "总结"
+    }
+  ],
+  "outline": "内容理解失败，使用默认配置"
+}

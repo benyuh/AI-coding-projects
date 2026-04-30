@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 82.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "三大议题均有覆盖：适应资金框架及AOSIS不满有专卡，68国减排联盟有覆盖，碳市场第六条规则有对应卡片，市场反应亦有体现。但美印沙分歧未单独呈现，碳市场三届磋商历程缺失，信息略有遗漏。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 88.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "主要内容忠实于原文，卡片[1]将'主要发达国家'改为'发达国家'略有扩大；卡片[0]标注'COP32于2026年2月在里约热内卢召开'原文无此具体信息，存在一定补充推断，其余卡片基本准确。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 78.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "卡片数量合理，类型有一定多样性，但data卡比例偏高（5/10），两张timeline卡功能偏重叙事而非时序展示，section卡仅1张层次感不足，部分标题被截断（2.4–2.、COP33安）影响完整性。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 82.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "文案保留了专业术语（AOSIS、COP框架）、具体数据（3000亿美元、580亿）及多边机制细节，符合professional受众需求。朋友圈适配方面略显冗长，部分卡片信息密度偏高，但整体简洁度尚可接受。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 82.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality"
+  ],
+  "voting_enabled": false
+}

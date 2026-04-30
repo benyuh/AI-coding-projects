@@ -1,0 +1,67 @@
+Unsupported screenshot mime type for path "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/runs/20260429_0731_functional/func_08_video_research/artifacts/output.mp4": video/mp4
+Traceback (most recent call last):
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/orchestrator/graph.py", line 123, in node_tool2
+    artifact = run_tool2_video_render(blueprint, output_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/infra/tracing.py", line 89, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/tools/tool2_video_render.py", line 60, in run_tool2_video_render
+    raise RuntimeError("FFmpeg 未安装，无法生成视频；可降级输出图片")
+RuntimeError: FFmpeg 未安装，无法生成视频；可降级输出图片
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/tests/eval/runner.py", line 125, in run_category
+    final_output_path, final_state = run_pipeline_with_gates(
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/infra/tracing.py", line 89, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/orchestrator/graph.py", line 439, in run_pipeline_with_gates
+    final_state = app.invoke(initial_state)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3365, in invoke
+    for chunk in self.stream(
+  File "/opt/homebrew/lib/python3.11/site-packages/langgraph/pregel/main.py", line 2759, in stream
+    for _ in runner.tick(
+  File "/opt/homebrew/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 167, in tick
+    run_with_retry(
+  File "/opt/homebrew/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/orchestrator/graph.py", line 126, in node_tool2
+    artifact = run_tool1_render(blueprint.model_copy(update={"output_format": OutputFormat.IMAGE}), output_path)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/infra/tracing.py", line 89, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/tools/tool1_image_render.py", line 301, in run_tool1_render
+    asyncio.run(_screenshot_html_to_png(html, output_path))
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/tools/tool1_image_render.py", line 248, in _screenshot_html_to_png
+    await page.screenshot(path=output_path, full_page=True, clip=None)
+  File "/opt/homebrew/lib/python3.11/site-packages/playwright/async_api/_generated.py", line 9792, in screenshot
+    await self._impl_obj.screenshot(
+  File "/opt/homebrew/lib/python3.11/site-packages/playwright/_impl/_page.py", line 800, in screenshot
+    params["type"] = determine_screenshot_type(params["path"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/lib/python3.11/site-packages/playwright/_impl/_element_handle.py", line 466, in determine_screenshot_type
+    raise Error(f'Unsupported screenshot mime type for path "{path}": {mime_type}')
+playwright._impl._errors.Error: Unsupported screenshot mime type for path "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/runs/20260429_0731_functional/func_08_video_research/artifacts/output.mp4": video/mp4
+During task with name 'tool2' and id '3777f4a5-9d5a-6122-a43c-0301b1767881'

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>信息图 — 时间线</title>
+  {% include "shared/base_styles.html" %}
+  <style>
+    /* chronological_timeline：时间轴连续展示，首尾轴线连接 */
+    .timeline-track {
+      display: flex; flex-direction: column; gap: 0;
+      border-left: 4px solid var(--color-primary, #FF6B6B);
+      margin-left: 52px; padding-left: 0;
+    }
+    .timeline-entry {
+      position: relative; padding: 24px 32px 24px 60px;
+      background: #fff; margin-bottom: 16px;
+      border-radius: 16px; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .timeline-entry::before {
+      content: ""; position: absolute; left: -38px; top: 28px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--color-primary, #FF6B6B);
+      border: 3px solid #fff; box-shadow: 0 0 0 3px var(--color-primary, #FF6B6B);
+    }
+    .timeline-entry .entry-time {
+      font-size: 20px; font-weight: 700; color: var(--color-primary, #FF6B6B);
+      margin-bottom: 8px; letter-spacing: 0.04em;
+    }
+    .timeline-entry .entry-title { font-size: 28px; font-weight: 700; color: #1A1A1A; margin-bottom: 10px; word-break: break-word; }
+    .timeline-entry .entry-body { font-size: 24px; color: #555; line-height: 1.7; word-break: break-word; }
+  </style>
+</head>
+<body>
+<div class="infographic">
+  {% set ns = namespace(in_track=false) %}
+  {% for card in cards %}
+  {% if card.card_type == "cover" %}
+    {% if ns.in_track %}</div>{% set ns.in_track = false %}{% endif %}
+    <div class="card-cover">
+      <div class="cover-inner">
+        <div class="tag">📅 时间线梳理</div>
+        <div class="main-title">{{ card.title }}</div>
+        {% if card.body %}<div class="subtitle">{{ card.body }}</div>{% endif %}
+        <div class="cover-divider"></div>
+      </div>
+    </div>
+  {% elif card.card_type == "summary" %}
+    {% if ns.in_track %}</div>{% set ns.in_track = false %}{% endif %}
+    <div class="card-summary">
+      <div class="summary-inner">
+        <div class="summary-label">▌ 时间线总结</div>
+        <div class="card-title">{{ card.title }}</div>
+        {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+        {% if card.items %}<ul class="items-list">{% for item in card.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+        <div class="summary-footer">✦ AI 摘要 · 仅供参考，请以原文为准</div>
+      </div>
+    </div>
+  {% elif card.card_type == "timeline" or card.card_type == "section" %}
+    {% if not ns.in_track %}<div class="timeline-track">{% set ns.in_track = true %}{% endif %}
+    <div class="timeline-entry">
+      {% if card.timeline_time %}<div class="entry-time">{{ card.timeline_time }}</div>{% endif %}
+      <div class="entry-title">{{ card.title }}</div>
+      {% if card.body %}<div class="entry-body">{{ card.body }}</div>{% endif %}
+    </div>
+  {% else %}
+    {% if ns.in_track %}</div>{% set ns.in_track = false %}{% endif %}
+    <div class="card-data">
+      <div class="data-number-wrap">{% if card.data_label|length > 8 %}<div class="data-number very-long-number">{{ card.data_label }}</div>{% elif card.data_label|length > 5 %}<div class="data-number long-number">{{ card.data_label }}</div>{% else %}<div class="data-number">{{ card.data_label }}</div>{% endif %}</div>
+      <div class="data-text"><div class="data-title">{{ card.title }}</div>{% if card.body %}<div class="data-desc">{{ card.body }}</div>{% endif %}</div>
+    </div>
+  {% endif %}
+  {% endfor %}
+  {% if ns.in_track %}</div>{% endif %}
+  <div class="footer">由 Ducc 智能生成 · Blueprint {{ blueprint_id | default('') }}</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+case_id: comp_R05
+category: comprehensive
+title: 海参养生功效全面评测
+source_url: null
+text_length: 4368
+language: zh
+preferences:
+  target_platform: xiaohongshu
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: general

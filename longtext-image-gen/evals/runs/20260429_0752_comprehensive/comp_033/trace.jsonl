@@ -1,0 +1,9 @@
+{"stage": "orchestrator_graph", "started_at": "2026-04-29T07:52:58.841336", "duration_ms": 1646.15797996521, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "agent0_multisource", "started_at": "2026-04-29T07:52:58.849328", "duration_ms": 0.0209808349609375, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "agent1_router", "started_at": "2026-04-29T07:52:58.849529", "duration_ms": 221.41289710998535, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "agent2_understand", "started_at": "2026-04-29T07:52:59.072553", "duration_ms": 81.66289329528809, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "agent3_orchestrate", "started_at": "2026-04-29T07:52:59.155381", "duration_ms": 90.0270938873291, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "gate1_blueprint", "started_at": "2026-04-29T07:52:59.246321", "duration_ms": 171.45776748657227, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "tool2_videorender", "started_at": "2026-04-29T07:52:59.418854", "duration_ms": 0.3590583801269531, "status": "error", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": "FFmpeg 未安装，无法生成视频；可降级输出图片"}
+{"stage": "tool1_imagerender", "started_at": "2026-04-29T07:52:59.419261", "duration_ms": 945.8460807800293, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}
+{"stage": "gate2_render", "started_at": "2026-04-29T07:53:00.365586", "duration_ms": 121.2770938873291, "status": "done", "input_data": null, "output_data": null, "model_calls": [], "retries": 0, "error": null}

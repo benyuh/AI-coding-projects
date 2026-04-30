@@ -1,0 +1,12 @@
+case_id: comp_004_semiconductor_2025
+category: comprehensive
+title: 2025年全球半导体行业深度展望
+source_url: null
+text_length: 1000
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: professional

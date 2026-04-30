@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>信息图</title>
+  <style>
+    /* ── 全局 ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 1080px;
+      background: #FFF8F0;
+      font-family: "PingFang SC", "Noto Sans SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .infographic {
+      width: 1080px;
+      padding: 40px 60px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      background: #FFF8F0;
+    }
+
+    /* ── 封面卡片 — v3.1.1 精修：更强层级、更大装饰圆 ── */
+    .card-cover {
+      background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 50%, #FFB347 100%);
+      border-radius: 28px;
+      padding: 72px 60px 64px;
+      color: #fff;
+      position: relative;
+      /* overflow: clip 只裁剪布局溢出（装饰圆），不裁剪文字内容高度 */
+      overflow: clip;
+      min-height: 320px;
+    }
+    /* 装饰圆 1：右上大圆 */
+    .card-cover::before {
+      content: "";
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      pointer-events: none;
+    }
+    /* 装饰圆 2：左下中圆 */
+    .card-cover::after {
+      content: "";
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+    /* 装饰圆 3：右下小圆（用 box-shadow 模拟第三层） */
+    .card-cover .cover-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .card-cover .cover-inner::after {
+      content: "";
+      position: absolute;
+      bottom: -200px; right: 60px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+      pointer-events: none;
+    }
+    .card-cover .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.28);
+      border-radius: 24px;
+      padding: 8px 22px;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-bottom: 32px;
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .card-cover .main-title {
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .card-cover .subtitle {
+      font-size: 26px;
+      opacity: 0.88;
+      font-weight: 400;
+      line-height: 1.6;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    /* 封面底部装饰线 */
+    .card-cover .cover-divider {
+      width: 60px;
+      height: 4px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 2px;
+      margin: 28px 0 0;
+    }
+
+    /* ── 普通 section 卡片 — v3.1.1：降低溢出概率 ── */
+    .card-section {
+      background: #fff;
+      border-radius: 20px;
+      padding: 40px 48px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      border-left: 8px solid #FF6B6B;
+      overflow: hidden;
+    }
+    .card-section .card-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1A1A1A;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .card-section .card-body {
+      font-size: 26px;
+      color: #444;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      overflow: hidden;
+    }
+    .card-section .items-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-section .items-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 25px;
+      color: #333;
+      line-height: 1.6;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .card-section .items-list li::before {
+      content: "•";
+      color: #FF6B6B;
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.4;
+      flex-shrink: 0;
+    }
+
+    /* ── 数据亮点卡片 — v3.1.1：超长数字防破版 ── */
+    .card-data {
+      background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+      border-radius: 20px;
+      padding: 44px 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+    .card-data .data-number-wrap {
+      /* 固定宽度区，超长数字在此区内自动缩放 */
+      min-width: 160px;
+      max-width: 280px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-data .data-number {
+      font-size: 88px;
+      font-weight: 900;
+      color: #FFB347;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      word-break: break-all;
+      overflow-wrap: break-word;
+      /* 超长数字自动缩小：最小不低于 40px */
+      max-width: 280px;
+    }
+    /* 超长数字（>6字符）缩小字号 */
+    .card-data .data-number.long-number {
+      font-size: 60px;
+    }
+    .card-data .data-number.very-long-number {
+      font-size: 44px;
+    }
+    .card-data .data-text {
+      flex: 1;
+      overflow: hidden;
+    }
+    .card-data .data-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .card-data .data-desc {
+      font-size: 24px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      overflow: hidden;
+    }
+    /* 数据卡右侧装饰点阵 */
+    .card-data .data-decoration {
+      position: relative;
+      flex-shrink: 0;
+      width: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      opacity: 0.2;
+    }
+    .card-data .data-decoration span {
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #FFB347;
+    }
+
+    /* ── 时间线卡片 — v3.1.1：时间徽章升级，无时间字段时左侧隐藏 ── */
+    .card-timeline {
+      background: #fff;
+      border-radius: 20px;
+      padding: 36px 48px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 36px;
+      overflow: hidden;
+    }
+    /* 有时间字段时显示左侧徽章列 */
+    .card-timeline .timeline-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+      width: 96px;
+      padding-top: 4px;
+    }
+    .card-timeline .timeline-badge {
+      background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+      border-radius: 14px;
+      padding: 8px 10px;
+      text-align: center;
+      min-width: 80px;
+    }
+    .card-timeline .timeline-time-text {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+    }
+    /* 轴线 */
+    .card-timeline .timeline-axis {
+      width: 3px;
+      min-height: 40px;
+      flex: 1;
+      background: linear-gradient(to bottom, #FF6B6B44, transparent);
+      margin-top: 8px;
+      border-radius: 2px;
+    }
+    .card-timeline .timeline-content {
+      flex: 1;
+      overflow: hidden;
+    }
+    .card-timeline .card-title {
+      font-size: 30px;
+      font-weight: 700;
+      color: #1A1A1A;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .card-timeline .card-body {
+      font-size: 25px;
+      color: #555;
+      line-height: 1.7;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      overflow: hidden;
+    }
+
+    /* ── 总结卡片 — v3.1.1：与封面风格呼应，加收尾感 ── */
+    .card-summary {
+      background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+      border-radius: 28px;
+      padding: 48px 52px;
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(102,126,234,0.38);
+      position: relative;
+      overflow: hidden;
+    }
+    /* 总结卡装饰：右上斜纹光 */
+    .card-summary::before {
+      content: "";
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+    .card-summary .summary-inner {
+      position: relative;
+      z-index: 1;
+    }
+    .card-summary .summary-label {
+      font-size: 22px;
+      font-weight: 700;
+      opacity: 0.85;
+      letter-spacing: 0.10em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .card-summary .card-title {
+      font-size: 36px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 18px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .card-summary .card-body {
+      font-size: 26px;
+      opacity: 0.92;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      overflow: hidden;
+    }
+    .card-summary .items-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .card-summary .items-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 25px;
+      opacity: 0.94;
+      line-height: 1.6;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .card-summary .items-list li::before {
+      content: "✓";
+      font-weight: 900;
+      flex-shrink: 0;
+      font-size: 22px;
+      margin-top: 3px;
+      background: rgba(255,255,255,0.2);
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* 总结卡底部收尾装饰条 */
+    .card-summary .summary-footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.25);
+      font-size: 20px;
+      opacity: 0.65;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    /* ── 页脚 ── */
+    .footer {
+      text-align: center;
+      padding: 8px 0 0;
+      font-size: 20px;
+      color: #bbb;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+<div class="infographic">
+
+  {% for card in cards %}
+
+  {# ── COVER ── #}
+  {% if card.card_type == "cover" %}
+  <div class="card-cover">
+    <div class="cover-inner">
+      <div class="tag">📖 长文速读</div>
+      <div class="main-title">{{ card.title }}</div>
+      {% if card.body %}<div class="subtitle">{{ card.body }}</div>{% endif %}
+      <div class="cover-divider"></div>
+    </div>
+  </div>
+
+  {# ── DATA ── #}
+  {% elif card.card_type == "data" %}
+  <div class="card-data">
+    <div class="data-number-wrap">
+      {# 根据数字长度选择字号类 #}
+      {% if card.data_label|length > 8 %}
+      <div class="data-number very-long-number">{{ card.data_label }}</div>
+      {% elif card.data_label|length > 5 %}
+      <div class="data-number long-number">{{ card.data_label }}</div>
+      {% else %}
+      <div class="data-number">{{ card.data_label }}</div>
+      {% endif %}
+    </div>
+    <div class="data-text">
+      <div class="data-title">{{ card.title }}</div>
+      {% if card.data_desc %}<div class="data-desc">{{ card.data_desc }}</div>{% endif %}
+      {% if card.body %}<div class="data-desc" style="margin-top:8px;">{{ card.body }}</div>{% endif %}
+    </div>
+    <div class="data-decoration">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  {# ── TIMELINE ── #}
+  {% elif card.card_type == "timeline" %}
+  <div class="card-timeline">
+    {% if card.timeline_time %}
+    <div class="timeline-left">
+      <div class="timeline-badge">
+        <div class="timeline-time-text">{{ card.timeline_time }}</div>
+      </div>
+      <div class="timeline-axis"></div>
+    </div>
+    {% endif %}
+    <div class="timeline-content">
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    </div>
+  </div>
+
+  {# ── SUMMARY ── #}
+  {% elif card.card_type == "summary" %}
+  <div class="card-summary">
+    <div class="summary-inner">
+      <div class="summary-label">▌ 核心要点</div>
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+      {% if card.items %}
+      <ul class="items-list">
+        {% for item in card.items %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      <div class="summary-footer">✦ AI 摘要 · 仅供参考，请以原文为准</div>
+    </div>
+  </div>
+
+  {# ── SECTION (default) ── #}
+  {% else %}
+  <div class="card-section">
+    <div class="card-title">{{ card.title }}</div>
+    {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    {% if card.items %}
+    <ul class="items-list">
+      {% for item in card.items %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% endfor %}
+
+  <div class="footer">由 Ducc 智能生成 · 长文转信息图</div>
+</div>
+</body>
+</html>

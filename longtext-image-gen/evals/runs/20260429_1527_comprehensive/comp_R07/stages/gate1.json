@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 62.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "蓝图严重遗漏多个核心模块：三层次定义、三类型链（公链/联盟链/私链）、共识机制/哈希/智能合约技术核心、中国战略、未来走向均无对应卡片，现有卡片偏重安全威胁和局限性，信息结构失衡。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 92.0,
+      "threshold": 90.0,
+      "passed": true,
+      "reason": "各卡片核心事实均有原文依据，数据准确（6000万美元、99.95%、257美元等）。卡片0正文未完整呈现习总书记原话，卡片2正文未完结，但未见明显事实失真或编造，整体忠实于原文。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 62.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "结构存在明显问题：summary卡片与最后一张section卡片标题完全重复（均为'区块链管不了的事：预言机问题'），疑似复制错误；section占比过高(5/10)，data卡片仅3张内容支撑不足；整体主题较分散，缺乏清晰叙事逻辑。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 52.0,
+      "threshold": 75.0,
+      "passed": false,
+      "reason": "面向大众受众但大量使用PoW/PoS/重入攻击/51%攻击等专业术语，技术细节过于密集。朋友圈需要简洁易懂，当前内容更适合区块链从业者，普通用户阅读门槛较高，传播效果有限。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 67.0,
+  "failed_dims": [
+    "completeness",
+    "card_quality",
+    "audience_fit"
+  ],
+  "voting_enabled": false
+}

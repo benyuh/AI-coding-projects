@@ -1,0 +1,2 @@
+case_id,terminal_status,format,platform,style_id,narrative_structure,card_count,gate1_pass,gate2_pass,duration_s,degrade_level
+comp_001_ai_medical,passed,image,xiaohongshu,clean_business,pyramid_argument,4,True,True,2.99,

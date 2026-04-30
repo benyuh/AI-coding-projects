@@ -1,0 +1,18 @@
+{
+  "terminal_status": "passed",
+  "degradation_level": "",
+  "elapsed_s": 132.87,
+  "tokens_in": 14293,
+  "tokens_out": 6908,
+  "output_path": "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/runs/demo_safe_20260430_001037_comp_R05/artifacts/output.png",
+  "platform": "xiaohongshu",
+  "style_id": "clean_business",
+  "card_count": 10,
+  "gate1_passed": true,
+  "gate1_failed_dims": [],
+  "gate1_faithfulness": 82.0,
+  "gate1_completeness": 82.0,
+  "gate2_passed": true,
+  "workerb_rejected_cards": [],
+  "demo_safe_mode": true
+}

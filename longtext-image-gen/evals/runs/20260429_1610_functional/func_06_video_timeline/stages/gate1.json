@@ -1,0 +1,43 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 62.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "蓝图覆盖了销量登顶、骗补整顿、渗透率、比亚迪转折等节点，但严重缺失双积分政策、特斯拉入华、价格战、出海战略、智驾竞赛等关键阶段，2017-2022年重要历程几乎空白，无法完整呈现产业跃迁全貌。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 92.0,
+      "threshold": 90.0,
+      "passed": true,
+      "reason": "各卡片核心数据与原文高度一致，包括销量、增速、渗透率、涉案金额等关键数字均准确。卡片3将'上海宣布获批'表述为直接落地略有简化，但无实质性失真。整体忠实度高。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 82.0,
+      "threshold": 80.0,
+      "passed": true,
+      "reason": "8张卡片数量适中，类型分布合理，覆盖封面、时间线、数据、分节和总结。标题无标题党，逻辑从崛起到丑闻到突破连贯清晰。轻微不足：两个section卡片标题略显割裂，整体叙事节奏稍欠流畅。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 72.0,
+      "threshold": 75.0,
+      "passed": false,
+      "reason": "内容以数据驱动、时间线清晰，大众可读性尚可，但部分表述如\"骗补核查\"\"外商独资整车制造企业\"偏专业，朋友圈场景下略显枯燥，缺乏情感共鸣与生活化表达，建议加入更多口语化叙事。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 77.0,
+  "failed_dims": [
+    "completeness",
+    "audience_fit"
+  ],
+  "voting_enabled": false
+}

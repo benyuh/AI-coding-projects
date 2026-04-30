@@ -1,0 +1,12 @@
+case_id: comp_024
+category: comprehensive
+title: Rise of E-sports (Vol.24)
+source_url: null
+text_length: 500
+language: zh
+preferences:
+  target_platform: xiaohongshu
+  output_format: video
+  style_hint: auto
+user_profile:
+  user_type: general

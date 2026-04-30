@@ -1,0 +1,12 @@
+case_id: comp_003_nev_history
+category: comprehensive
+title: 中国新能源汽车三十年跨越式发展
+source_url: null
+text_length: 1200
+language: zh
+preferences:
+  target_platform: xiaohongshu
+  output_format: video
+  style_hint: auto
+user_profile:
+  user_type: general

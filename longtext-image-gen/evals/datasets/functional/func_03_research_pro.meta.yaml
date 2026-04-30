@@ -1,0 +1,23 @@
+case_id: func_03_research_pro
+category: functional
+sub_category: research
+title: 中国AI大模型市场深度研究报告2026Q1
+text_length: ~3500
+language: zh
+source_count: 1
+expected_behavior:
+  agent1_decision:
+    risk_level: safe
+    article_type: research
+    skip_pipeline: false
+  expected_terminal: passed
+  expected_format: image
+  notes: data_chart/comparison_table至少各出现一次；专业用户密度高
+preferences:
+  target_platform: xiaohongshu
+  output_format: auto
+  style_hint: auto
+  watermark: true
+user_profile:
+  user_type: professional
+tags: [research, AI, market, data, professional]

@@ -1,0 +1,41 @@
+# render/styles/magazine_editorial.yaml
+# 杂志编辑风格（v3.1.4）
+# 特点：奢华金色+深黑，高端质感，适合财经/时尚/深度报道
+
+style_id: magazine_editorial
+
+# ── 颜色系统 ──────────────────────────────────────────────────────────────
+primary_color: "#C9A84C"
+secondary_color: "#E8C97E"
+accent_color: "#F0D98E"
+background_color: "#FAFAF8"
+text_color: "#1A1510"
+text_secondary_color: "#4A3F30"
+text_muted_color: "#9A8E7E"
+
+# ── 排版 ──────────────────────────────────────────────────────────────────
+font_family: "PingFang SC, Noto Sans SC, Microsoft YaHei, sans-serif"
+font_size_base: 26
+font_size_title: 34
+font_size_cover: 60
+font_size_data: 96
+line_height: 1.8
+
+# ── 间距与圆角 ────────────────────────────────────────────────────────────
+border_radius: 4
+border_radius_cover: 8
+padding_card: "44px 52px"
+card_gap: 28
+
+# ── 阴影 ──────────────────────────────────────────────────────────────────
+card_shadow: "0 2px 20px rgba(201,168,76,0.12)"
+cover_shadow: "0 10px 48px rgba(0,0,0,0.3)"
+
+# ── 渐变 ──────────────────────────────────────────────────────────────────
+cover_gradient: "linear-gradient(135deg, #1A1510 0%, #2C2218 50%, #1A1510 100%)"
+data_gradient: "linear-gradient(135deg, #1A1510 0%, #2C2218 100%)"
+summary_gradient: "linear-gradient(135deg, #C9A84C 0%, #9A7A30 100%)"
+
+# ── 边框 ──────────────────────────────────────────────────────────────────
+section_border_left_color: "#C9A84C"
+section_border_left_width: 6

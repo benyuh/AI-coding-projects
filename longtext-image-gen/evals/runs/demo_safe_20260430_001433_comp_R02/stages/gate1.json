@@ -1,0 +1,107 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 72.0,
+      "threshold": 72.0,
+      "passed": true,
+      "reason": "蓝图覆盖了装机历程、成本下降、技术路线、里程碑和展望等核心内容，但原文中全球历史演进、应用场景多样性、行业挑战（消纳/产能过剩/贸易摩擦/环境问题）、政策体系等重要章节缺乏对应卡片，影响信息完整性。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 55.0,
+      "threshold": 75.0,
+      "passed": false,
+      "reason": "卡片0有原文依据；但卡片1-6涉及2025年装机数据、多晶硅价格、TOPCon/HJT效率、西藏项目、度电成本等内容，均未在所提供的原文片段中出现，属于大量无法核实或编造的信息。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "1",
+          "card_field": "body",
+          "original_text": "（原文未提及）",
+          "hallucinated_text": "2025年一季度，中国风电光伏总装机达14.82亿千瓦（其中光伏9.46亿千瓦），首次超过火电14.51亿千瓦",
+          "error_summary": "原文无此数据，疑似编造"
+        },
+        {
+          "card_id": "1",
+          "card_field": "title",
+          "original_text": "（原文未提及）",
+          "hallucinated_text": "风光装机首超火电里程碑",
+          "error_summary": "原文无相关内容"
+        },
+        {
+          "card_id": "2",
+          "card_field": "body",
+          "original_text": "（原文未提及）",
+          "hallucinated_text": "2025年全年光伏新增并网3.17亿千瓦，同比增长14%；截至2025年12月，全国光伏累计装机约12亿千瓦",
+          "error_summary": "原文无此数据，疑似编造"
+        },
+        {
+          "card_id": "3",
+          "card_field": "body",
+          "original_text": "（原文未提及）",
+          "hallucinated_text": "过去20年，光伏度电成本下降超90%，成为有史以来成本下降最快的能源技术之一",
+          "error_summary": "原文无度电成本降幅数据"
+        },
+        {
+          "card_id": "4",
+          "card_field": "body",
+          "original_text": "（原文未提及）",
+          "hallucinated_text": "价格从2022年高峰300元/公斤以上骤跌至50元/公斤以下，几……",
+          "error_summary": "原文无多晶硅价格数据"
+        },
+        {
+          "card_id": "5",
+          "card_field": "body",
+          "original_text": "（原文未提及）",
+          "hallucinated_text": "N型TOPCon和HJT电池量产效率已突破24%，预计2025—2026年全面取代PERC电池成为主流",
+          "error_summary": "原文无新型电池效率及路线数据"
+        },
+        {
+          "card_id": "6",
+          "card_field": "body",
+          "original_text": "（原文未提及）",
+          "hallucinated_text": "2024年8月，西藏山南乃东亚堆才朋100MW光伏项目开工，场址海拔5…",
+          "error_summary": "原文无此项目相关内容"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 82.0,
+      "threshold": 70.0,
+      "passed": true,
+      "reason": "12张卡片数量合理，类型分布均衡，覆盖封面、数据、时间线、章节和总结，逻辑从历史到现状再到展望清晰。轻微问题：两个section标题功能相近，timeline与section里程碑卡片有内容重叠嫌疑。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 72.0,
+      "threshold": 68.0,
+      "passed": true,
+      "reason": "数据详实、术语专业，符合professional受众需求；但小红书平台调性偏轻松互动，文案叙述偏学术报告风格，缺乏钩子句、共鸣感和视觉引导语，平台适配略显生硬。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 70.2,
+  "failed_dims": [
+    "faithfulness"
+  ],
+  "voting_enabled": false
+}

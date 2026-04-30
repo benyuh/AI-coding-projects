@@ -1,0 +1,274 @@
+{
+  "blueprint_id": "9e9fb9d5",
+  "source_bundle": {
+    "mode": "single",
+    "text": "# 2025年全球半导体行业深度展望报告：AI与5G-A双轮驱动下的“智能涌现”时代\n\n2025年将正式开启半导体行业的“结构性扩张元年”。随着生成式人工智能（GenAI）从云端向边缘端渗透，以及5G-Advanced（5.5G）技术的商用化，全球半导体市场正迎来新一轮的增长长周期。预计2025年全球半导体市场规模有望突破7000亿美元大关，同比增长率预计维持在12%-15%之间。\n\n## 核心增长引擎\n1. AI的“普适化”：2025年，AI将完成从“云端孤岛”到“端云协同”的跨越。AI PC、AI手机以及具备本地推理能力的AIoT设备将爆发式增长。这对逻辑芯片的能效比、存储芯片的带宽以及封装技术提出了近乎苛刻的要求。\n2. 5G-Advanced（5.5G）：2025年是5.5G的大规模商用期。相比5G，5.5G实现了十倍的网络性能提升。射频前端（RFFE）的升级带动了滤波器、功率放大器和天线开关数量的增加，单机射频芯片价值量将提升15%-20%。\n3. AIoT（万物智联）：传统的“万物互联”正在向“万物智联”转变。边缘AI芯片（Edge AI SoC）集成NPU将成为主流。RISC-V架构凭借其灵活性和低功耗特性，将在2025年占据更显著的市场份额。\n\n## 计算与存储：AI时代的“心脏”与“大脑”\nNVIDIA的Blackwell架构将继续统治训练市场。云服务巨头将加大自研推理ASIC的部署以降低成本。存储方面，HBM3e/HBM4将长期处于供不应求状态，DDR5与LPDDR5x将加速替代DDR4。\n\n## 汽车与工业半导体\n功率半导体（SiC/GaN）：800V高压快充平台的普及使得碳化硅MOSFET进入全面爆发期。L3级自动驾驶的法律准入将推动高算力智驾芯片的装车量。\n\n## 制造与封装\n台积电2nm制程将进入量产准备阶段。当制程微缩接近物理极限，先进封装（如CoWoS、Chiplet）成为提升性能的关键。\n\n## 供应链安全与挑战\n“China + 1”策略将更加成熟，供应链呈现碎片化格局。地缘政治仍是不确定因素，中国半导体产业将继续在EDA工具、核心设备零部件等“卡脖子”领域寻求突破。\n\n## 总结与投资建议\n2025年是AI重塑硬件逻辑的时代。爆发点在于AI服务器、HBM存储、5.5G射频前端。风险提示包括全球通胀导致的消费力恢复不及预期，以及成熟制程产能过剩导致的价格战。\n",
+    "source_id": "single",
+    "source_url": null,
+    "sources": [
+      {
+        "source_id": "single",
+        "raw_text": "# 2025年全球半导体行业深度展望报告：AI与5G-A双轮驱动下的“智能涌现”时代\n\n2025年将正式开启半导体行业的“结构性扩张元年”。随着生成式人工智能（GenAI）从云端向边缘端渗透，以及5G-Advanced（5.5G）技术的商用化，全球半导体市场正迎来新一轮的增长长周期。预计2025年全球半导体市场规模有望突破7000亿美元大关，同比增长率预计维持在12%-15%之间。\n\n## 核心增长引擎\n1. AI的“普适化”：2025年，AI将完成从“云端孤岛”到“端云协同”的跨越。AI PC、AI手机以及具备本地推理能力的AIoT设备将爆发式增长。这对逻辑芯片的能效比、存储芯片的带宽以及封装技术提出了近乎苛刻的要求。\n2. 5G-Advanced（5.5G）：2025年是5.5G的大规模商用期。相比5G，5.5G实现了十倍的网络性能提升。射频前端（RFFE）的升级带动了滤波器、功率放大器和天线开关数量的增加，单机射频芯片价值量将提升15%-20%。\n3. AIoT（万物智联）：传统的“万物互联”正在向“万物智联”转变。边缘AI芯片（Edge AI SoC）集成NPU将成为主流。RISC-V架构凭借其灵活性和低功耗特性，将在2025年占据更显著的市场份额。\n\n## 计算与存储：AI时代的“心脏”与“大脑”\nNVIDIA的Blackwell架构将继续统治训练市场。云服务巨头将加大自研推理ASIC的部署以降低成本。存储方面，HBM3e/HBM4将长期处于供不应求状态，DDR5与LPDDR5x将加速替代DDR4。\n\n## 汽车与工业半导体\n功率半导体（SiC/GaN）：800V高压快充平台的普及使得碳化硅MOSFET进入全面爆发期。L3级自动驾驶的法律准入将推动高算力智驾芯片的装车量。\n\n## 制造与封装\n台积电2nm制程将进入量产准备阶段。当制程微缩接近物理极限，先进封装（如CoWoS、Chiplet）成为提升性能的关键。\n\n## 供应链安全与挑战\n“China + 1”策略将更加成熟，供应链呈现碎片化格局。地缘政治仍是不确定因素，中国半导体产业将继续在EDA工具、核心设备零部件等“卡脖子”领域寻求突破。\n\n## 总结与投资建议\n2025年是AI重塑硬件逻辑的时代。爆发点在于AI服务器、HBM存储、5.5G射频前端。风险提示包括全球通胀导致的消费力恢复不及预期，以及成熟制程产能过剩导致的价格战。\n",
+        "source_name": "single",
+        "url": null,
+        "title": "",
+        "publish_time": null,
+        "authority": "general_web"
+      }
+    ],
+    "duplicate_clusters": [],
+    "disagreements": [],
+    "multi_source_meta": {},
+    "char_count": 1015
+  },
+  "router_decision": {
+    "article_type": "unknown",
+    "user_type": "general",
+    "platform": "xiaohongshu",
+    "narrative_structure": "pyramid_argument",
+    "output_format_hint": "image",
+    "risk_level": "safe",
+    "risk_reason": "",
+    "skip_reason": "",
+    "style_hint": ""
+  },
+  "content_tree": {
+    "source_bundle": {
+      "mode": "single",
+      "text": "# 2025年全球半导体行业深度展望报告：AI与5G-A双轮驱动下的“智能涌现”时代\n\n2025年将正式开启半导体行业的“结构性扩张元年”。随着生成式人工智能（GenAI）从云端向边缘端渗透，以及5G-Advanced（5.5G）技术的商用化，全球半导体市场正迎来新一轮的增长长周期。预计2025年全球半导体市场规模有望突破7000亿美元大关，同比增长率预计维持在12%-15%之间。\n\n## 核心增长引擎\n1. AI的“普适化”：2025年，AI将完成从“云端孤岛”到“端云协同”的跨越。AI PC、AI手机以及具备本地推理能力的AIoT设备将爆发式增长。这对逻辑芯片的能效比、存储芯片的带宽以及封装技术提出了近乎苛刻的要求。\n2. 5G-Advanced（5.5G）：2025年是5.5G的大规模商用期。相比5G，5.5G实现了十倍的网络性能提升。射频前端（RFFE）的升级带动了滤波器、功率放大器和天线开关数量的增加，单机射频芯片价值量将提升15%-20%。\n3. AIoT（万物智联）：传统的“万物互联”正在向“万物智联”转变。边缘AI芯片（Edge AI SoC）集成NPU将成为主流。RISC-V架构凭借其灵活性和低功耗特性，将在2025年占据更显著的市场份额。\n\n## 计算与存储：AI时代的“心脏”与“大脑”\nNVIDIA的Blackwell架构将继续统治训练市场。云服务巨头将加大自研推理ASIC的部署以降低成本。存储方面，HBM3e/HBM4将长期处于供不应求状态，DDR5与LPDDR5x将加速替代DDR4。\n\n## 汽车与工业半导体\n功率半导体（SiC/GaN）：800V高压快充平台的普及使得碳化硅MOSFET进入全面爆发期。L3级自动驾驶的法律准入将推动高算力智驾芯片的装车量。\n\n## 制造与封装\n台积电2nm制程将进入量产准备阶段。当制程微缩接近物理极限，先进封装（如CoWoS、Chiplet）成为提升性能的关键。\n\n## 供应链安全与挑战\n“China + 1”策略将更加成熟，供应链呈现碎片化格局。地缘政治仍是不确定因素，中国半导体产业将继续在EDA工具、核心设备零部件等“卡脖子”领域寻求突破。\n\n## 总结与投资建议\n2025年是AI重塑硬件逻辑的时代。爆发点在于AI服务器、HBM存储、5.5G射频前端。风险提示包括全球通胀导致的消费力恢复不及预期，以及成熟制程产能过剩导致的价格战。\n",
+      "source_id": "single",
+      "source_url": null,
+      "sources": [
+        {
+          "source_id": "single",
+          "raw_text": "# 2025年全球半导体行业深度展望报告：AI与5G-A双轮驱动下的“智能涌现”时代\n\n2025年将正式开启半导体行业的“结构性扩张元年”。随着生成式人工智能（GenAI）从云端向边缘端渗透，以及5G-Advanced（5.5G）技术的商用化，全球半导体市场正迎来新一轮的增长长周期。预计2025年全球半导体市场规模有望突破7000亿美元大关，同比增长率预计维持在12%-15%之间。\n\n## 核心增长引擎\n1. AI的“普适化”：2025年，AI将完成从“云端孤岛”到“端云协同”的跨越。AI PC、AI手机以及具备本地推理能力的AIoT设备将爆发式增长。这对逻辑芯片的能效比、存储芯片的带宽以及封装技术提出了近乎苛刻的要求。\n2. 5G-Advanced（5.5G）：2025年是5.5G的大规模商用期。相比5G，5.5G实现了十倍的网络性能提升。射频前端（RFFE）的升级带动了滤波器、功率放大器和天线开关数量的增加，单机射频芯片价值量将提升15%-20%。\n3. AIoT（万物智联）：传统的“万物互联”正在向“万物智联”转变。边缘AI芯片（Edge AI SoC）集成NPU将成为主流。RISC-V架构凭借其灵活性和低功耗特性，将在2025年占据更显著的市场份额。\n\n## 计算与存储：AI时代的“心脏”与“大脑”\nNVIDIA的Blackwell架构将继续统治训练市场。云服务巨头将加大自研推理ASIC的部署以降低成本。存储方面，HBM3e/HBM4将长期处于供不应求状态，DDR5与LPDDR5x将加速替代DDR4。\n\n## 汽车与工业半导体\n功率半导体（SiC/GaN）：800V高压快充平台的普及使得碳化硅MOSFET进入全面爆发期。L3级自动驾驶的法律准入将推动高算力智驾芯片的装车量。\n\n## 制造与封装\n台积电2nm制程将进入量产准备阶段。当制程微缩接近物理极限，先进封装（如CoWoS、Chiplet）成为提升性能的关键。\n\n## 供应链安全与挑战\n“China + 1”策略将更加成熟，供应链呈现碎片化格局。地缘政治仍是不确定因素，中国半导体产业将继续在EDA工具、核心设备零部件等“卡脖子”领域寻求突破。\n\n## 总结与投资建议\n2025年是AI重塑硬件逻辑的时代。爆发点在于AI服务器、HBM存储、5.5G射频前端。风险提示包括全球通胀导致的消费力恢复不及预期，以及成熟制程产能过剩导致的价格战。\n",
+          "source_name": "single",
+          "url": null,
+          "title": "",
+          "publish_time": null,
+          "authority": "general_web"
+        }
+      ],
+      "duplicate_clusters": [],
+      "disagreements": [],
+      "multi_source_meta": {},
+      "char_count": 1015
+    },
+    "claims": [],
+    "card_budget": 6,
+    "card_slots": [
+      {
+        "slot_index": 0,
+        "suggested_type": "cover",
+        "content_hint": "封面"
+      },
+      {
+        "slot_index": 1,
+        "suggested_type": "section",
+        "content_hint": "内容1"
+      },
+      {
+        "slot_index": 2,
+        "suggested_type": "section",
+        "content_hint": "内容2"
+      },
+      {
+        "slot_index": 3,
+        "suggested_type": "section",
+        "content_hint": "内容3"
+      },
+      {
+        "slot_index": 4,
+        "suggested_type": "section",
+        "content_hint": "内容4"
+      },
+      {
+        "slot_index": 5,
+        "suggested_type": "summary",
+        "content_hint": "总结"
+      }
+    ],
+    "outline": "内容理解失败，使用默认配置"
+  },
+  "style_tokens": {
+    "style_id": "clean_business",
+    "primary_color": "#FF6B6B",
+    "secondary_color": "#FF8E53",
+    "accent_color": "#FFB347",
+    "background_color": "#FFF8F0",
+    "text_color": "#1A1A1A",
+    "font_size_base": 26,
+    "border_radius": 20,
+    "card_shadow": "0 2px 16px rgba(0,0,0,0.06)",
+    "cover_gradient": "linear-gradient(135deg, #FF6B6B 0%, #FF8E53 50%, #FFB347 100%)",
+    "summary_gradient": "linear-gradient(135deg, #667EEA 0%, #764BA2 100%)"
+  },
+  "output_format": "image",
+  "cards": [
+    {
+      "card_index": 0,
+      "content": {
+        "title": "封面",
+        "body": "内容生成中...",
+        "items": [],
+        "data_label": "",
+        "data_desc": "",
+        "timeline_time": "",
+        "title_warning": false
+      },
+      "visual_spec": {
+        "visual_type": "cover_hero",
+        "card_type": "cover",
+        "structured_data": {}
+      },
+      "b_check": {
+        "status": "passed",
+        "verified_elements": [],
+        "failed_elements": [],
+        "retry_count": 0
+      },
+      "source_claim_index": -1
+    },
+    {
+      "card_index": 1,
+      "content": {
+        "title": "内容1",
+        "body": "内容生成中...",
+        "items": [],
+        "data_label": "",
+        "data_desc": "",
+        "timeline_time": "",
+        "title_warning": false
+      },
+      "visual_spec": {
+        "visual_type": "data_highlight",
+        "card_type": "section",
+        "structured_data": {
+          "items": []
+        }
+      },
+      "b_check": {
+        "status": "passed",
+        "verified_elements": [
+          "1"
+        ],
+        "failed_elements": [],
+        "retry_count": 0
+      },
+      "source_claim_index": -1
+    },
+    {
+      "card_index": 2,
+      "content": {
+        "title": "内容2",
+        "body": "内容生成中...",
+        "items": [],
+        "data_label": "",
+        "data_desc": "",
+        "timeline_time": "",
+        "title_warning": false
+      },
+      "visual_spec": {
+        "visual_type": "data_highlight",
+        "card_type": "section",
+        "structured_data": {
+          "items": []
+        }
+      },
+      "b_check": {
+        "status": "passed",
+        "verified_elements": [
+          "2"
+        ],
+        "failed_elements": [],
+        "retry_count": 0
+      },
+      "source_claim_index": -1
+    },
+    {
+      "card_index": 3,
+      "content": {
+        "title": "内容3",
+        "body": "内容生成中...",
+        "items": [],
+        "data_label": "",
+        "data_desc": "",
+        "timeline_time": "",
+        "title_warning": false
+      },
+      "visual_spec": {
+        "visual_type": "text_with_icon",
+        "card_type": "section",
+        "structured_data": {
+          "items": []
+        }
+      },
+      "b_check": {
+        "status": "passed",
+        "verified_elements": [
+          "3"
+        ],
+        "failed_elements": [],
+        "retry_count": 0
+      },
+      "source_claim_index": -1
+    },
+    {
+      "card_index": 4,
+      "content": {
+        "title": "内容4",
+        "body": "内容生成中...",
+        "items": [],
+        "data_label": "",
+        "data_desc": "",
+        "timeline_time": "",
+        "title_warning": false
+      },
+      "visual_spec": {
+        "visual_type": "text_with_icon",
+        "card_type": "section",
+        "structured_data": {
+          "items": []
+        }
+      },
+      "b_check": {
+        "status": "passed",
+        "verified_elements": [
+          "4"
+        ],
+        "failed_elements": [],
+        "retry_count": 0
+      },
+      "source_claim_index": -1
+    },
+    {
+      "card_index": 5,
+      "content": {
+        "title": "总结",
+        "body": "内容生成中...",
+        "items": [],
+        "data_label": "",
+        "data_desc": "",
+        "timeline_time": "",
+        "title_warning": false
+      },
+      "visual_spec": {
+        "visual_type": "text_with_icon",
+        "card_type": "summary",
+        "structured_data": {
+          "items": []
+        }
+      },
+      "b_check": {
+        "status": "passed",
+        "verified_elements": [],
+        "failed_elements": [],
+        "retry_count": 0
+      },
+      "source_claim_index": -1
+    }
+  ],
+  "multi_source_meta": {},
+  "created_at": "2026-04-29T07:52:13.119008",
+  "pipeline_version": "v3.1.2"
+}

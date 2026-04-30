@@ -1,0 +1,11 @@
+case_id,terminal_status,format,platform,style_id,narrative_structure,card_count,gate1_pass,gate2_pass,duration_s,degrade_level,realness_check,error
+comp_R01,degraded,image,wechat_moments,clean_business,pyramid_argument,4,False,n/a,102.27,L2,ok,
+comp_R02,degraded,image,wechat_moments,data_journalism,chronological_timeline,6,False,n/a,166.48,L2,ok,
+comp_R03,degraded,image,wechat_moments,data_journalism,multi_source_timeline,4,False,n/a,83.51,L2,ok,
+comp_R04,degraded,image,wechat_moments,clean_business,lin_style_explainer,5,False,n/a,95.36,L2,ok,
+comp_R05,degraded,image,wechat_moments,clean_business,consensus_disagreement_map,4,False,n/a,72.14,L2,ok,
+comp_R06,degraded,video,wechat_moments,tech_minimal,chronological_timeline,5,False,n/a,101.30,L2,format=video 但产物无 .mp4 (L1 降级),
+comp_R07,degraded,image,wechat_moments,tech_minimal,lin_style_explainer,5,False,n/a,139.39,L2,ok,
+comp_R08,degraded,image,wechat_moments,data_journalism,chronological_timeline,5,False,n/a,86.96,L2,ok,
+comp_R09,degraded,image,xiaohongshu,xiaohongshu_warm,lin_style_explainer,5,False,n/a,94.11,L2,ok,
+comp_R10,degraded,video,wechat_moments,data_journalism,multi_source_timeline,4,False,n/a,163.83,L2,format=video 但产物无 .mp4 (L1 降级),

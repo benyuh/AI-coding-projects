@@ -1,0 +1,11 @@
+case_id: edge_05_legal_contract
+category: edge
+sub_category: domain_boundary
+title: 某劳动合同范本
+text_length: 220
+language: zh
+expected_behavior:
+  expected_terminal: rejected_with_alternative
+preferences:
+  target_platform: xiaohongshu
+  output_format: auto

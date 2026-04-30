@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 72.0,
+      "threshold": 72.0,
+      "passed": true,
+      "reason": "蓝图覆盖了营养成分、活性物质、食用方法等核心内容，但明显缺失中医传统介绍、夸大宣传辨析、消费误区专项卡片，这三个原文重要板块未获独立呈现，影响信息完整性。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 82.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "卡片0-4内容基本忠实原文，卡片5、6涉及泡发方式营养损失和海参皮营养分布等具体数据，原文截取的3000字内并无相关记载，属于超出原文范围的内容，存在潜在编造风险。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "5",
+        "6"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "5",
+          "card_field": "body",
+          "original_text": "（原文截取部分未包含泡发方式与营养损失对比的相关内容）",
+          "hallucinated_text": "研究显示，常温水发虽然耗时最长，却是保留营养最多的方式；而碱发看似省事，矿物（质损失更多）",
+          "error_summary": "原文无此泡发营养损失对比内容"
+        },
+        {
+          "card_id": "6",
+          "card_field": "body",
+          "original_text": "（原文截取部分未提及海参营养物质集中于皮上的比例数据及烹饪方式影响）",
+          "hallucinated_text": "海参80%的重要营养物质集中于皮上，高温油炒会加速自溶、破（坏营养）",
+          "error_summary": "80%营养集中于皮，原文无据"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 72.0,
+      "threshold": 70.0,
+      "passed": true,
+      "reason": "结构基本完整，覆盖介绍→营养→成分→食用→评估链路，但data卡片仅2张偏少，且第6、7张标题高度重复（'怎么吃才不浪费'），存在明显冗余，建议合并或差异化处理。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 72.0,
+      "threshold": 68.0,
+      "passed": true,
+      "reason": "内容整体通俗，但部分术语如\"棘皮动物门海参纲\"\"营养密度\"略显专业；数据罗列偏密集，朋友圈受众更偏好轻松结论式表达，缺乏情感共鸣和互动钩子，稍显硬核科普风格。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 74.5,
+  "failed_dims": [],
+  "voting_enabled": false
+}

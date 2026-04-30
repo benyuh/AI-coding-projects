@@ -1,0 +1,43 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 62.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "蓝图缺少中医传统认知、消费误区两个完整维度，禁忌内容仅零散提及，生物学分类未覆盖，功效夸大辨析仅一张卡片略显单薄，整体结构偏重营养成分而忽视文化与消费理性层面。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 72.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片5正文严重跑偏，将'海参泡发'错写为'泡发木耳'，属明显事实错误；卡片0-4内容基本忠实原文，但卡片5的低级错误导致整体扣分较多。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 82.0,
+      "threshold": 80.0,
+      "passed": true,
+      "reason": "8张卡片数量适中，类型分布合理，逻辑从营养价值→功效证据→食用方法递进清晰。section卡片占比偏高（4/8），data卡片略少，部分section标题可升级为data类型以增强数据感。整体结构连贯，无标题党。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 78.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "整体通俗易懂，科普语气适合大众朋友圈传播；但部分卡片数据密集（如铁13.2mg、硒63.9μg），略显专业；\"人体临床证据\"等表述稍硬，朋友圈风格可再口语化，整体基本适配。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 73.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness"
+  ],
+  "voting_enabled": false
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>信息图 — 前后对比</title>
+  {% include "shared/base_styles.html" %}
+  <style>
+    /* before_after_comparison：左右分栏对比 */
+    .card-before-after {
+      background: #fff; border-radius: 20px; padding: 36px 48px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06); overflow: hidden;
+    }
+    .card-before-after .ba-title { font-size: 32px; font-weight: 700; margin-bottom: 24px; color: #1A1A1A; }
+    .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .ba-col { border-radius: 14px; padding: 24px; }
+    .ba-col--before { background: #fff5f5; border: 2px solid #ffcdd2; }
+    .ba-col--after  { background: #f1fff5; border: 2px solid #c8e6c9; }
+    .ba-label { font-size: 22px; font-weight: 800; margin-bottom: 14px; letter-spacing: 0.04em; }
+    .ba-col--before .ba-label { color: #e53935; }
+    .ba-col--after  .ba-label { color: #2e7d32; }
+    .ba-content { font-size: 24px; color: #333; line-height: 1.7; word-break: break-word; }
+    .ba-items { list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+    .ba-items li { font-size: 23px; color: #444; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+    .ba-col--before .ba-items li::before { content: "✗"; color: #e53935; flex-shrink: 0; }
+    .ba-col--after  .ba-items li::before { content: "✓"; color: #2e7d32; flex-shrink: 0; }
+  </style>
+</head>
+<body>
+<div class="infographic">
+  {% set ns = namespace(pair_idx=0) %}
+  {% for card in cards %}
+  {% if card.card_type == "cover" %}
+  <div class="card-cover">
+    <div class="cover-inner">
+      <div class="tag">⚖️ 前后对比</div>
+      <div class="main-title">{{ card.title }}</div>
+      {% if card.body %}<div class="subtitle">{{ card.body }}</div>{% endif %}
+      <div class="cover-divider"></div>
+    </div>
+  </div>
+  {% elif card.card_type == "summary" %}
+  <div class="card-summary">
+    <div class="summary-inner">
+      <div class="summary-label">▌ 对比总结</div>
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+      {% if card.items %}<ul class="items-list">{% for item in card.items %}<li>{{ item }}</li>{% endfor %}</ul>{% endif %}
+      <div class="summary-footer">✦ AI 摘要 · 仅供参考，请以原文为准</div>
+    </div>
+  </div>
+  {% elif card.card_type == "data" %}
+  <div class="card-data">
+    <div class="data-number-wrap">{% if card.data_label|length > 8 %}<div class="data-number very-long-number">{{ card.data_label }}</div>{% elif card.data_label|length > 5 %}<div class="data-number long-number">{{ card.data_label }}</div>{% else %}<div class="data-number">{{ card.data_label }}</div>{% endif %}</div>
+    <div class="data-text"><div class="data-title">{{ card.title }}</div>{% if card.body %}<div class="data-desc">{{ card.body }}</div>{% endif %}</div>
+  </div>
+  {% else %}
+  <div class="card-before-after">
+    <div class="ba-title">{{ card.title }}</div>
+    <div class="ba-grid">
+      <div class="ba-col ba-col--before">
+        <div class="ba-label">⬅ 改变前</div>
+        <div class="ba-content">{{ card.body[:40] if card.body else "" }}</div>
+        {% if card.items and card.items|length > 1 %}
+        <ul class="ba-items">{% for item in card.items[:card.items|length // 2] %}<li>{{ item }}</li>{% endfor %}</ul>
+        {% endif %}
+      </div>
+      <div class="ba-col ba-col--after">
+        <div class="ba-label">➡ 改变后</div>
+        <div class="ba-content">{{ card.body[40:80] if card.body and card.body|length > 40 else (card.data_desc if card.data_desc else "") }}</div>
+        {% if card.items and card.items|length > 1 %}
+        <ul class="ba-items">{% for item in card.items[card.items|length // 2:] %}<li>{{ item }}</li>{% endfor %}</ul>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+  <div class="footer">由 Ducc 智能生成 · Blueprint {{ blueprint_id | default('') }}</div>
+</div>
+</body>
+</html>

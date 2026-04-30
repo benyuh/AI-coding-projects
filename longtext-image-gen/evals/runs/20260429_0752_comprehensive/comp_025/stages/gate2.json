@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "issues": [
+    {
+      "check_name": "font_size",
+      "passed": true,
+      "detail": "font_size_base=26px ≥18px ✓",
+      "issue_type": "render_only"
+    },
+    {
+      "check_name": "ocr_typo",
+      "passed": true,
+      "detail": "OCR 未安装，检查已跳过",
+      "issue_type": "blueprint_level"
+    },
+    {
+      "check_name": "vision_score",
+      "passed": true,
+      "detail": "Vision 评分跳过: Error code: 403 - {'error': {'message': 'Claude模型配额已用尽，但您可以继续使用其他模型。请切换其他模型后重试。 (request id: 2026042907524780307327484061136)', 'type': 'claude_quota_exceeded', 'param': '', 'code': 'insufficient_quota'}}",
+      "issue_type": "render_only"
+    },
+    {
+      "check_name": "fact_drift",
+      "passed": true,
+      "detail": "OCR 未安装，事实漂移检查已跳过",
+      "issue_type": "fact_drift"
+    }
+  ],
+  "vision_score": 0.0,
+  "ocr_skipped": true
+}

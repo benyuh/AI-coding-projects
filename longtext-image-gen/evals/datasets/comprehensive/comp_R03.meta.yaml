@@ -1,0 +1,12 @@
+case_id: comp_R03
+category: comprehensive
+title: 全球生育率危机深度报道
+source_url: null
+text_length: 4805
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: professional

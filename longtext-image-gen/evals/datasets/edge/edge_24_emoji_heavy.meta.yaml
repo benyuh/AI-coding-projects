@@ -1,0 +1,11 @@
+case_id: edge_24_emoji_heavy
+category: edge
+sub_category: character
+title: 高频 Emoji 文本测试
+text_length: 150
+language: zh
+expected_behavior:
+  expected_terminal: passed
+preferences:
+  target_platform: xiaohongshu
+  output_format: image

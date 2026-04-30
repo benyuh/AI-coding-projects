@@ -1,0 +1,12 @@
+case_id: comp_022
+category: comprehensive
+title: Gourmet Coffee Culture (Vol.22)
+source_url: null
+text_length: 500
+language: zh
+preferences:
+  target_platform: xiaohongshu
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: general

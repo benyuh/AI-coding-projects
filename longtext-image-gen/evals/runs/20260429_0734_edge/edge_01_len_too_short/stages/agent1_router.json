@@ -1,0 +1,11 @@
+{
+  "article_type": "unknown",
+  "user_type": "general",
+  "platform": "xiaohongshu",
+  "narrative_structure": "pyramid_argument",
+  "output_format_hint": "image",
+  "risk_level": "blocked",
+  "risk_reason": "文章过短",
+  "skip_reason": "TEXT_TOO_SHORT",
+  "style_hint": "clean_business"
+}

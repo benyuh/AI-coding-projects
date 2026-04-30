@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 82.0,
+      "threshold": 72.0,
+      "passed": true,
+      "reason": "核心要点基本覆盖：增速、总量、三驾马车、服务业、新动能、就业物价、贸易、区域格局、统计修订均有对应卡片。但141.3万亿总量数据、消费具体贡献数据未单独突出，s2独立研究质疑维度仅一张卡片略显薄弱。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 85.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "卡片0编造了'GDP总量达141.3万亿元'，原文无此数据；卡片1将走势描述为'V型'而非原文的先降后升再稳的波动形态，略有夸大；其余卡片内容与原文基本吻合。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "0",
+        "1"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "0",
+          "card_field": "body",
+          "original_text": "2025年中国国内生产总值（GDP）按不变价格计算，同比增长5.1%，圆满完成全年\"5%左右\"的预期目标",
+          "hallucinated_text": "GDP总量达141.3万亿元",
+          "error_summary": "编造GDP总量数字141.3万亿元，原文无此数据"
+        },
+        {
+          "card_id": "1",
+          "card_field": "title",
+          "original_text": "一季度5.3%，二季度4.8%，三季度5.1%，四季度5.2%",
+          "hallucinated_text": "V型走势",
+          "error_summary": "走势为先降后升再稳，非标准V型，表述不准确"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 82.0,
+      "threshold": 70.0,
+      "passed": true,
+      "reason": "卡片数量适中，类型分布合理，覆盖封面、分节、数据和总结。标题无标题党，逻辑从宏观到微观较连贯。部分标题因字数限制被截断（如CPI后缺失），略影响完整性，section与data穿插略显跳跃。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 88.0,
+      "threshold": 68.0,
+      "passed": true,
+      "reason": "文案使用专业经济术语（支出法、贡献率、增加值）和精确数据，高度契合professional受众需求。朋友圈场景下内容略显冗长，部分卡片数据被截断，完整性稍有欠缺，但整体专业调性与数据密度适配良好。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 84.2,
+  "failed_dims": [],
+  "voting_enabled": false
+}

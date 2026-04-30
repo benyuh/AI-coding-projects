@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 72.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "蓝图覆盖了②③④⑤⑥章核心内容，但①政策法规依据章节完全缺失；绿色金融工具种类未展示，仅有杠杆目标；碳市场扩容逻辑与配额分配机制覆盖不完整，影响信息完整性。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 88.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片0-4内容与原文高度吻合，卡片2新增'电力行业碳排放占全国总量约42%'的数据原文未出现，属于添加信息。卡片5仅展示部分内容，但可见部分与原文一致。整体忠实度较高，仅个别数据存在来源不明问题。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 72.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "卡片数量适中，封面和摘要齐全，但8张数据卡类型高度单一，缺乏流程图、对比图等多样化类型；最后两张卡片主题高度重叠（MRV体系），存在明显冗余，逻辑结构略显松散。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 82.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "文案保留了专业术语（EAF/BF-BOF）、量化数据（42%、3800万千瓦）和政策引用，符合professional受众需求。但朋友圈平台偏好简洁，部分卡片文字密度偏高、句子被截断，略降低传播适配性。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 78.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality"
+  ],
+  "voting_enabled": false
+}

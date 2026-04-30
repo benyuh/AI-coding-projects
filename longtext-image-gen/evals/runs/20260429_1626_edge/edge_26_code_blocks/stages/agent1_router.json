@@ -1,0 +1,11 @@
+{
+  "article_type": "tutorial",
+  "user_type": "professional",
+  "platform": "wechat_moments",
+  "narrative_structure": "problem_solution_action",
+  "output_format_hint": "image",
+  "risk_level": "safe",
+  "risk_reason": "",
+  "skip_reason": "",
+  "style_hint": "tech_minimal"
+}

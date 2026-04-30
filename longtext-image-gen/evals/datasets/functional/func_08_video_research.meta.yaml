@@ -1,0 +1,22 @@
+case_id: func_08_video_research
+category: functional
+sub_category: video_route
+title: 全球半导体行业竞争格局深度分析
+text_length: ~5000
+language: zh
+source_count: 1
+expected_behavior:
+  agent1_decision:
+    risk_level: safe
+    article_type: research
+    skip_pipeline: false
+  expected_terminal: passed
+  expected_format: video
+preferences:
+  target_platform: xiaohongshu
+  output_format: video
+  style_hint: auto
+  watermark: true
+user_profile:
+  user_type: general
+tags: [research, semiconductor, data, video]

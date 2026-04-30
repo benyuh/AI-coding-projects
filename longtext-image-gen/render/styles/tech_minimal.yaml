@@ -1,0 +1,41 @@
+# render/styles/tech_minimal.yaml
+# 科技简约风格（v3.1.4）
+# 特点：白底蓝色，干净利落，代码感，适合技术文章
+
+style_id: tech_minimal
+
+# ── 颜色系统 ──────────────────────────────────────────────────────────────
+primary_color: "#0066FF"
+secondary_color: "#3385FF"
+accent_color: "#00C3FF"
+background_color: "#F8FAFF"
+text_color: "#0D1224"
+text_secondary_color: "#3D4D6A"
+text_muted_color: "#8896AB"
+
+# ── 排版 ──────────────────────────────────────────────────────────────────
+font_family: "PingFang SC, Noto Sans SC, Microsoft YaHei, sans-serif"
+font_size_base: 25
+font_size_title: 30
+font_size_cover: 54
+font_size_data: 88
+line_height: 1.7
+
+# ── 间距与圆角 ────────────────────────────────────────────────────────────
+border_radius: 12
+border_radius_cover: 16
+padding_card: "36px 44px"
+card_gap: 20
+
+# ── 阴影 ──────────────────────────────────────────────────────────────────
+card_shadow: "0 1px 12px rgba(0,102,255,0.08)"
+cover_shadow: "0 8px 32px rgba(0,102,255,0.2)"
+
+# ── 渐变 ──────────────────────────────────────────────────────────────────
+cover_gradient: "linear-gradient(135deg, #0044CC 0%, #0066FF 50%, #00A8FF 100%)"
+data_gradient: "linear-gradient(135deg, #0D1224 0%, #1A2644 100%)"
+summary_gradient: "linear-gradient(135deg, #0044CC 0%, #0022AA 100%)"
+
+# ── 边框 ──────────────────────────────────────────────────────────────────
+section_border_left_color: "#0066FF"
+section_border_left_width: 6

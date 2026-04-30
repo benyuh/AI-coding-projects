@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 62.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "蓝图缺失光伏基本原理、全球发展史、技术路线演进、系统类型介绍、贸易壁垒挑战等核心板块；结尾存在重复卡片（2030展望出现两次）；现有卡片偏重装机数据，结构不均衡，无法完整代表原文。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 72.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片3称'超越水电'成第二大电源，原文为'仅次于火电'成第二大电源，属明显事实改写；其余卡片0-2、4-5与原文基本吻合，无重大失真。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 62.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "存在明显问题：section[10]与summary[12]标题完全重复；section[10]与section[11]内容高度重叠（同为2030展望）；data卡片仅3张且分布不均；section卡片占比过高（6张），结构冗余，逻辑层次不够清晰。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 82.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "文案保留了大量专业术语（TOPCon、HJT、钙钛矿叠层）和精确数据，符合专业受众需求。但朋友圈平台偏好简洁，部分卡片数据密度过高、句式偏长，略超朋友圈阅读习惯，建议适当精简层级。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 69.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality"
+  ],
+  "voting_enabled": false
+}

@@ -1,0 +1,12 @@
+case_id: comp_009
+category: comprehensive
+title: Sustainable Architecture (Vol.9)
+source_url: null
+text_length: 500
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: video
+  style_hint: auto
+user_profile:
+  user_type: general

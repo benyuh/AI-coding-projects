@@ -1,0 +1,43 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 62.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "蓝图缺失多个重要章节：随迁子女政策仅五证无完整流程、特殊群体保障未覆盖、中考衔接缺失、时间节点未体现、政策历史演进和常见问答均无对应卡片，信息完整性受损明显。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 88.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片0-5整体忠实原文。卡片3仅列出4项五证内容，原文有5项，存在遗漏。卡片5表述基本准确。卡片6、7原文内容未被卡片覆盖，但不影响已有卡片的准确性评分。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 82.0,
+      "threshold": 80.0,
+      "passed": true,
+      "reason": "8张卡片数量适中，类型分布合理，逻辑从政策背景→入学条件→禁止行为→解决方案→指标总结递进清晰。section占比略高（4/8），data卡片可再增一张丰富数据层次，整体结构完整无标题党。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 82.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "文案语言通俗易懂，贴近大众家长关切，数据具体有说服力，适合朋友圈传播。部分表述略显正式（如\"历史性突破\"\"义务教育阶段\"），朋友圈更宜口语化、简短有力，整体基本适配但仍有优化空间。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 78.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness"
+  ],
+  "voting_enabled": false
+}

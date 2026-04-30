@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 72.0,
+      "threshold": 72.0,
+      "passed": true,
+      "reason": "蓝图覆盖了金融危机背景、减半机制、大事记、中本聪、私钥安全等核心要点，但缺少区块链工作原理、挖矿机制、各国监管态度、哲学意涵等重要内容，优缺点分析也未独立呈现，影响信息完整性。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 82.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "卡片0-3内容与原文基本吻合；卡片2减半细节、卡片4门头沟丢失数量、卡片5/6涉及原文未覆盖内容（超出前3000字范围），无法验证真实性，存在潜在编造风险。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "4",
+        "5",
+        "6"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "4",
+          "card_field": "body",
+          "original_text": "（原文前3000字未提及Mt. Gox事件）",
+          "hallucinated_text": "约85万枚比特币凭空消失，成为加密货币史",
+          "error_summary": "原文未覆盖，数据无法核实"
+        },
+        {
+          "card_id": "5",
+          "card_field": "body",
+          "original_text": "（原文前3000字未提及ETF获批及特朗普签署相关内容）",
+          "hallucinated_text": "2024年1月10日，美国SEC首次批准比特币现货ETF上市…2025年3月6日，特朗普签",
+          "error_summary": "原文未覆盖，内容无法核实"
+        },
+        {
+          "card_id": "6",
+          "card_field": "body",
+          "original_text": "（原文前3000字未包含比特币与传统跨境转账对比内容）",
+          "hallucinated_text": "比特币凭借去中心化、总量固定2100万枚、全球互联网即可",
+          "error_summary": "原文未覆盖，对比内容无依据"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 82.0,
+      "threshold": 70.0,
+      "passed": true,
+      "reason": "卡片数量适中，类型分布合理，覆盖cover/section/data/timeline/summary，无标题党。但section占比偏高（4/10），部分data卡片（如披萨故事）与叙事主线略显松散，summary标题偏向数据罗列，整体结构基本连贯。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 78.0,
+      "threshold": 68.0,
+      "passed": true,
+      "reason": "文案用故事化叙事讲比特币历史，通俗易懂，符合小红书大众风格。披萨、危机等具体事件增强趣味性。但\"区块\"\"矿工奖励减半\"等术语未作解释，部分表述略显严肃，亲切感稍不足，整体基本适配。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 78.5,
+  "failed_dims": [],
+  "voting_enabled": false
+}

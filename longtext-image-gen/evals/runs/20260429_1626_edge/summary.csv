@@ -1,0 +1,3 @@
+case_id,terminal_status,format,platform,style_id,narrative_structure,card_count,gate1_pass,gate2_pass,duration_s,degrade_level,realness_check
+edge_05_legal_contract,passed,image,wechat_moments,unknown,pyramid_argument,0,n/a,n/a,3.16,,耗时仅 3.2s (疑似 fallback)
+edge_26_code_blocks,degraded,image,wechat_moments,tech_minimal,problem_solution_action,3,False,n/a,51.71,L2,ok

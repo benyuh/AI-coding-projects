@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 82.0,
+      "threshold": 72.0,
+      "passed": true,
+      "reason": "主要要点基本覆盖：GDP总量、季度增速、三驾马车、产业结构、新动能、就业物价、修正测算、农业贸易均有对应卡片。但区域分化仅为section标题未见详细数据卡，消费与工业摘要卡内容不明确，s3部分细项数据（如人口、城镇化率）存在遗漏。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 92.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "绝大多数卡片内容与原文高度吻合，卡片0中出现'总量达1,412,57'字样（原文未提及GDP总量绝对值），属编造数据；其余卡片1-6内容均有原文依据，表述准确。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "0"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "0",
+          "card_field": "body",
+          "original_text": "原文未提及GDP总量绝对值数字",
+          "hallucinated_text": "总量达1,412,57（疑似编造的GDP总量数字）",
+          "error_summary": "编造GDP总量绝对值数据"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 78.0,
+      "threshold": 70.0,
+      "passed": true,
+      "reason": "卡片数量适中，类型分布基本合理，封面、分节、数据、总结层次清晰。但section卡片仅2张且位置靠后，结构节奏略失衡；部分data卡片标题被截断（如第3、7条），完整性存疑；summary仅1张略显单薄。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 72.0,
+      "threshold": 68.0,
+      "passed": true,
+      "reason": "数据详实、术语专业，符合professional受众需求；但小红书平台偏重轻松互动风格，纯统计数据罗列缺乏洞察观点和情感共鸣，标题吸引力不足，建议增加分析视角或实际影响的解读，提升平台适配度。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 81.0,
+  "failed_dims": [],
+  "voting_enabled": false
+}

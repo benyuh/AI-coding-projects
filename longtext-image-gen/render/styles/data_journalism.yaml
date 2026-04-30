@@ -1,0 +1,41 @@
+# render/styles/data_journalism.yaml
+# 数据新闻风格（v3.1.4）
+# 特点：深色背景，高对比，数据突出，严肃专业
+
+style_id: data_journalism
+
+# ── 颜色系统 ──────────────────────────────────────────────────────────────
+primary_color: "#1DB954"
+secondary_color: "#17A446"
+accent_color: "#F5E642"
+background_color: "#0D1117"
+text_color: "#E6EDF3"
+text_secondary_color: "#8B949E"
+text_muted_color: "#6E7681"
+
+# ── 排版 ──────────────────────────────────────────────────────────────────
+font_family: "PingFang SC, Noto Sans SC, Microsoft YaHei, sans-serif"
+font_size_base: 24
+font_size_title: 30
+font_size_cover: 54
+font_size_data: 92
+line_height: 1.65
+
+# ── 间距与圆角 ────────────────────────────────────────────────────────────
+border_radius: 8
+border_radius_cover: 12
+padding_card: "40px 48px"
+card_gap: 20
+
+# ── 阴影 ──────────────────────────────────────────────────────────────────
+card_shadow: "0 2px 8px rgba(0,0,0,0.4)"
+cover_shadow: "0 8px 32px rgba(29,185,84,0.2)"
+
+# ── 渐变 ──────────────────────────────────────────────────────────────────
+cover_gradient: "linear-gradient(135deg, #0D1117 0%, #161B22 50%, #1A2633 100%)"
+data_gradient: "linear-gradient(135deg, #0D1117 0%, #161B22 100%)"
+summary_gradient: "linear-gradient(135deg, #1A2E1A 0%, #0D1F0D 100%)"
+
+# ── 边框 ──────────────────────────────────────────────────────────────────
+section_border_left_color: "#1DB954"
+section_border_left_width: 4

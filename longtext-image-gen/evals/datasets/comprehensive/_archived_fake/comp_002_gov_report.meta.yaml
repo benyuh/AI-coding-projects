@@ -1,0 +1,12 @@
+case_id: comp_002_gov_report
+category: comprehensive
+title: 2026年政府工作报告实施方案
+source_url: null
+text_length: 800
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: general

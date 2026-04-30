@@ -1,0 +1,45 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 72.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "蓝图覆盖了金融危机背景、减半机制、大事记、监管态度等核心内容，但明显遗漏了区块链工作原理/挖矿/钱包等技术原理章节、中本聪身份之谜、以及比特币哲学意涵与结语展望，核心章节有实质性缺失。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 82.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片4标题'7年涨了100倍'与原文不符，原文仅提及2017年涨幅逾1900%及2021年高点约6.9万美元，未有'7年100倍'的表述，属于自行推算夸大。其余卡片内容基本忠实原文，无明显失真。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 78.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "卡片数量适中，类型分布基本合理，逻辑从起源到现状递进清晰。但section卡片占比偏高（4张），timeline仅1张且主题略窄，部分section标题（如披萨、各国态度）内容跨度大，结构略显松散。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 72.0,
+      "threshold": 75.0,
+      "passed": false,
+      "reason": "内容以故事化叙述为主，可读性较好，适合大众传播。但涉及P2P技术、区块奖励减半等专业概念未充分通俗化解释，部分数据密集。朋友圈受众偏好轻量内容，当前文案略显信息过载，需适当简化术语并增加情感共鸣点。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 76.0,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality",
+    "audience_fit"
+  ],
+  "voting_enabled": false
+}

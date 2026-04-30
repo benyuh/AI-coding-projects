@@ -1,0 +1,23 @@
+case_id: func_04_news_event_general
+category: functional
+sub_category: news_event
+title: 全球气候峰会关键决策深度报道
+text_length: ~2400
+language: zh
+source_count: 1
+expected_behavior:
+  agent1_decision:
+    risk_level: safe
+    article_type: news
+    skip_pipeline: false
+  expected_terminal: passed
+  expected_format: image
+  notes: timeline visual_type 应命中，时间锚点≥5
+preferences:
+  target_platform: wechat_moments
+  output_format: auto
+  style_hint: auto
+  watermark: true
+user_profile:
+  user_type: general
+tags: [news, climate, event, timeline, general]

@@ -1,0 +1,126 @@
+{
+  "source_bundle": {
+    "mode": "single",
+    "text": "在开发大型分布式系统时，代码质量至关重要。\n下面是一个典型的 Python 示例：\n\n```python\nimport asyncio\n\nasync def main():\n    print(\"Hello, Distributed World!\")\n    await asyncio.sleep(1)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())\n```\n\n这段代码展示了如何使用 `asyncio` 进行异步编程。\n在信息图中，模型是否会错误地提取代码块作为正文？\n应当保留其为证据，但不应直接渲染在卡片核心文案中。\n",
+    "source_id": "single",
+    "source_url": null,
+    "sources": [
+      {
+        "source_id": "single",
+        "raw_text": "在开发大型分布式系统时，代码质量至关重要。\n下面是一个典型的 Python 示例：\n\n```python\nimport asyncio\n\nasync def main():\n    print(\"Hello, Distributed World!\")\n    await asyncio.sleep(1)\n\nif __name__ == \"__main__\":\n    asyncio.run(main())\n```\n\n这段代码展示了如何使用 `asyncio` 进行异步编程。\n在信息图中，模型是否会错误地提取代码块作为正文？\n应当保留其为证据，但不应直接渲染在卡片核心文案中。\n",
+        "source_name": "single",
+        "url": null,
+        "title": "",
+        "publish_time": null,
+        "authority": "general_web"
+      }
+    ],
+    "duplicate_clusters": [],
+    "disagreements": [],
+    "multi_source_meta": {},
+    "char_count": 291
+  },
+  "claims": [
+    {
+      "claim_text": "大型分布式系统开发中，代码质量至关重要",
+      "evidence_span": "在开发大型分布式系统时，代码质量至关重要。",
+      "evidence_spans": [
+        {
+          "source_id": "single",
+          "text": "在开发大型分布式系统时，代码质量至关重要。"
+        }
+      ],
+      "source_refs": [
+        "single"
+      ],
+      "disagreement_refs": [],
+      "fact_elements": [
+        {
+          "text": "大型分布式系统",
+          "element_type": "entity",
+          "context_50": "在开发大型分布式系统时，代码质量至关重要。",
+          "char_start": -1,
+          "char_end": -1
+        }
+      ],
+      "importance": 0.85
+    },
+    {
+      "claim_text": "asyncio 可用于 Python 异步编程实现",
+      "evidence_span": "这段代码展示了如何使用 `asyncio` 进行异步编程。",
+      "evidence_spans": [
+        {
+          "source_id": "single",
+          "text": "这段代码展示了如何使用 `asyncio` 进行异步编程。"
+        }
+      ],
+      "source_refs": [
+        "single"
+      ],
+      "disagreement_refs": [],
+      "fact_elements": [
+        {
+          "text": "asyncio",
+          "element_type": "entity",
+          "context_50": "这段代码展示了如何使用 `asyncio` 进行异步编程。",
+          "char_start": -1,
+          "char_end": -1
+        }
+      ],
+      "importance": 0.75
+    },
+    {
+      "claim_text": "信息图模型不应将代码块错误提取为正文内容",
+      "evidence_span": "在信息图中，模型是否会错误地提取代码块作为正文？应当保留其为证据，但不应直接渲染在卡片核心文案中。",
+      "evidence_spans": [
+        {
+          "source_id": "single",
+          "text": "在信息图中，模型是否会错误地提取代码块作为正文？应当保留其为证据，但不应直接渲染在卡片核心文案中。"
+        }
+      ],
+      "source_refs": [
+        "single"
+      ],
+      "disagreement_refs": [],
+      "fact_elements": [
+        {
+          "text": "代码块",
+          "element_type": "entity",
+          "context_50": "模型是否会错误地提取代码块作为正文？应当保留其为证据，但不应直接渲染在卡片核心文案中。",
+          "char_start": -1,
+          "char_end": -1
+        }
+      ],
+      "importance": 0.9
+    }
+  ],
+  "card_budget": 5,
+  "card_slots": [
+    {
+      "slot_index": 0,
+      "suggested_type": "cover",
+      "content_hint": "分布式系统开发与代码质量——异步编程实践要点"
+    },
+    {
+      "slot_index": 1,
+      "suggested_type": "concept",
+      "content_hint": "分布式系统中代码质量的核心地位"
+    },
+    {
+      "slot_index": 2,
+      "suggested_type": "data",
+      "content_hint": "asyncio 异步编程模式说明（代码块作为辅助证据，不渲染为主文案）"
+    },
+    {
+      "slot_index": 3,
+      "suggested_type": "insight",
+      "content_hint": "信息图内容提取规范：代码块应保留为证据而非核心渲染内容"
+    },
+    {
+      "slot_index": 4,
+      "suggested_type": "summary",
+      "content_hint": "核心结论：分布式开发重视代码质量，异步编程是典型实践，内容提取需区分代码与正文"
+    }
+  ],
+  "outline": "文章分三层：①点出分布式系统对代码质量的要求；②以 asyncio 异步代码为示例；③提出信息图内容提取规范——代码块应作为证据保留而非直接渲染为卡片主文案。"
+}

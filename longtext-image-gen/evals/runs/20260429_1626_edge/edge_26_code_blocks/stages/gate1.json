@@ -1,0 +1,45 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 78.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "三层核心要点基本覆盖：分布式系统代码质量、asyncio示例、代码块处理规范均有对应卡片。但asyncio作为'示例证据'的功能定位未明确体现，且存在两张重复卡片（代码块作证据），结构冗余影响信息完整性。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 62.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片0、2、3基本忠实原文；卡片1将'展示如何使用asyncio'扩展为'标准库核心模块/事件循环机制'等原文未提内容；卡片4将多卡片内容混合重组，并添加'分布式系统对代码质量要求严苛'与asyncio的关联，属无依据编造。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 52.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "存在明显问题：data卡片与section卡片标题完全重复，内容规划混乱；section标题'asyncio 实现 Python'不完整且语义不清；封面主题与卡片内容关联性弱，整体逻辑连贯性差，结构较为混乱。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 72.0,
+      "threshold": 75.0,
+      "passed": false,
+      "reason": "专业术语使用恰当（asyncio、分布式系统、事件循环），适合professional受众。但朋友圈要求简洁，部分卡片文案过于冗长且存在明显截断，影响传播效果。内容本身专业度匹配，但平台适配性略显不足。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 66.0,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality",
+    "audience_fit"
+  ],
+  "voting_enabled": false
+}

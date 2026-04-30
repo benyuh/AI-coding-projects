@@ -1,0 +1,36 @@
+case_id: func_07_multi_source
+category: functional
+sub_category: multi_source
+title: 2025年中国GDP增速多信源综合
+text_length: ~4500
+language: zh
+source_count: 3
+sources:
+  - source_id: s1
+    file: func_07_multi_source_s1.txt
+    authority: mainstream_media
+    title: 财经媒体报道
+  - source_id: s2
+    file: func_07_multi_source_s2.txt
+    authority: professional_blog
+    title: 行业分析师观点
+  - source_id: s3
+    file: func_07_multi_source_s3.txt
+    authority: authoritative
+    title: 官方统计局公告
+expected_behavior:
+  agent1_decision:
+    risk_level: safe
+    article_type: news
+    skip_pipeline: false
+  expected_terminal: passed
+  expected_format: image
+  notes: s1和s2数字冲突，s3为权威源仲裁；期望生成disagreement和duplicate_clusters
+preferences:
+  target_platform: xiaohongshu
+  output_format: image
+  style_hint: auto
+  watermark: true
+user_profile:
+  user_type: general
+tags: [multi_source, conflict, economy, GDP]

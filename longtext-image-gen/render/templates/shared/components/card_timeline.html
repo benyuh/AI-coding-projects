@@ -1,0 +1,24 @@
+{#
+render/templates/shared/components/card_timeline.html
+竖向时间轴卡组件
+
+参数：
+  card    — 卡片对象（card.timeline_time, card.title, card.body）
+  is_last — 是否为最后一个时间节点（控制轴线显示）
+#}
+{% macro card_timeline(card, is_last=false) %}
+<div class="card-timeline">
+  {% if card.timeline_time %}
+  <div class="timeline-left">
+    <div class="timeline-badge">
+      <div class="timeline-time-text">{{ card.timeline_time }}</div>
+    </div>
+    {% if not is_last %}<div class="timeline-axis"></div>{% endif %}
+  </div>
+  {% endif %}
+  <div class="timeline-content">
+    <div class="card-title">{{ card.title }}</div>
+    {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+  </div>
+</div>
+{% endmacro %}

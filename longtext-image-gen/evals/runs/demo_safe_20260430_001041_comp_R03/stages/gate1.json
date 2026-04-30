@@ -1,0 +1,87 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 58.0,
+      "threshold": 72.0,
+      "passed": false,
+      "reason": "蓝图严重缺失多个核心模块：生育率定义解析、深层原因分析（经济/文化/制度）、各国政策对比与实证教训、人口萎缩宏观后果（经济/养老/国防）、低生育率不可逆性论述均无对应卡片。且存在重复卡片（美国相关3张），结构混乱。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 72.0,
+      "threshold": 75.0,
+      "passed": false,
+      "reason": "卡片3、4、5内容超出原文范围，含编造数据；卡片0将'警戒线'表述混淆；卡片6内容无原文依据。多处存在无法核实的具体数字。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "3",
+          "card_field": "body",
+          "original_text": "（原文未提及日本相关数据）",
+          "hallucinated_text": "2023年，日本全年新生儿仅758631人，TFR降至1.20，首次跌破80万大关。这一数字刷新了自1899年有记录以来",
+          "error_summary": "日本具体数据原文未出现，属编造"
+        },
+        {
+          "card_id": "4",
+          "card_field": "body",
+          "original_text": "（原文未提及中国人口负增长具体数据）",
+          "hallucinated_text": "2022年，中国出生人口956万，死亡人口1041万，自1962年以来首次人口负增长。此后降幅持续扩大，2025年人口减",
+          "error_summary": "中国人口数据及2025年预测原文无据"
+        },
+        {
+          "card_id": "5",
+          "card_field": "body",
+          "original_text": "（原文未提及新加坡相关数据）",
+          "hallucinated_text": "2023年，新加坡TFR降至0.97，成为全球首个跌破1.0的富裕国家",
+          "error_summary": "新加坡数据原文未出现，属编造"
+        },
+        {
+          "card_id": "6",
+          "card_field": "body",
+          "original_text": "（原文未涉及匈牙利等国政策内容）",
+          "hallucinated_text": "各国为提振生育率使出浑身解数：匈牙利免税",
+          "error_summary": "匈牙利政策内容原文完全未提及"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 62.0,
+      "threshold": 70.0,
+      "passed": false,
+      "reason": "存在明显重复问题：'美国生育率跌破1.6'同时出现在section和summary卡片，'美国生育率例外'主题重复两张卡片，内容冗余严重。部分标题被截断不完整（韩国、日本、summary卡片），结构逻辑混乱，需整合去重。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 62.0,
+      "threshold": 68.0,
+      "passed": false,
+      "reason": "数据密度过高，TFR、总和生育率等术语未作解释，大众受众理解门槛较高。语气偏学术严肃，缺乏小红书惯用的亲切感、共鸣感和互动性表达，更像研究报告而非社交内容。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 63.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality",
+    "audience_fit"
+  ],
+  "voting_enabled": false
+}

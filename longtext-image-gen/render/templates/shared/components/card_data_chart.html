@@ -1,0 +1,61 @@
+{#
+render/templates/shared/components/card_data_chart.html
+Chart.js 数据图表卡组件
+
+参数：
+  card        — 卡片对象（card.title, card.body）
+  chart_data  — {"type": "pie|bar|line", "labels": [...], "values": [...], "title": "..."}
+  chart_id    — 图表唯一 ID（防多个 canvas 冲突）
+#}
+{% macro card_data_chart(card, chart_data, chart_id="chart0") %}
+<div class="card-section card-chart">
+  <div class="card-title">{{ card.title }}</div>
+  {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+  <div class="chart-container">
+    <canvas id="{{ chart_id }}" width="900" height="400"></canvas>
+  </div>
+</div>
+<script>
+(function() {
+  var ctx = document.getElementById('{{ chart_id }}').getContext('2d');
+  var chartType = '{{ chart_data.type | default("bar") }}';
+  var labels = {{ chart_data.labels | tojson | default('[]') }};
+  var values = {{ chart_data.values | tojson | default('[]') }};
+
+  var colors = [
+    'rgba(255,107,107,0.85)', 'rgba(255,142,83,0.85)', 'rgba(255,179,71,0.85)',
+    'rgba(102,126,234,0.85)', 'rgba(118,75,162,0.85)', 'rgba(52,152,219,0.85)',
+  ];
+
+  new Chart(ctx, {
+    type: chartType,
+    data: {
+      labels: labels,
+      datasets: [{
+        data: values,
+        backgroundColor: chartType === 'line' ? 'rgba(255,107,107,0.2)' : colors.slice(0, values.length),
+        borderColor: chartType === 'line' ? '#FF6B6B' : colors.slice(0, values.length),
+        borderWidth: 2,
+        fill: chartType === 'line',
+        tension: 0.4,
+        pointBackgroundColor: '#FF6B6B',
+      }]
+    },
+    options: {
+      responsive: false,
+      plugins: {
+        legend: {
+          display: chartType === 'pie',
+          labels: { font: { size: 16, family: 'PingFang SC, Noto Sans SC, sans-serif' }, color: '#1A1A1A' }
+        },
+        tooltip: { enabled: true }
+      },
+      scales: chartType !== 'pie' ? {
+        y: { beginAtZero: true, ticks: { font: { size: 14 }, color: '#444' } },
+        x: { ticks: { font: { size: 14 }, color: '#444' } }
+      } : {}
+    }
+  });
+})();
+</script>
+{% endmacro %}

@@ -1,0 +1,11 @@
+case_id: edge_09_lorem
+category: edge
+sub_category: nonsense
+title: 非中文拉丁占位符测试
+text_length: 450
+language: la
+expected_behavior:
+  expected_terminal: rejected_with_alternative
+preferences:
+  target_platform: xiaohongshu
+  output_format: auto

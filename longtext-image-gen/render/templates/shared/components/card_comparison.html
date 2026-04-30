@@ -1,0 +1,37 @@
+{#
+render/templates/shared/components/card_comparison.html
+左右对比表组件
+
+参数：
+  card    — 卡片对象（card.title, card.items，items 为 ["左标题|右标题", "左内容|右内容", ...]）
+  left_label  — 左侧标签（默认"对比A"）
+  right_label — 右侧标签（默认"对比B"）
+#}
+{% macro card_comparison(card, left_label="方案A", right_label="方案B") %}
+<div class="card-comparison">
+  <div class="card-title comparison-title">{{ card.title }}</div>
+  <div class="comparison-grid">
+    <div class="comparison-col comparison-col--left">
+      <div class="comparison-header">{{ left_label }}</div>
+      {% for item in card.items %}
+        {% if '|' in item %}
+        <div class="comparison-cell">{{ item.split('|')[0] }}</div>
+        {% else %}
+        <div class="comparison-cell">{{ item }}</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="comparison-divider"></div>
+    <div class="comparison-col comparison-col--right">
+      <div class="comparison-header">{{ right_label }}</div>
+      {% for item in card.items %}
+        {% if '|' in item %}
+        <div class="comparison-cell">{{ item.split('|')[1] if item.split('|')|length > 1 else '' }}</div>
+        {% else %}
+        <div class="comparison-cell"></div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,124 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 62.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "蓝图严重遗漏多个核心章节：光伏基本原理、技术路线演进（单晶/薄膜等）、应用场景多样化、消纳/贸易/环境等行业挑战、政策体系均无专项卡片覆盖，仅靠少数数据卡片无法代表原文完整信息框架。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 30.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "提供的chunk原文仅包含光伏基本原理部分（P-N结、半导体掺杂），而卡片0-6中涉及的大量具体数据（装机量、价格、效率、年份等）均无法在原文中找到依据，属于大规模编造或来源不明内容。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "0",
+          "card_field": "body",
+          "original_text": "（原文无此内容）",
+          "hallucinated_text": "1954年贝尔实验室制成首块实用单晶硅太阳电池，转化效率约6%",
+          "error_summary": "原文无此历史数据，无法核实"
+        },
+        {
+          "card_id": "0",
+          "card_field": "body",
+          "original_text": "（原文无此内容）",
+          "hallucinated_text": "经七十（年）…",
+          "error_summary": "原文无相关表述，编造内容"
+        },
+        {
+          "card_id": "1",
+          "card_field": "body",
+          "original_text": "（原文无此内容）",
+          "hallucinated_text": "2025年一季度，风电光伏总装机达14.82亿千瓦（其中光伏9.46亿千瓦），首次超过火电（14.51亿千瓦）",
+          "error_summary": "原文无此装机数据，编造"
+        },
+        {
+          "card_id": "2",
+          "card_field": "body",
+          "original_text": "（原文无此内容）",
+          "hallucinated_text": "2025年全年光伏新增并网3.17亿千瓦，同比增长14%；截至2025年12月，全国光伏装机约12亿千瓦，同比增长逾35%",
+          "error_summary": "原文无此数据，编造"
+        },
+        {
+          "card_id": "2",
+          "card_field": "title",
+          "original_text": "（原文无此内容）",
+          "hallucinated_text": "2025年光伏装机突破12亿千瓦",
+          "error_summary": "原文无此数据，编造标题"
+        },
+        {
+          "card_id": "3",
+          "card_field": "body",
+          "original_text": "（原文无此内容）",
+          "hallucinated_text": "2023年6月底，中国太阳能发电装机约4.7亿千瓦，同比增长39.8%，成为中国第二大电源",
+          "error_summary": "原文无此数据，编造"
+        },
+        {
+          "card_id": "4",
+          "card_field": "body",
+          "original_text": "（原文无此内容）",
+          "hallucinated_text": "多晶硅价格从高峰400元/公斤跌至50元…光伏成为有史以来成本下降最快的能源技术",
+          "error_summary": "原文无价格及成本降幅数据，编造"
+        },
+        {
+          "card_id": "5",
+          "card_field": "body",
+          "original_text": "（原文无此内容）",
+          "hallucinated_text": "价格从2022年高峰300元/公斤以上骤跌至50元/公斤以下",
+          "error_summary": "原文无此价格数据，编造"
+        },
+        {
+          "card_id": "6",
+          "card_field": "body",
+          "original_text": "（原文无此内容）",
+          "hallucinated_text": "钙钛矿-硅叠层电池实验室效率已超过33%",
+          "error_summary": "原文无此效率数据，编造"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 72.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "结构基本合理，类型分布尚可，但存在明显内容重叠：timeline与data卡片均涉及2025/2030装机目标，section卡片偏向单一议题罗列，逻辑层次不够清晰，中间段落主题跳跃（成本→危机→技术→标准），叙事连贯性有待加强。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 82.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "专业术语（P-N结、光生伏特效应、装机容量）和详实数据保留完好，符合专业受众需求。但朋友圈场景偏重社交传播，部分卡片信息密度偏高，叙述略显学术，可适当增加观点性结论提升传播力。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 61.5,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality"
+  ],
+  "voting_enabled": false
+}

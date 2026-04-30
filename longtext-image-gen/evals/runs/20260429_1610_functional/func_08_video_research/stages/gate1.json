@@ -1,0 +1,43 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 62.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "蓝图覆盖了行业概览、逻辑芯片、部分企业（英伟达、联发科、台积电）及地缘投资，但严重缺失：存储芯片（HBM仅一卡）、代工竞争格局（三星/英特尔）、区域格局完整对比、技术节点演进时间线、结论与结构性分化分析；且存在重复卡片。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 95.0,
+      "threshold": 90.0,
+      "passed": true,
+      "reason": "各卡片核心数据与原文高度吻合，包括市场规模、份额数据、英伟达营收、联发科反超等关键事实均有原文依据。卡片2表述'突破50%'与原文50.3%一致。整体忠实度高，仅存在少量截断，无明显编造或失真。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 62.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "存在两张完全重复的卡片标题（中国大陆成熟制程产能占比急升），section标题偏弱缺乏数据支撑，summary与重复data内容高度重叠，结构冗余明显，整体逻辑连贯性受损。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 88.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "文案数据详实、术语专业（CAGR、AP、CUDA生态），符合professional受众需求；朋友圈偏简洁风格，部分卡片数据密度略高，句子被截断影响完整性，整体适配度良好但排版节奏可再精炼。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 76.8,
+  "failed_dims": [
+    "completeness",
+    "card_quality"
+  ],
+  "voting_enabled": false
+}

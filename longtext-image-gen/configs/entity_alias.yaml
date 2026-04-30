@@ -1,0 +1,15 @@
+# entity_alias.yaml
+# 实体别名字典，用于 Worker B 事实核验的 NER 匹配
+# 格式：canonical_name: [alias1, alias2, ...]
+
+aliases:
+  "百度": ["百度公司", "Baidu", "百度集团"]
+  "阿里巴巴": ["阿里", "Alibaba", "阿里集团", "BABA"]
+  "腾讯": ["腾讯公司", "Tencent", "腾讯集团"]
+  "字节跳动": ["字节", "ByteDance", "抖音集团"]
+  "华为": ["华为技术", "Huawei", "华为公司"]
+  "GPT-4": ["GPT4", "GPT-4o", "GPT 4"]
+  "Claude": ["Anthropic", "Claude 3", "Claude 3.5"]
+  "DeepSeek": ["深度求索", "DeepSeek-R1", "DeepSeek R1"]
+  "小红书": ["RED", "RED平台", "小红书APP"]
+  "ChatGPT": ["ChatGPT-4", "OpenAI ChatGPT"]

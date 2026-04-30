@@ -1,0 +1,11 @@
+case_id: edge_25_table_in_text
+category: edge
+sub_category: character
+title: 文本含 Markdown 表格测试
+text_length: 200
+language: zh
+expected_behavior:
+  expected_terminal: passed
+preferences:
+  target_platform: wechat_official
+  output_format: image

@@ -1,0 +1,12 @@
+case_id: comp_R04
+category: comprehensive
+title: 比特币基础知识科普
+source_url: null
+text_length: 5278
+language: zh
+preferences:
+  target_platform: xiaohongshu
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: general

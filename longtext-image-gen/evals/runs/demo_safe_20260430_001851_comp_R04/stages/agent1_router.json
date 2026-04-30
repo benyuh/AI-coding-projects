@@ -1,0 +1,11 @@
+{
+  "article_type": "research",
+  "user_type": "general",
+  "platform": "xiaohongshu",
+  "narrative_structure": "lin_style_explainer",
+  "output_format_hint": "image",
+  "risk_level": "borderline",
+  "risk_reason": "涉及加密货币科普，含中国监管政策及非法金融活动定性内容",
+  "skip_reason": "",
+  "style_hint": "clean_business"
+}

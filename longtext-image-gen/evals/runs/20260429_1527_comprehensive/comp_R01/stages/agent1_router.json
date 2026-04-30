@@ -1,0 +1,11 @@
+{
+  "article_type": "policy",
+  "user_type": "general",
+  "platform": "wechat_moments",
+  "narrative_structure": "pyramid_argument",
+  "output_format_hint": "image",
+  "risk_level": "safe",
+  "risk_reason": "",
+  "skip_reason": "",
+  "style_hint": "clean_business"
+}

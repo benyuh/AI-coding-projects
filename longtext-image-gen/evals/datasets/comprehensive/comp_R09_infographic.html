@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: #F0FDF4;
+    color: #1E3A2F;
+  }
+  .header {
+    background: linear-gradient(135deg, #059669, #0D9488);
+    padding: 80px 60px 64px;
+    color: white;
+  }
+  .header .icon { font-size: 52px; margin-bottom: 20px; }
+  .header h1 { font-size: 52px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .header .subtitle { font-size: 26px; font-weight: 400; opacity: 0.9; line-height: 1.5; }
+  .header .badge {
+    display: inline-block; margin-top: 20px;
+    background: rgba(255,255,255,0.2); border-radius: 24px;
+    padding: 8px 20px; font-size: 20px; font-weight: 600;
+  }
+
+  /* 四大核心观 */
+  .section { padding: 48px 60px 8px; }
+  .section-title {
+    font-size: 20px; font-weight: 700; color: #059669;
+    letter-spacing: 3px; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: #D1FAE5; }
+
+  .four-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 20px; padding: 0 60px 40px;
+  }
+  .view-card {
+    background: white; border-radius: 16px; padding: 32px;
+    border-top: 4px solid #059669;
+  }
+  .view-card:nth-child(2) { border-top-color: #0D9488; }
+  .view-card:nth-child(3) { border-top-color: #7C3AED; }
+  .view-card:nth-child(4) { border-top-color: #F59E0B; }
+  .view-icon { font-size: 36px; margin-bottom: 12px; }
+  .view-name { font-size: 26px; font-weight: 800; color: #022C22; margin-bottom: 4px; }
+  .view-sub { font-size: 20px; color: #059669; font-weight: 600; margin-bottom: 10px; }
+  .view-desc { font-size: 22px; line-height: 1.6; color: #1E3A2F; }
+
+  /* 四季养生 */
+  .season-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 16px; padding: 0 60px 40px;
+  }
+  .season-card {
+    background: white; border-radius: 14px; padding: 28px 20px;
+    text-align: center;
+  }
+  .s-icon { font-size: 40px; margin-bottom: 12px; }
+  .s-name { font-size: 24px; font-weight: 800; color: #022C22; margin-bottom: 4px; }
+  .s-organ { font-size: 20px; color: #059669; font-weight: 600; margin-bottom: 10px; }
+  .s-tip { font-size: 20px; line-height: 1.5; color: #1E3A2F; }
+
+  /* 十大要诀 */
+  .tips-list { padding: 0 60px 40px; }
+  .tip-item {
+    background: white; border-radius: 14px; padding: 22px 28px;
+    margin-bottom: 16px;
+    display: flex; align-items: flex-start; gap: 16px;
+  }
+  .tip-num {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: #059669; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 20px; font-weight: 700;
+  }
+  .tip-num.teal { background: #0D9488; }
+  .tip-num.purple { background: #7C3AED; }
+  .tip-body {}
+  .tip-title { font-size: 24px; font-weight: 700; color: #022C22; margin-bottom: 4px; }
+  .tip-desc { font-size: 21px; line-height: 1.6; color: #1E3A2F; }
+
+  /* 养生边界 */
+  .boundary {
+    margin: 0 60px 40px;
+    background: white; border-radius: 16px; padding: 32px 36px;
+  }
+  .boundary-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+  }
+  .b-col {}
+  .b-title { font-size: 22px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .b-title.green { color: #059669; }
+  .b-title.red { color: #DC2626; }
+  .b-item {
+    font-size: 21px; line-height: 1.6; color: #1E3A2F;
+    padding: 8px 0; border-bottom: 1px solid #D1FAE5;
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .b-item:last-child { border-bottom: none; }
+
+  /* 结论 */
+  .conclusion {
+    margin: 0 60px 48px;
+    padding: 44px 48px;
+    background: linear-gradient(135deg, #059669, #0D9488);
+    border-radius: 16px; color: white;
+    text-align: center;
+  }
+  .conclusion .lbl { font-size: 20px; opacity: 0.85; margin-bottom: 16px; letter-spacing: 4px; }
+  .conclusion .quote {
+    font-size: 26px; font-weight: 700; line-height: 1.7;
+    padding: 0 20px;
+  }
+  .conclusion .quote em { font-style: normal; opacity: 0.85; font-size: 22px; font-weight: 400; display: block; margin-top: 12px; }
+
+  .footer {
+    background: #022C22; padding: 40px 60px;
+    color: rgba(255,255,255,0.55); font-size: 20px; text-align: center; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="icon">🌿</div>
+  <h1>中医养生：千年智慧守护现代健康</h1>
+  <div class="subtitle">以中医理论为指导，顺应自然、调和阴阳，实现未病先防</div>
+  <div class="badge">🏆 2008年列入国家级非物质文化遗产</div>
+</div>
+
+<div class="section">
+  <div class="section-title">🌀 四大核心养生观念</div>
+</div>
+<div class="four-grid">
+  <div class="view-card">
+    <div class="view-icon">🛡️</div>
+    <div class="view-name">预防观</div>
+    <div class="view-sub">"未病先防"</div>
+    <div class="view-desc">不治已病治未病，与现代医学"预防医学"理念高度契合，防患于未然是根本目标</div>
+  </div>
+  <div class="view-card">
+    <div class="view-icon">🌍</div>
+    <div class="view-name">整体观</div>
+    <div class="view-sub">"天人合一"</div>
+    <div class="view-desc">人与自然环境高度关联，四季变化、地域环境均影响人体状态，顺势而为方能养生</div>
+  </div>
+  <div class="view-card">
+    <div class="view-icon">☯️</div>
+    <div class="view-name">平衡观</div>
+    <div class="view-sub">"调和阴阳"</div>
+    <div class="view-desc">阴阳平衡是健康根本，一旦失衡则百病丛生，养生的核心即动态维持这种平衡</div>
+  </div>
+  <div class="view-card">
+    <div class="view-icon">⚖️</div>
+    <div class="view-name">辩证观</div>
+    <div class="view-sub">"动静有常"</div>
+    <div class="view-desc">动与静、开与合均需把握适度，过犹不及皆伤身，在动静平衡中维持生命活力</div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0;">
+  <div class="section-title">🌸 四季养生重点</div>
+</div>
+<div class="season-row">
+  <div class="season-card">
+    <div class="s-icon">🌱</div>
+    <div class="s-name">春季</div>
+    <div class="s-organ">养肝护气</div>
+    <div class="s-tip">多食绿色蔬菜，保持心情平和，适度舒展运动，不宜过早脱衣</div>
+  </div>
+  <div class="season-card">
+    <div class="s-icon">☀️</div>
+    <div class="s-name">夏季</div>
+    <div class="s-organ">养心清热</div>
+    <div class="s-tip">饮食清淡少油腻，防暑避直晒，保持情绪平稳，适当午休</div>
+  </div>
+  <div class="season-card">
+    <div class="s-icon">🍂</div>
+    <div class="s-name">秋季</div>
+    <div class="s-organ">养肺润燥</div>
+    <div class="s-tip">多食梨、百合、银耳等润肺之物，保持室内湿度，避免悲忧</div>
+  </div>
+  <div class="season-card">
+    <div class="s-icon">❄️</div>
+    <div class="s-name">冬季</div>
+    <div class="s-organ">养肾固本</div>
+    <div class="s-tip">早睡晚起顺应冬藏，温补食物（核桃、栗子），加强保暖</div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0;">
+  <div class="section-title">✅ 十大日常养生要诀</div>
+</div>
+<div class="tips-list">
+  <div class="tip-item">
+    <div class="tip-num">1</div>
+    <div class="tip-body"><div class="tip-title">晨起缓慢不急起</div><div class="tip-desc">在床上先做伸展，让心血管系统平稳过渡，减少心脑血管意外风险</div></div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num">2</div>
+    <div class="tip-body"><div class="tip-title">日梳头发二百下</div><div class="tip-desc">以梳子充分梳理头部，刺激头皮穴位，改善头部血液循环</div></div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num teal">3</div>
+    <div class="tip-body"><div class="tip-title">常泡热水搓涌泉</div><div class="tip-desc">涌泉穴位于足底1/3处，温水泡脚后按摩，有温经散寒补肾功效</div></div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num teal">4</div>
+    <div class="tip-body"><div class="tip-title">叩齿百次咽津液</div><div class="tip-desc">中医认为唾液为"津液之精"，叩齿促进腺体分泌，主动咽下益于养肾健脾</div></div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num purple">5</div>
+    <div class="tip-body"><div class="tip-title">腹部摩揉助消化</div><div class="tip-desc">以肚脐为中心顺时针轻摩腹部，促进胃肠蠕动，缓解便秘</div></div>
+  </div>
+  <div class="tip-item">
+    <div class="tip-num purple">6</div>
+    <div class="tip-body"><div class="tip-title">步行是最好的运动</div><div class="tip-desc">每日步行约一小时（6000-8000步），微微出汗，适合绝大多数人的基础运动</div></div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0;">
+  <div class="section-title">📋 中医养生的边界</div>
+</div>
+<div class="boundary">
+  <div class="boundary-grid">
+    <div class="b-col">
+      <div class="b-title green">✅ 养生擅长的领域</div>
+      <div class="b-item"><span>🌿</span>慢性病辅助管理与生活方式干预</div>
+      <div class="b-item"><span>😴</span>亚健康调理（睡眠差、疲乏、消化不适）</div>
+      <div class="b-item"><span>👴</span>老年人体质维护与活力保持</div>
+      <div class="b-item"><span>🍃</span>季节性调养，预防季节性疾病</div>
+    </div>
+    <div class="b-col">
+      <div class="b-title red">❌ 超出养生边界的情况</div>
+      <div class="b-item"><span>🚑</span>急性传染病——须立即就医</div>
+      <div class="b-item"><span>💊</span>器质性病变须现代医学诊断和治疗</div>
+      <div class="b-item"><span>⚕️</span>高血压、糖尿病等须在医生指导下规范用药</div>
+      <div class="b-item"><span>⚠️</span>注意：养生服务提供机构不得从事诊疗活动</div>
+    </div>
+  </div>
+</div>
+
+<div class="conclusion">
+  <div class="lbl">✦ 核心结论 ✦</div>
+  <div class="quote">
+    中医养生是一套以整体观维护生命健康的传统智慧<br>
+    值得认真学习，也需要理性甄别
+    <em>接受有循证支持的部分（运动、饮食、情志管理）<br>对未经验证的声称保持开放而非盲目接受</em>
+  </div>
+</div>
+
+<div class="footer">
+  来源：百度百科"中医养生"词条整理 ｜ 信息图由 AI 生成<br>
+  <span style="opacity:0.4;font-size:18px;">内容仅供参考，健康问题请咨询专业医生</span>
+</div>
+
+</body>
+</html>

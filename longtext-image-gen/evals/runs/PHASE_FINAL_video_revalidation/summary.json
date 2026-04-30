@@ -1,0 +1,26 @@
+[
+  {
+    "case_id": "comp_R06",
+    "elapsed_s": 91.3,
+    "token_in": 9220,
+    "final_path": "evals/runs/PHASE_FINAL_video_revalidation/comp_R06/artifacts/output.png",
+    "artifacts": [
+      "output.png (471432B)"
+    ],
+    "has_mp4": false,
+    "has_srt": false,
+    "degradation_level": "L2"
+  },
+  {
+    "case_id": "comp_R10",
+    "elapsed_s": 75.1,
+    "token_in": 9761,
+    "final_path": "evals/runs/PHASE_FINAL_video_revalidation/comp_R10/artifacts/output.png",
+    "artifacts": [
+      "output.png (509405B)"
+    ],
+    "has_mp4": false,
+    "has_srt": false,
+    "degradation_level": "L2"
+  }
+]

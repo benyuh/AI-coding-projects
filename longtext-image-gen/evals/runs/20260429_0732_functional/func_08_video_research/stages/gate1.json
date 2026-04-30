@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 85.0,
+      "threshold": 85.0,
+      "passed": true,
+      "reason": "评估失败，降级为默认分: Error code: 403 - {'error': {'message': 'Claude模型配额已用尽，但您可以继续使用其他模型。请切换其他模型后重试。 (request id: 2026042907325291921303351489779)', 'type': 'claude_quota_exceeded', 'param': '', 'code': 'insufficient_quota'}}",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 90.0,
+      "threshold": 90.0,
+      "passed": true,
+      "reason": "评估失败，降级为默认分: Error code: 403 - {'error': {'message': 'Claude模型配额已用尽，但您可以继续使用其他模型。请切换其他模型后重试。 (request id: 2026042907325291428915513013811)', 'type': 'claude_quota_exceeded', 'param': '', 'code': 'insufficient_quota'}}",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 80.0,
+      "threshold": 80.0,
+      "passed": true,
+      "reason": "评估失败，降级为默认分: Error code: 403 - {'error': {'message': 'Claude模型配额已用尽，但您可以继续使用其他模型。请切换其他模型后重试。 (request id: 2026042907325291884563867027395)', 'type': 'claude_quota_exceeded', 'param': '', 'code': 'insufficient_quota'}}",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 75.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "评估失败，降级为默认分: Error code: 403 - {'error': {'message': 'Claude模型配额已用尽，但您可以继续使用其他模型。请切换其他模型后重试。 (request id: 2026042907325291449812603104963)', 'type': 'claude_quota_exceeded', 'param': '', 'code': 'insufficient_quota'}}",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 82.5,
+  "failed_dims": [],
+  "voting_enabled": false
+}

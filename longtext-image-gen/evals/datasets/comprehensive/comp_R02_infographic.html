@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px;
+    font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    background: #F8FAFC;
+    color: #334155;
+  }
+  .header {
+    background: linear-gradient(135deg, #2563EB, #7C3AED);
+    padding: 80px 60px 64px;
+    color: white;
+  }
+  .header .icon { font-size: 52px; margin-bottom: 20px; }
+  .header h1 { font-size: 52px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+  .header .subtitle { font-size: 26px; font-weight: 400; opacity: 0.9; line-height: 1.5; }
+
+  /* 核心数据 */
+  .data-row {
+    display: flex; background: white; border-bottom: 1px solid #E2E8F0;
+  }
+  .data-item {
+    flex: 1; text-align: center; padding: 44px 16px;
+    border-right: 1px solid #E2E8F0;
+  }
+  .data-item:last-child { border-right: none; }
+  .data-item .num { font-size: 58px; font-weight: 800; color: #2563EB; line-height: 1; }
+  .data-item .unit { font-size: 24px; font-weight: 800; color: #2563EB; }
+  .data-item .lbl { font-size: 19px; color: #94A3B8; margin-top: 8px; line-height: 1.4; }
+
+  /* 发展里程碑 */
+  .section { padding: 48px 60px 8px; }
+  .section-title {
+    font-size: 20px; font-weight: 700; color: #2563EB;
+    letter-spacing: 3px; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: #E2E8F0; }
+
+  .timeline { padding: 0 60px 8px; }
+  .tl-item {
+    display: flex; gap: 20px; margin-bottom: 28px; align-items: flex-start;
+    position: relative;
+  }
+  .tl-item:not(:last-child)::after {
+    content: ''; position: absolute;
+    left: 19px; top: 44px; bottom: -28px;
+    width: 2px; background: linear-gradient(to bottom, #2563EB, #DBEAFE);
+  }
+  .tl-dot {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: #2563EB; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 18px; font-weight: 700;
+  }
+  .tl-dot.highlight { background: #7C3AED; }
+  .tl-body {
+    flex: 1; background: white; border-radius: 14px; padding: 22px 28px;
+  }
+  .tl-year { font-size: 20px; color: #2563EB; font-weight: 700; margin-bottom: 6px; }
+  .tl-year.purple { color: #7C3AED; }
+  .tl-title { font-size: 26px; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
+  .tl-desc { font-size: 22px; line-height: 1.6; color: #334155; }
+
+  /* 挑战区 */
+  .challenge-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px; padding: 0 60px 48px;
+  }
+  .ch-card {
+    background: white; border-radius: 14px; padding: 28px 24px;
+    border-top: 4px solid #2563EB;
+    text-align: center;
+  }
+  .ch-card:nth-child(2) { border-top-color: #F59E0B; }
+  .ch-card:nth-child(3) { border-top-color: #DC2626; }
+  .ch-icon { font-size: 32px; margin-bottom: 12px; }
+  .ch-title { font-size: 24px; font-weight: 700; color: #0F172A; margin-bottom: 8px; }
+  .ch-desc { font-size: 20px; line-height: 1.5; color: #64748B; }
+
+  /* 结论 */
+  .conclusion {
+    margin: 0 60px 48px;
+    padding: 40px 48px;
+    background: linear-gradient(135deg, #2563EB, #7C3AED);
+    border-radius: 16px; color: white;
+  }
+  .conclusion .lbl {
+    font-size: 20px; opacity: 0.8; margin-bottom: 16px;
+    letter-spacing: 4px; text-align: center;
+  }
+  .conclusion .pts { display: flex; flex-direction: column; gap: 14px; }
+  .conclusion .pt { display: flex; align-items: flex-start; gap: 12px; }
+  .conclusion .dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.7); flex-shrink: 0; margin-top: 10px; }
+  .conclusion .txt { font-size: 23px; line-height: 1.6; }
+
+  .footer {
+    background: #0F172A; padding: 40px 60px;
+    color: rgba(255,255,255,0.55); font-size: 20px; text-align: center; line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="icon">☀️</div>
+  <h1>中国光伏：从追赶者到全球领导者</h1>
+  <div class="subtitle">20年完成历史性跨越，中国光伏如何重塑全球清洁能源格局</div>
+</div>
+
+<div class="data-row">
+  <div class="data-item">
+    <div class="num">12<span class="unit">亿kW</span></div>
+    <div class="lbl">2025年全国光伏<br>累计装机规模</div>
+  </div>
+  <div class="data-item">
+    <div class="num">90<span class="unit">%+</span></div>
+    <div class="lbl">过去20年<br>光伏度电成本下降</div>
+  </div>
+  <div class="data-item">
+    <div class="num">0.2<span class="unit">元</span></div>
+    <div class="lbl">西部地区度电成本<br>（已实现平价上网）</div>
+  </div>
+  <div class="data-item">
+    <div class="num">52<span class="unit">%</span></div>
+    <div class="lbl">2024年上半年<br>分布式装机占比</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">📅 关键发展里程碑</div>
+</div>
+
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-dot">①</div>
+    <div class="tl-body">
+      <div class="tl-year">1954 · 起点</div>
+      <div class="tl-title">人类第一块实用光伏电池诞生</div>
+      <div class="tl-desc">美国贝尔实验室制成转换效率约6%的单晶硅电池，此前1839年法国贝克雷尔已发现光电效应。</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot">②</div>
+    <div class="tl-body">
+      <div class="tl-year">2011 · 崛起</div>
+      <div class="tl-title">中国产量占全球65%，装机年增5倍</div>
+      <div class="tl-desc">中国电池产量达20GW，全球累计超67GW，同比增长52%。中国供应链优势开始主导全球市场。</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot highlight">③</div>
+    <div class="tl-body">
+      <div class="tl-year purple">2015 · 登顶</div>
+      <div class="tl-title">超越德国成为全球装机第一</div>
+      <div class="tl-desc">累计装机约4300万千瓦超越德国，此后连续9年稳居世界首位，2021年累计突破3亿千瓦。</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot highlight">④</div>
+    <div class="tl-body">
+      <div class="tl-year purple">2023 · 历史性节点</div>
+      <div class="tl-title">光伏首次超过煤电成为第二大电源</div>
+      <div class="tl-desc">6月底装机达4.7亿千瓦，同比增39.8%——可再生能源首次在装机规模上超越传统主导的煤电。</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-dot">⑤</div>
+    <div class="tl-body">
+      <div class="tl-year">2025 · 当下</div>
+      <div class="tl-title">风电+光伏总装机首次超过火电</div>
+      <div class="tl-desc">Q1光伏总装机9.46亿千瓦超越火电14.51亿千瓦，能源结构转型迈过关键节点。全年新增3.17亿千瓦。</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:32px;">
+  <div class="section-title">⚡ 技术演进路线</div>
+</div>
+<div style="padding: 0 60px 40px;">
+  <div style="background:white;border-radius:16px;padding:32px 36px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+      <div style="background:#F8FAFC;border-radius:12px;padding:24px;border-left:4px solid #2563EB;">
+        <div style="font-size:22px;font-weight:700;color:#0F172A;margin-bottom:8px;">单晶PERC（主流）</div>
+        <div style="font-size:20px;color:#64748B;line-height:1.5;">量产效率23%，大规模生产工艺成熟，成本最低</div>
+      </div>
+      <div style="background:#F8FAFC;border-radius:12px;padding:24px;border-left:4px solid #7C3AED;">
+        <div style="font-size:22px;font-weight:700;color:#0F172A;margin-bottom:8px;">N型TOPCon/HJT</div>
+        <div style="font-size:20px;color:#64748B;line-height:1.5;">量产效率突破24%，快速扩产中，预计2025-26年成主流</div>
+      </div>
+      <div style="background:#F8FAFC;border-radius:12px;padding:24px;border-left:4px solid #F59E0B;">
+        <div style="font-size:22px;font-weight:700;color:#0F172A;margin-bottom:8px;">钙钛矿叠层（未来）</div>
+        <div style="font-size:20px;color:#64748B;line-height:1.5;">实验室效率超33%，稳定性和寿命问题仍在攻克中</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" style="padding-top:0;">
+  <div class="section-title">⚠️ 行业三大挑战</div>
+</div>
+<div class="challenge-grid">
+  <div class="ch-card">
+    <div class="ch-icon">🔋</div>
+    <div class="ch-title">消纳瓶颈</div>
+    <div class="ch-desc">西部部分地区弃光率超10%，须配套建设抽水蓄能和储能</div>
+  </div>
+  <div class="ch-card">
+    <div class="ch-icon">📉</div>
+    <div class="ch-title">产能过剩</div>
+    <div class="ch-desc">多晶硅价格从300元/公斤暴跌至50元以下，大量中小企业亏损退出</div>
+  </div>
+  <div class="ch-card">
+    <div class="ch-icon">🌐</div>
+    <div class="ch-title">贸易壁垒</div>
+    <div class="ch-desc">欧美对华组件加征关税，企业正在东南亚和中东建海外工厂以应对</div>
+  </div>
+</div>
+
+<div class="conclusion">
+  <div class="lbl">✦ 核心结论 ✦</div>
+  <div class="pts">
+    <div class="pt"><div class="dot"></div><div class="txt"><strong>中国已形成全球最完整的光伏产业链</strong>，掌握从硅料到组件再到储能的核心技术，2030年装机预计突破20亿千瓦。</div></div>
+    <div class="pt"><div class="dot"></div><div class="txt"><strong>技术进步、规模经济是成本下降的核心</strong>，西部度电成本已达0.2元，全面平价时代开启。</div></div>
+    <div class="pt"><div class="dot"></div><div class="txt"><strong>消纳、储能和电网升级</strong>是影响下一阶段发展的三大关键变量。</div></div>
+  </div>
+</div>
+
+<div class="footer">
+  来源：百度百科"光伏发电"词条整理分析 ｜ 信息图由 AI 生成<br>
+  <span style="opacity:0.4;font-size:18px;">数据截至2025年，部分为预测值，仅供参考</span>
+</div>
+
+</body>
+</html>

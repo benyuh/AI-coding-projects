@@ -1,0 +1,9 @@
+case_id,terminal_status,format,platform,style_id,narrative_structure,card_count,gate1_pass,gate2_pass,duration_s,degrade_level
+func_01_policy_general,passed,image,xiaohongshu,clean_business,pyramid_argument,6,True,True,2.86,
+func_02_policy_pro,passed,image,xiaohongshu,clean_business,pyramid_argument,6,True,True,1.68,
+func_03_research_pro,passed,image,xiaohongshu,clean_business,pyramid_argument,6,True,True,1.62,
+func_04_news_event_general,passed,image,xiaohongshu,clean_business,pyramid_argument,6,True,True,1.66,
+func_05_personal_opinion_general,passed,image,xiaohongshu,clean_business,pyramid_argument,6,True,True,1.59,
+func_06_video_timeline,degraded,video,xiaohongshu,clean_business,pyramid_argument,10,True,True,1.87,L1
+func_07_multi_source,passed,image,xiaohongshu,clean_business,pyramid_argument,10,True,True,1.73,
+func_08_video_research,degraded,video,xiaohongshu,clean_business,pyramid_argument,10,True,True,2.06,L1

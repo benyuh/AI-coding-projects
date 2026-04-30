@@ -1,0 +1,11 @@
+'/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/runs/20260429_0731_functional/func_01_policy_general/artifacts/output.png' and PosixPath('/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/runs/20260429_0731_functional/func_01_policy_general/artifacts/output.png') are the same file
+Traceback (most recent call last):
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/tests/eval/runner.py", line 136, in run_category
+    self._archive_case_result(case_output_dir, final_state, final_output_path)
+  File "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/tests/eval/runner.py", line 264, in _archive_case_result
+    shutil.copy(output_path, case_dir / "artifacts" / dest_name)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shutil.py", line 431, in copy
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/opt/homebrew/Cellar/python@3.11/3.11.15/Frameworks/Python.framework/Versions/3.11/lib/python3.11/shutil.py", line 236, in copyfile
+    raise SameFileError("{!r} and {!r} are the same file".format(src, dst))
+shutil.SameFileError: '/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/runs/20260429_0731_functional/func_01_policy_general/artifacts/output.png' and PosixPath('/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/runs/20260429_0731_functional/func_01_policy_general/artifacts/output.png') are the same file

@@ -1,0 +1,12 @@
+case_id: comp_029
+category: comprehensive
+title: Sustainable Architecture (Vol.29)
+source_url: null
+text_length: 500
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: general

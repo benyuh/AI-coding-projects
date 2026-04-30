@@ -1,0 +1,23 @@
+case_id: func_01_policy_general
+category: functional
+sub_category: policy
+title: 某省碳达峰碳中和实施方案政策通知
+text_length: ~1800
+language: zh
+source_count: 1
+expected_behavior:
+  agent1_decision:
+    risk_level: safe
+    article_type: policy
+    skip_pipeline: false
+  expected_terminal: passed
+  expected_format: image
+  notes: 政策类正常路径，标题党两阶段不误杀，文案密度适中
+preferences:
+  target_platform: xiaohongshu
+  output_format: auto
+  style_hint: auto
+  watermark: true
+user_profile:
+  user_type: general
+tags: [policy, carbon, environment, general]

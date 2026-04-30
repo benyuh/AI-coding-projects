@@ -1,0 +1,11 @@
+{
+  "article_type": "tutorial",
+  "user_type": "general",
+  "platform": "wechat_moments",
+  "narrative_structure": "lin_style_explainer",
+  "output_format_hint": "image",
+  "risk_level": "borderline",
+  "risk_reason": "涉及虚拟货币科普，含中国监管政策背景，需注意合规边界",
+  "skip_reason": "",
+  "style_hint": "clean_business"
+}

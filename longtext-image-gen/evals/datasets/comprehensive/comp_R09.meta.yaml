@@ -1,0 +1,12 @@
+case_id: comp_R09
+category: comprehensive
+title: 中医养生完全指南
+source_url: null
+text_length: 4569
+language: zh
+preferences:
+  target_platform: xiaohongshu
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: general

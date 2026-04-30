@@ -1,0 +1,23 @@
+{
+  "terminal_status": "l2_degraded",
+  "degradation_level": "L2",
+  "elapsed_s": 229.95,
+  "tokens_in": 16147,
+  "tokens_out": 10554,
+  "output_path": "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/runs/demo_safe_20260429_235539_comp_R03/artifacts/output.png",
+  "platform": "wechat_moments",
+  "style_id": "data_journalism",
+  "card_count": 5,
+  "gate1_passed": false,
+  "gate1_failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality",
+    "audience_fit"
+  ],
+  "gate1_faithfulness": 72.0,
+  "gate1_completeness": 62.0,
+  "gate2_passed": null,
+  "workerb_rejected_cards": [],
+  "demo_safe_mode": true
+}

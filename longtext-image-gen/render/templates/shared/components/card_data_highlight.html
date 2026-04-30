@@ -1,0 +1,25 @@
+{#
+render/templates/shared/components/card_data_highlight.html
+大数字强调卡组件
+
+参数：
+  card    — 卡片对象（card.data_label, card.title, card.body, card.data_desc）
+#}
+{% macro card_data_highlight(card) %}
+<div class="card-data">
+  <div class="data-number-wrap">
+    {% if card.data_label|length > 8 %}
+    <div class="data-number very-long-number">{{ card.data_label }}</div>
+    {% elif card.data_label|length > 5 %}
+    <div class="data-number long-number">{{ card.data_label }}</div>
+    {% else %}
+    <div class="data-number">{{ card.data_label }}</div>
+    {% endif %}
+  </div>
+  <div class="data-text">
+    <div class="data-title">{{ card.title }}</div>
+    {% if card.data_desc %}<div class="data-desc">{{ card.data_desc }}</div>{% endif %}
+    {% if card.body %}<div class="data-desc" style="margin-top:8px;">{{ card.body }}</div>{% endif %}
+  </div>
+</div>
+{% endmacro %}

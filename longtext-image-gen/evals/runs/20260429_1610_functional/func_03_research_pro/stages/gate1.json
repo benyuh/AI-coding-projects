@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 72.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "六大主题中算力供给有覆盖，国际竞争/出海挑战仅DeepSeek开源量侧面涉及，缺乏专项卡片；基础模型梯队仅覆盖一梯队对比，二梯队格局缺失；风险提示无对应卡片，整体结构性遗漏影响完整性。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 88.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片0-5内容与原文基本吻合。卡片1未提及5年CAGR 58%，卡片2截断但核心数据准确，卡片6、7对应信息未被评估卡片覆盖。已展示卡片中无明显事实错误或编造，存在少量信息截断但无失真。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 72.0,
+      "threshold": 80.0,
+      "passed": false,
+      "reason": "结构基本完整，cover/section/data/summary层次清晰，但data卡片占比过高(6/10)且多张标题被截断不完整，两个section标题定位模糊，逻辑连贯性稍弱，整体可用但需优化。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 88.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "文案保留了MMLU、CAGR、HumanEval等专业术语及精确数据，契合专业受众需求。朋友圈场景下文案略显冗长，部分句子被截断影响完整性，但整体专业深度与平台调性基本匹配。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 80.0,
+  "failed_dims": [
+    "completeness",
+    "faithfulness",
+    "card_quality"
+  ],
+  "voting_enabled": false
+}

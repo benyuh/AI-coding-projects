@@ -1,0 +1,12 @@
+case_id: comp_037
+category: comprehensive
+title: Ancient Mayan Civilization (Vol.37)
+source_url: null
+text_length: 500
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: general

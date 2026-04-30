@@ -1,0 +1,101 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 72.0,
+      "threshold": 65.0,
+      "passed": true,
+      "reason": "蓝图覆盖了MSIF模型、四维信源、OSINT/AI工具等核心内容，但缺少深度伪造伦理挑战、2026年工具生态演进、交叉验证方法的专项卡片，以及两个验证案例的具体呈现，影响方法论完整性与未来展望部分。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 72.0,
+      "threshold": 75.0,
+      "passed": false,
+      "reason": "卡片1、2、3、4、5、6涉及军事C3I起源、三层模型细节、OSINT时间范围、具体卫星工具及AI模型命名等内容，原文摘要片段均未提供对应依据，属于超出原文范围的编造或推断。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "1",
+          "card_field": "body",
+          "original_text": "（原文摘要未提及MSIF军事C3I起源）",
+          "hallucinated_text": "多源信息融合（MSIF）最早起源于军事领域的C3I系统，通过多传感器冗余数据实现战场态势感知，后被深度报道领域转化为三层",
+          "error_summary": "军事C3I起源内容原文无依据"
+        },
+        {
+          "card_id": "2",
+          "card_field": "body",
+          "original_text": "（原文未描述三层认知架构具体内容）",
+          "hallucinated_text": "数据层直接叠加异构原始信息，特征层提取跨域特",
+          "error_summary": "三层认知架构细节原文无依据"
+        },
+        {
+          "card_id": "3",
+          "card_field": "body",
+          "original_text": "（原文仅提及OSINT，未说明时间范围及盲点效应等细节）",
+          "hallucinated_text": "2024-2025年间，OSINT已从边缘辅助手段变为深度报道的标配。其核心在于多源整合消除\"盲点效应\"与\"偏见误差\"",
+          "error_summary": "OSINT时间范围与盲点效应原文无依据"
+        },
+        {
+          "card_id": "4",
+          "card_field": "body",
+          "original_text": "（原文未提及Sentinel-2、Maxar等具体卫星工具）",
+          "hallucinated_text": "记者借助Sentinel-2、Maxar等卫星影像",
+          "error_summary": "具体卫星工具名称原文无依据"
+        },
+        {
+          "card_id": "5",
+          "card_field": "body",
+          "original_text": "（原文未提及DeepSeek-V4、Nvidia Nemotron、Claude 3.5 Sonnet等具体模型）",
+          "hallucinated_text": "DeepSeek-V4、Nvidia Nemotron、Claude 3.5 Sonnet等全模态模型标志\"智能体报道时",
+          "error_summary": "具体AI模型名称原文无依据"
+        },
+        {
+          "card_id": "6",
+          "card_field": "body",
+          "original_text": "（原文未提及DeepSeek-V4、Nvidia Nemo等具体模型）",
+          "hallucinated_text": "DeepSeek-V4、Nvidia Nemo",
+          "error_summary": "具体AI模型名称原文无依据"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 78.0,
+      "threshold": 70.0,
+      "passed": true,
+      "reason": "10张卡片结构清晰，覆盖/正文/数据/总结类型齐全，逻辑递进合理。但section卡片占比过高（7/10），data卡片仅1张，视觉层次略显单调；部分标题含专业缩写（MSIF/GEOINT/OSINT），普通读者理解门槛较高。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 62.0,
+      "threshold": 68.0,
+      "passed": false,
+      "reason": "术语密度高（MSIF、OSINT、C3I、MSI）符合专业受众需求，但小红书平台调性偏轻松视觉化，纯术语堆叠缺乏钩子感和互动性，文案截断明显影响完整性。专业内容与平台风格存在明显张力。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 71.0,
+  "failed_dims": [
+    "faithfulness",
+    "audience_fit"
+  ],
+  "voting_enabled": false
+}

@@ -1,0 +1,12 @@
+case_id: comp_045
+category: comprehensive
+title: Impact of Social Media (Vol.45)
+source_url: null
+text_length: 500
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: video
+  style_hint: auto
+user_profile:
+  user_type: general

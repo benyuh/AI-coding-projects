@@ -1,0 +1,43 @@
+{
+  "passed": false,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 72.0,
+      "threshold": 85.0,
+      "passed": false,
+      "reason": "蓝图覆盖了韩国数据、全球趋势、中日新等亚洲国家及政策反思，但严重缺失'不愿生育的五大原因'这一核心分析层，欧洲整体数据未独立呈现，美国生育率数据完全缺席，影响原文逻辑链完整性。",
+      "retry_target": "agent2"
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 72.0,
+      "threshold": 90.0,
+      "passed": false,
+      "reason": "卡片5存在明显数字错误：原文为758631人，卡片写成'75万863'，数字截断失真。卡片1未提及2050年预测值2.1被截断。其余卡片基本忠实原文，无明显编造。",
+      "retry_target": "worker_a"
+    },
+    {
+      "dimension": "card_quality",
+      "score": 82.0,
+      "threshold": 80.0,
+      "passed": true,
+      "reason": "卡片数量合适，类型分布较均衡，标题无标题党且吸引力强。但section与data职能边界略模糊，部分section卡片更像data内容；summary结尾北欧视角转换略显突兀，与前文韩日中焦点稍脱节。",
+      "retry_target": "agent3"
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 78.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "数据丰富、逻辑清晰，大众可读性较好；但\"总和生育率\"\"人口正常更替\"等术语未作解释，略显专业。朋友圈风格偏严肃，缺乏情感共鸣或互动感，整体基本适配但亲和力稍不足。",
+      "retry_target": "worker_a"
+    }
+  ],
+  "overall_score": 76.0,
+  "failed_dims": [
+    "completeness",
+    "faithfulness"
+  ],
+  "voting_enabled": false
+}

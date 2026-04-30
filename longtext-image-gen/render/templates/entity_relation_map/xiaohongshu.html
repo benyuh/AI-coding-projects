@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>信息图</title>
+  {% include "shared/base_styles.html" %}
+  <style>
+    /* 关系图谱专属样式：section 卡左侧彩色实体标签 */
+    .card-section.entity-card {
+      position: relative;
+      padding-left: 56px;
+    }
+    .entity-tag-badge {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      border-radius: var(--border-radius, 20px) 0 0 var(--border-radius, 20px);
+    }
+    .entity-label {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.04em;
+    }
+    /* 循环颜色（通过 nth-child 近似，或用 loop 变量注入 inline style）*/
+    .entity-color-0 { background: #FF6B6B; color: #fff; }
+    .entity-color-1 { background: #667EEA; color: #fff; }
+    .entity-color-2 { background: #48BB78; color: #fff; }
+    .entity-color-3 { background: #ED8936; color: #fff; }
+    .entity-color-4 { background: #38B2AC; color: #fff; }
+    .entity-color-5 { background: #9F7AEA; color: #fff; }
+  </style>
+</head>
+<body>
+<div class="infographic">
+
+  {% for card in cards %}
+
+  {# ── COVER ── #}
+  {% if card.card_type == "cover" %}
+  <div class="card-cover">
+    <div class="cover-inner">
+      <div class="tag">🕸️ 关系图谱</div>
+      <div class="main-title">{{ card.title }}</div>
+      {% if card.body %}<div class="subtitle">{{ card.body }}</div>{% endif %}
+      <div class="cover-divider"></div>
+    </div>
+  </div>
+
+  {# ── DATA ── #}
+  {% elif card.card_type == "data" %}
+  <div class="card-data">
+    <div class="data-number-wrap">
+      {% if card.data_label|length > 8 %}
+      <div class="data-number very-long-number">{{ card.data_label }}</div>
+      {% elif card.data_label|length > 5 %}
+      <div class="data-number long-number">{{ card.data_label }}</div>
+      {% else %}
+      <div class="data-number">{{ card.data_label }}</div>
+      {% endif %}
+    </div>
+    <div class="data-text">
+      <div class="data-title">{{ card.title }}</div>
+      {% if card.data_desc %}<div class="data-desc">{{ card.data_desc }}</div>{% endif %}
+      {% if card.body %}<div class="data-desc" style="margin-top:8px;">{{ card.body }}</div>{% endif %}
+    </div>
+  </div>
+
+  {# ── TIMELINE ── #}
+  {% elif card.card_type == "timeline" %}
+  <div class="card-timeline">
+    {% if card.timeline_time %}
+    <div class="timeline-left">
+      <div class="timeline-badge">
+        <div class="timeline-time-text">{{ card.timeline_time }}</div>
+      </div>
+      <div class="timeline-axis"></div>
+    </div>
+    {% endif %}
+    <div class="timeline-content">
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    </div>
+  </div>
+
+  {# ── SUMMARY ── #}
+  {% elif card.card_type == "summary" %}
+  <div class="card-summary">
+    <div class="summary-inner">
+      <div class="summary-label">▌ 核心要点</div>
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+      {% if card.items %}
+      <ul class="items-list">
+        {% for item in card.items %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      <div class="summary-footer">✦ AI 摘要 · 仅供参考，请以原文为准</div>
+    </div>
+  </div>
+
+  {# ── SECTION（彩色实体标签）── #}
+  {% else %}
+  <div class="card-section entity-card">
+    <div class="entity-tag-badge" style="background: var(--color-primary, #FF6B6B);"></div>
+    <div class="entity-label entity-color-{{ (loop.index0) % 6 }}">
+      {% if card.entity_label %}{{ card.entity_label }}{% else %}实体 {{ loop.index }}{% endif %}
+    </div>
+    <div class="card-title">{{ card.title }}</div>
+    {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    {% if card.items %}
+    <ul class="items-list">
+      {% for item in card.items %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% endfor %}
+
+  <div class="footer">由 Ducc 智能生成 · Blueprint {{ blueprint_id | default('') }}</div>
+</div>
+</body>
+</html>

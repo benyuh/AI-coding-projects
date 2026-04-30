@@ -1,0 +1,7 @@
+{
+  "txt_path": "/Users/benyuhang/Desktop/longtext_project/longtext_v3.1 _fix/evals/datasets/functional/func_07_multi_source.txt",
+  "text_length": 3295,
+  "multi_source_count": 3,
+  "target_platform": "xiaohongshu",
+  "demo_safe_mode": true
+}

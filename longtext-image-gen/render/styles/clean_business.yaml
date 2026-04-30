@@ -1,0 +1,40 @@
+# render/styles/clean_business.yaml
+# 商业简洁风格（v3.1.2 完整骨架）
+
+style_id: clean_business
+
+# ── 颜色系统 ──────────────────────────────────────────────────────────────
+primary_color: "#FF6B6B"
+secondary_color: "#FF8E53"
+accent_color: "#FFB347"
+background_color: "#FFF8F0"
+text_color: "#1A1A1A"
+text_secondary_color: "#444444"
+text_muted_color: "#888888"
+
+# ── 排版 ──────────────────────────────────────────────────────────────────
+font_family: "PingFang SC, Noto Sans SC, Microsoft YaHei, sans-serif"
+font_size_base: 26
+font_size_title: 32
+font_size_cover: 56
+font_size_data: 88
+line_height: 1.7
+
+# ── 间距与圆角 ────────────────────────────────────────────────────────────
+border_radius: 20
+border_radius_cover: 28
+padding_card: "40px 48px"
+card_gap: 24
+
+# ── 阴影 ──────────────────────────────────────────────────────────────────
+card_shadow: "0 2px 16px rgba(0,0,0,0.06)"
+cover_shadow: "0 8px 40px rgba(255,107,107,0.25)"
+
+# ── 渐变 ──────────────────────────────────────────────────────────────────
+cover_gradient: "linear-gradient(135deg, #FF6B6B 0%, #FF8E53 50%, #FFB347 100%)"
+data_gradient: "linear-gradient(135deg, #1A1A2E 0%, #16213E 100%)"
+summary_gradient: "linear-gradient(135deg, #667EEA 0%, #764BA2 100%)"
+
+# ── 边框 ──────────────────────────────────────────────────────────────────
+section_border_left_color: "#FF6B6B"
+section_border_left_width: 8

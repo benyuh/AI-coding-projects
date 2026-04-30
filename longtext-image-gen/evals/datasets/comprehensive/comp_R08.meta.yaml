@@ -1,0 +1,12 @@
+case_id: comp_R08
+category: comprehensive
+title: 中国新能源汽车行业深度分析
+source_url: null
+text_length: 4404
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: professional

@@ -1,0 +1,12 @@
+case_id: comp_R02
+category: comprehensive
+title: 光伏行业发展报告
+source_url: null
+text_length: 4736
+language: zh
+preferences:
+  target_platform: wechat_official
+  output_format: image
+  style_hint: auto
+user_profile:
+  user_type: professional

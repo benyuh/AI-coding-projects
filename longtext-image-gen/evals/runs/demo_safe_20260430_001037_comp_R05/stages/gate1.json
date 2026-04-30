@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "dim_scores": [
+    {
+      "dimension": "completeness",
+      "score": 82.0,
+      "threshold": 72.0,
+      "passed": true,
+      "reason": "蓝图覆盖了生物介绍、营养成分、功效、食用方法、理性消费等核心板块，但传统中医观点、消费误区辨析及夸大宣传批评未有独立卡片呈现，略有遗漏，不影响整体理解。",
+      "retry_target": "agent2",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "faithfulness",
+      "score": 82.0,
+      "threshold": 75.0,
+      "passed": true,
+      "reason": "大多数卡片内容忠实原文，但卡片1对海参种类描述有所夸大/偏差，原文明确全球约900余种、中国约140种、食用约20余种，卡片1表述模糊且暗示食用种类'寥寥无几'有失准确；卡片6内容超出原文截取范围，无法核实但存在风险。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [
+        "1"
+      ],
+      "failed_facts": [
+        {
+          "card_id": "1",
+          "card_field": "body",
+          "original_text": "全球约有900余种，中国约有140种，其中具有食用价值的约20余种",
+          "hallucinated_text": "全球种类繁多，但真正端上餐桌的其实寥寥无几，远没有你想象中那么多",
+          "error_summary": "食用种类描述模糊且语气夸大失实"
+        }
+      ]
+    },
+    {
+      "dimension": "card_quality",
+      "score": 82.0,
+      "threshold": 70.0,
+      "passed": true,
+      "reason": "卡片数量适中，类型分布合理，封面、数据、章节、总结结构完整。逻辑从认知→成分→功效→食用方法→结论递进清晰。但section卡片占比偏高且部分section标题内容接近重复，略显冗余。",
+      "retry_target": "agent3",
+      "failed_card_ids": [],
+      "failed_facts": []
+    },
+    {
+      "dimension": "audience_fit",
+      "score": 72.0,
+      "threshold": 68.0,
+      "passed": true,
+      "reason": "整体科普方向适合大众，语言较通俗，但\"棘皮动物门\"\"活性成分\"\"海参多糖\"等术语未做口语化转化，部分表述偏学术严肃，缺乏小红书特有的亲切感和互动感，与平台调性略有落差。",
+      "retry_target": "worker_a",
+      "failed_card_ids": [],
+      "failed_facts": []
+    }
+  ],
+  "overall_score": 79.5,
+  "failed_dims": [],
+  "voting_enabled": false
+}

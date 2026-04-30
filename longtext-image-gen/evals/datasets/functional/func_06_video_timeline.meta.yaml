@@ -1,0 +1,23 @@
+case_id: func_06_video_timeline
+category: functional
+sub_category: video_route
+title: 中国新能源汽车十年发展大事记（2015-2026）
+text_length: ~6000
+language: zh
+source_count: 1
+expected_behavior:
+  agent1_decision:
+    risk_level: safe
+    article_type: news
+    skip_pipeline: false
+  expected_terminal: passed
+  expected_format: video
+preferences:
+  target_platform: xiaohongshu
+  output_format: video
+  style_hint: auto
+  watermark: true
+user_profile:
+  user_type: general
+tags: [news, timeline, EV, video, long]
+notes: 时间锚点≥10个，跨度≥5年，应触发视频分流

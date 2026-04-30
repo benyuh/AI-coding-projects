@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>信息图</title>
+  {% include "shared/base_styles.html" %}
+  <style>
+    /* 李永乐风格知识拆解专属样式 */
+    .card-section.lin-card {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      border-left: none;
+      padding: 32px 40px;
+    }
+    .lin-step-num {
+      min-width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-primary, #FF6B6B);
+      color: #fff;
+      font-size: 28px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .lin-content {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+<div class="infographic">
+
+  {% for card in cards %}
+
+  {# ── COVER ── #}
+  {% if card.card_type == "cover" %}
+  <div class="card-cover">
+    <div class="cover-inner">
+      <div class="tag">📚 知识拆解</div>
+      <div class="main-title">{{ card.title }}</div>
+      {% if card.body %}<div class="subtitle">{{ card.body }}</div>{% endif %}
+      <div class="cover-divider"></div>
+    </div>
+  </div>
+
+  {# ── DATA ── #}
+  {% elif card.card_type == "data" %}
+  <div class="card-data">
+    <div class="data-number-wrap">
+      {% if card.data_label|length > 8 %}
+      <div class="data-number very-long-number">{{ card.data_label }}</div>
+      {% elif card.data_label|length > 5 %}
+      <div class="data-number long-number">{{ card.data_label }}</div>
+      {% else %}
+      <div class="data-number">{{ card.data_label }}</div>
+      {% endif %}
+    </div>
+    <div class="data-text">
+      <div class="data-title">{{ card.title }}</div>
+      {% if card.data_desc %}<div class="data-desc">{{ card.data_desc }}</div>{% endif %}
+      {% if card.body %}<div class="data-desc" style="margin-top:8px;">{{ card.body }}</div>{% endif %}
+    </div>
+  </div>
+
+  {# ── TIMELINE ── #}
+  {% elif card.card_type == "timeline" %}
+  <div class="card-timeline">
+    {% if card.timeline_time %}
+    <div class="timeline-left">
+      <div class="timeline-badge">
+        <div class="timeline-time-text">{{ card.timeline_time }}</div>
+      </div>
+      <div class="timeline-axis"></div>
+    </div>
+    {% endif %}
+    <div class="timeline-content">
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+    </div>
+  </div>
+
+  {# ── SUMMARY ── #}
+  {% elif card.card_type == "summary" %}
+  <div class="card-summary">
+    <div class="summary-inner">
+      <div class="summary-label">▌ 核心要点</div>
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+      {% if card.items %}
+      <ul class="items-list">
+        {% for item in card.items %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+      <div class="summary-footer">✦ AI 摘要 · 仅供参考，请以原文为准</div>
+    </div>
+  </div>
+
+  {# ── SECTION（李永乐数字序号圆圈）── #}
+  {% else %}
+  <div class="card-section lin-card">
+    <div class="lin-step-num">{{ loop.index - 1 }}</div>
+    <div class="lin-content">
+      <div class="card-title">{{ card.title }}</div>
+      {% if card.body %}<div class="card-body">{{ card.body }}</div>{% endif %}
+      {% if card.items %}
+      <ul class="items-list">
+        {% for item in card.items %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% endfor %}
+
+  <div class="footer">由 Ducc 智能生成 · Blueprint {{ blueprint_id | default('') }}</div>
+</div>
+</body>
+</html>

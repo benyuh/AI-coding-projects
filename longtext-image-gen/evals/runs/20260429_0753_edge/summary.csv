@@ -1,0 +1,7 @@
+case_id,terminal_status,format,platform,style_id,narrative_structure,card_count,gate1_pass,gate2_pass,duration_s,degrade_level
+edge_01_len_too_short,passed,image,xiaohongshu,unknown,pyramid_argument,0,n/a,n/a,0.01,
+edge_05_legal_contract,passed,image,xiaohongshu,clean_business,pyramid_argument,4,True,True,2.08,
+edge_09_lorem,passed,image,xiaohongshu,clean_business,pyramid_argument,4,True,True,1.71,
+edge_24_emoji_heavy,passed,image,xiaohongshu,unknown,pyramid_argument,0,n/a,n/a,0.01,
+edge_25_table_in_text,passed,image,xiaohongshu,clean_business,pyramid_argument,4,True,True,1.71,
+edge_26_code_blocks,passed,image,xiaohongshu,clean_business,pyramid_argument,4,True,True,1.73,

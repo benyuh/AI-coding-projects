@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "issues": [
+    {
+      "check_name": "font_size",
+      "passed": true,
+      "detail": "font_size_base=26px ≥18px ✓",
+      "issue_type": "render_only"
+    },
+    {
+      "check_name": "ocr_typo",
+      "passed": true,
+      "detail": "OCR 未安装，检查已跳过",
+      "issue_type": "blueprint_level"
+    },
+    {
+      "check_name": "vision_score",
+      "passed": true,
+      "detail": "Vision 评分: 78/65 | 深色主题配色和谐，层级结构清晰，大数字锚点设计突出重点；但部分卡片文字密度偏高，正文字号略小，社媒传",
+      "issue_type": "render_only"
+    },
+    {
+      "check_name": "fact_drift",
+      "passed": true,
+      "detail": "OCR 未安装，事实漂移检查已跳过",
+      "issue_type": "fact_drift"
+    }
+  ],
+  "vision_score": 78.0,
+  "ocr_skipped": true
+}

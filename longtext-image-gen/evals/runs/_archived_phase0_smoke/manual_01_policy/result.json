@@ -1,0 +1,11 @@
+{
+  "elapsed_s": 110.39,
+  "sonnet_in": 11576,
+  "sonnet_out": 6376,
+  "output_path": "evals/runs/PHASE0_smoke/manual_01_policy/artifacts/output.png",
+  "degradation_level": "L2",
+  "gate1_passed": false,
+  "gate2_passed": null,
+  "style_id": "clean_business",
+  "card_count": 4
+}
